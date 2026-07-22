@@ -1,10 +1,3 @@
----
-id: F001
-typ: fundament
-status: kanon
-wersja: 1.0
----
-
 # FUNDAMENT INFINITA
 
 ## Zasada zero
