@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -14,3 +16,33 @@ jobs:
         run: python narzedzia/zbuduj_kanon.py
       - name: Czujniki spójności semantycznej (błędy blokują, ostrzeżenia są raportowane)
         run: python narzedzia/audyt_semantyczny.py
+      - name: Raport kondycji kanonu (błędy twarde blokują CI)
+        run: |
+          mkdir -p .raporty
+          python narzedzia/raport_kondycji.py \
+            --md .raporty/RAPORT_KONDYCJI.md \
+            --json .raporty/raport_kondycji.json
+      - name: Raport różnicowy dla modeli
+        shell: bash
+        run: |
+          mkdir -p .raporty
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE="${{ github.event.before }}"
+          fi
+          if [ -z "$BASE" ] || [[ "$BASE" =~ ^0+$ ]]; then
+            BASE="HEAD^"
+          fi
+          python narzedzia/raport_roznicowy.py \
+            --od "$BASE" \
+            --do HEAD \
+            --wyjscie .raporty/RAPORT_ROZNICOWY.md
+      - name: Zachowaj raporty bramki modeli
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bramka-modeli-${{ github.sha }}
+          path: .raporty/
+          if-no-files-found: warn
+          retention-days: 7
