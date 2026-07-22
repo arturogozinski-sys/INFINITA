@@ -20,7 +20,7 @@ def _parse_frontmatter(tekst):
     for linia in blok.splitlines():
         if not linia.strip():
             continue
-        if re.match(r'^\s*-\s+', linia):
+        if re.match(r'^\s*-\s+', linia):  # element listy
             if biezacy_klucz:
                 meta.setdefault(biezacy_klucz, [])
                 if isinstance(meta[biezacy_klucz], list):
@@ -39,6 +39,7 @@ def parsuj_plik(sciezka):
     fname = os.path.basename(sciezka)
     m = ID_RE.match(meta.get('id','') or fname)
     ident = (meta.get('id') or (m.group(1) if m else fname)).strip()
+
     wezel = {
         'id': ident,
         'typ': meta.get('typ', 'nieokreślony'),
@@ -48,12 +49,13 @@ def parsuj_plik(sciezka):
         'zrodla': meta.get('zrodla', []) if isinstance(meta.get('zrodla'), list) else [],
         'sciezka': sciezka,
     }
+    # krawędzie z pola 'odwolania' (lista identyfikatorów)
     odw = meta.get('odwolania', [])
     krawedzie = [(ident, cel, 'odwoluje_sie_do') for cel in (odw if isinstance(odw, list) else [])]
     return wezel, krawedzie
 
 def zbuduj_indeks(katalog_kanonu, indeks):
-    """Buduje indeks z WYŁĄCZNIE kanonu. Odtwarzalne od zera."""
+    """Buduje indeks z WYŁĄCZNIE kanonu. Odtwarzalne od zera (Konstytucja, sekcja II)."""
     indeks.rebuild()
     pliki = sorted(glob.glob(os.path.join(katalog_kanonu, '**', '*.md'), recursive=True))
     wszystkie_krawedzie = []
