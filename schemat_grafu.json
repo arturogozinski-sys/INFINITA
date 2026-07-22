@@ -1,6 +1,6 @@
 {
   "schemat": "INFINITA_GRAF",
-  "wersja": "1.0",
+  "wersja": "1.1",
   "opis": "Kontrakt danych grafu wiedzy. Maszynowo czytelny — parser waliduje względem tego pliku. Zmiana tego pliku = zmiana modelu danych, podbija wersję schematu (Konstytucja Techniczna, sekcja IX).",
   "system_identyfikatorow": {
     "wzorzec": "^([A-Z]{1,3})([0-9]{3})$",
@@ -18,71 +18,177 @@
     }
   },
   "status_produkcyjny": {
-    "dozwolone": ["warsztat", "kandydat", "kanon", "archiwum"],
+    "dozwolone": [
+      "warsztat",
+      "kandydat",
+      "kanon",
+      "archiwum"
+    ],
     "opis": "Gdzie w łańcuchu produkcji jest element. Parser kanonu przyjmuje wyłącznie 'kanon'.",
-    "tylko_do_parsera_kanonu": ["kanon"]
+    "tylko_do_parsera_kanonu": [
+      "kanon"
+    ]
   },
   "status_epistemiczny": {
-    "dozwolone": ["propozycja", "hipoteza", "zweryfikowane", "odrzucone", "demonstracyjne"],
+    "dozwolone": [
+      "propozycja",
+      "hipoteza",
+      "zweryfikowane",
+      "odrzucone",
+      "demonstracyjne"
+    ],
     "opis": "Pewność poznawcza elementu. Do kanonu wchodzi tylko 'zweryfikowane'. 'demonstracyjne' = fikstury prototypu, nigdy nie kanon.",
-    "dozwolone_w_kanonie": ["zweryfikowane"]
+    "dozwolone_w_kanonie": [
+      "zweryfikowane"
+    ]
   },
   "typy_wezlow": {
     "mechanizm": {
       "prefiks": "M",
-      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny", "wersja"],
-      "pola_opcjonalne": ["zrodla", "odwolania"],
+      "pola_wymagane": [
+        "id",
+        "typ",
+        "tytul",
+        "status_epistemiczny",
+        "wersja"
+      ],
+      "pola_opcjonalne": [
+        "zrodla",
+        "odwolania"
+      ],
       "opis": "Reguła działania systemu poznawczego. Kanon trwały — pełna linia produkcji."
     },
     "zasada": {
       "prefiks": "Z",
-      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny", "wersja"],
-      "pola_opcjonalne": ["zrodla", "odwolania"],
+      "pola_wymagane": [
+        "id",
+        "typ",
+        "tytul",
+        "status_epistemiczny",
+        "wersja"
+      ],
+      "pola_opcjonalne": [
+        "zrodla",
+        "odwolania"
+      ],
       "opis": "Zasada uniwersalna. Kanon trwały."
     },
     "specyfikacja": {
       "prefiks": "S",
-      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny", "wersja"],
-      "pola_opcjonalne": ["odwolania"],
+      "pola_wymagane": [
+        "id",
+        "typ",
+        "tytul",
+        "status_epistemiczny",
+        "wersja"
+      ],
+      "pola_opcjonalne": [
+        "odwolania"
+      ],
       "opis": "Standard/protokół systemu. Kanon trwały."
     },
     "proces": {
       "prefiks": "P",
-      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny", "wersja"],
-      "pola_opcjonalne": ["odwolania"],
+      "pola_wymagane": [
+        "id",
+        "typ",
+        "tytul",
+        "status_epistemiczny",
+        "wersja"
+      ],
+      "pola_opcjonalne": [
+        "odwolania"
+      ],
       "opis": "Procedura. Kanon trwały."
     },
     "dowod": {
       "prefiks": "E",
-      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny", "wiarygodnosc"],
-      "pola_opcjonalne": ["odwolania"],
+      "pola_wymagane": [
+        "id",
+        "typ",
+        "tytul",
+        "status_epistemiczny",
+        "wiarygodnosc"
+      ],
+      "pola_opcjonalne": [
+        "odwolania"
+      ],
       "opis": "Materiał odniesienia — dowód wspierający mechanizmy. Lżejsza linia. Uwaga prywatności: treść dowodów bywa osobista (poza kanonem publicznym).",
-      "walidacja_dodatkowa": {"wiarygodnosc": "liczba 1-5"}
+      "walidacja_dodatkowa": {
+        "wiarygodnosc": "liczba 1-5"
+      }
     },
     "przypadek": {
       "prefiks": "C",
-      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny"],
-      "pola_opcjonalne": ["odwolania"],
+      "pola_wymagane": [
+        "id",
+        "typ",
+        "tytul",
+        "status_epistemiczny"
+      ],
+      "pola_opcjonalne": [
+        "odwolania"
+      ],
       "opis": "Studium przypadku. Materiał odniesienia."
     },
     "dialog": {
       "prefiks": "D",
-      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny"],
-      "pola_opcjonalne": ["odwolania"],
+      "pola_wymagane": [
+        "id",
+        "typ",
+        "tytul",
+        "status_epistemiczny"
+      ],
+      "pola_opcjonalne": [
+        "odwolania"
+      ],
       "opis": "Zapis dialogu. Materiał odniesienia."
     },
     "hipoteza": {
       "prefiks": "H",
-      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny"],
-      "pola_opcjonalne": ["odwolania", "zrodla"],
+      "pola_wymagane": [
+        "id",
+        "typ",
+        "tytul",
+        "status_epistemiczny"
+      ],
+      "pola_opcjonalne": [
+        "odwolania",
+        "zrodla"
+      ],
       "opis": "Element rejestru propozycji. NIE wchodzi do kanonu — status_epistemiczny w {propozycja, hipoteza}."
+    },
+    "indeks": {
+      "prefiks": "I",
+      "pola_wymagane": [
+        "id",
+        "typ",
+        "tytul",
+        "status_epistemiczny",
+        "wersja"
+      ],
+      "pola_opcjonalne": [
+        "odwolania"
+      ],
+      "opis": "Narzędzie klasyfikujące/porządkujące (słownik, macierz, indeks). Nie jest treścią kanonu merytorycznego, lecz metadanymi o nim."
     }
   },
   "typy_krawedzi": {
-    "odwoluje_sie_do": {"opis": "ogólne odniesienie A->B", "z_pola": "odwolania"},
-    "wspiera": {"opis": "dowód wspiera mechanizm E->M", "z_pola": "zrodla", "kierunek": "dowod_do_wezla"},
-    "syntetyzuje_z": {"opis": "zasada powstała z syntezy wielu elementów"},
-    "wynika_z": {"opis": "element pochodny od innego"}
+    "odwoluje_sie_do": {
+      "opis": "ogólne odniesienie A->B",
+      "z_pola": "odwolania"
+    },
+    "wspiera": {
+      "opis": "dowód wspiera mechanizm E->M",
+      "z_pola": "zrodla",
+      "kierunek": "dowod_do_wezla"
+    },
+    "syntetyzuje_z": {
+      "opis": "zasada powstała z syntezy wielu elementów"
+    },
+    "wynika_z": {
+      "opis": "element pochodny od innego"
+    }
   },
   "reguly_integralnosci": {
     "kazdy_wezel_ma_typ_ze_slownika": true,
