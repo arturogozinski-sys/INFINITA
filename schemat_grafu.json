@@ -1,0 +1,95 @@
+{
+  "schemat": "INFINITA_GRAF",
+  "wersja": "1.0",
+  "opis": "Kontrakt danych grafu wiedzy. Maszynowo czytelny — parser waliduje względem tego pliku. Zmiana tego pliku = zmiana modelu danych, podbija wersję schematu (Konstytucja Techniczna, sekcja IX).",
+  "system_identyfikatorow": {
+    "wzorzec": "^([A-Z]{1,3})([0-9]{3})$",
+    "opis": "Prefiks literowy = typ, trzy cyfry = numer w ramach typu. Identyfikator jest stały i nigdy nie jest używany ponownie ani przenumerowywany.",
+    "prefiksy": {
+      "S": "specyfikacja",
+      "M": "mechanizm",
+      "P": "proces",
+      "Z": "zasada",
+      "E": "dowod",
+      "C": "przypadek",
+      "D": "dialog",
+      "I": "indeks",
+      "H": "hipoteza"
+    }
+  },
+  "status_produkcyjny": {
+    "dozwolone": ["warsztat", "kandydat", "kanon", "archiwum"],
+    "opis": "Gdzie w łańcuchu produkcji jest element. Parser kanonu przyjmuje wyłącznie 'kanon'.",
+    "tylko_do_parsera_kanonu": ["kanon"]
+  },
+  "status_epistemiczny": {
+    "dozwolone": ["propozycja", "hipoteza", "zweryfikowane", "odrzucone", "demonstracyjne"],
+    "opis": "Pewność poznawcza elementu. Do kanonu wchodzi tylko 'zweryfikowane'. 'demonstracyjne' = fikstury prototypu, nigdy nie kanon.",
+    "dozwolone_w_kanonie": ["zweryfikowane"]
+  },
+  "typy_wezlow": {
+    "mechanizm": {
+      "prefiks": "M",
+      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny", "wersja"],
+      "pola_opcjonalne": ["zrodla", "odwolania"],
+      "opis": "Reguła działania systemu poznawczego. Kanon trwały — pełna linia produkcji."
+    },
+    "zasada": {
+      "prefiks": "Z",
+      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny", "wersja"],
+      "pola_opcjonalne": ["zrodla", "odwolania"],
+      "opis": "Zasada uniwersalna. Kanon trwały."
+    },
+    "specyfikacja": {
+      "prefiks": "S",
+      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny", "wersja"],
+      "pola_opcjonalne": ["odwolania"],
+      "opis": "Standard/protokół systemu. Kanon trwały."
+    },
+    "proces": {
+      "prefiks": "P",
+      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny", "wersja"],
+      "pola_opcjonalne": ["odwolania"],
+      "opis": "Procedura. Kanon trwały."
+    },
+    "dowod": {
+      "prefiks": "E",
+      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny", "wiarygodnosc"],
+      "pola_opcjonalne": ["odwolania"],
+      "opis": "Materiał odniesienia — dowód wspierający mechanizmy. Lżejsza linia. Uwaga prywatności: treść dowodów bywa osobista (poza kanonem publicznym).",
+      "walidacja_dodatkowa": {"wiarygodnosc": "liczba 1-5"}
+    },
+    "przypadek": {
+      "prefiks": "C",
+      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny"],
+      "pola_opcjonalne": ["odwolania"],
+      "opis": "Studium przypadku. Materiał odniesienia."
+    },
+    "dialog": {
+      "prefiks": "D",
+      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny"],
+      "pola_opcjonalne": ["odwolania"],
+      "opis": "Zapis dialogu. Materiał odniesienia."
+    },
+    "hipoteza": {
+      "prefiks": "H",
+      "pola_wymagane": ["id", "typ", "tytul", "status_epistemiczny"],
+      "pola_opcjonalne": ["odwolania", "zrodla"],
+      "opis": "Element rejestru propozycji. NIE wchodzi do kanonu — status_epistemiczny w {propozycja, hipoteza}."
+    }
+  },
+  "typy_krawedzi": {
+    "odwoluje_sie_do": {"opis": "ogólne odniesienie A->B", "z_pola": "odwolania"},
+    "wspiera": {"opis": "dowód wspiera mechanizm E->M", "z_pola": "zrodla", "kierunek": "dowod_do_wezla"},
+    "syntetyzuje_z": {"opis": "zasada powstała z syntezy wielu elementów"},
+    "wynika_z": {"opis": "element pochodny od innego"}
+  },
+  "reguly_integralnosci": {
+    "kazdy_wezel_ma_typ_ze_slownika": true,
+    "id_zgodne_z_prefiksem_typu": "prefiks identyfikatora musi odpowiadać typowi węzła",
+    "pola_wymagane_obecne": "wszystkie pola_wymagane danego typu muszą istnieć",
+    "brak_martwych_krawedzi": "każde odwolanie wskazuje na istniejący węzeł (ostrzeżenie, nie błąd — cel może być poza bieżącym zakresem)",
+    "kanon_tylko_zweryfikowane": "węzeł w kanonie musi mieć status_epistemiczny=zweryfikowane",
+    "hipoteza_nie_w_kanonie": "typ hipoteza nie może mieć statusu produkcyjnego kanon"
+  }
+}
