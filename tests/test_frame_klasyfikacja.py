@@ -32,12 +32,23 @@ def test_frame_subtypes_are_defined_and_routed() -> None:
         "PRESJA",
         "FAŁSZYWA_ALTERNATYWA",
         "MORALIZACJA",
-        "ZAWŁASZCZENIE",
     }
 
     for subtype in expected:
         assert subtype in i006
         assert subtype.lower().replace("_", " ") in p008.lower().replace("_", " ")
+
+
+def test_frame_composite_result_is_not_an_eighth_subtype() -> None:
+    m043 = read("M043")
+    i006 = read("I006")
+    p008 = read("P008")
+
+    subtype_section = i006.split("## Podtypy FRAME", 1)[1].split("## Wynik złożony FRAME", 1)[0]
+    assert "ZAWŁASZCZENIE_RAMY" not in subtype_section
+    assert "wynik, nie podtyp" in i006
+    assert "Jest skutkiem funkcjonalnym całej wypowiedzi" in m043
+    assert "ocenić osobno wynik `ZAWŁASZCZENIE_RAMY`" in p008
 
 
 def test_frame_does_not_automatically_mean_false_or_manipulative() -> None:
