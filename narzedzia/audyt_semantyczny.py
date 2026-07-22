@@ -9,10 +9,9 @@ się nową tradycją projektu.
 """
 from __future__ import annotations
 
-import os
 import re
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -83,8 +82,12 @@ def audit() -> tuple[list[str], list[str]]:
                 f"{ident}: Powiązania w treści {sorted(declared)} != odwolania YAML {sorted(refs)}"
             )
 
+        # S002 jest jedynym miejscem, które może wymieniać stare nazwy po to,
+        # żeby jawnie ich zakazać. W pozostałym kanonie to błąd terminologiczny.
         lowered = body.lower()
-        if "status operacyjny" in lowered or "op-" in lowered or "fn-" in lowered:
+        if ident != "S002" and (
+            "status operacyjny" in lowered or "op-" in lowered or "fn-" in lowered
+        ):
             errors.append(
                 f"{ident}: używa starego/niejednoznacznego modelu statusu operacyjnego lub FN/OP"
             )
