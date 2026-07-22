@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
-"""Warstwa abstrakcji repozytorium. Indeks jest pochodny i odtwarzalny."""
+"""Warstwa abstrakcji repozytorium (Konstytucja Techniczna, sekcja III).
+Rdzeń nie wie, czy pod spodem jest SQLite czy PostgreSQL.
+Zmiana silnika = podmiana implementacji tej klasy, bez dotykania parsera i logiki.
+Indeks jest POCHODNY i odtwarzalny (sekcja II): rebuild() kasuje i buduje od zera z plików.
+"""
 from abc import ABC, abstractmethod
 import sqlite3, json
 
-SCHEMA_VERSION = "0.1"
+SCHEMA_VERSION = "0.1"  # wersja schematu grafu (Konstytucja, sekcja IX)
 
 class RepozytoriumIndeksu(ABC):
+    """Kontrakt, który zna rdzeń. Silnik jest szczegółem implementacyjnym."""
     @abstractmethod
     def rebuild(self): ...
     @abstractmethod
@@ -24,6 +29,7 @@ class RepozytoriumIndeksu(ABC):
     def martwe_krawedzie(self) -> list: ...
 
 class IndeksSQLite(RepozytoriumIndeksu):
+    """Implementacja na SQLite. Wymienialna. Postgres = inna klasa, ten sam kontrakt."""
     def __init__(self, sciezka=":memory:"):
         self.db = sqlite3.connect(sciezka)
         self.db.row_factory = sqlite3.Row
@@ -40,6 +46,7 @@ class IndeksSQLite(RepozytoriumIndeksu):
         self.close()
 
     def __del__(self):
+        # siatka bezpieczeństwa, gdyby ktoś zapomniał close()/with
         try:
             self.close()
         except Exception:
@@ -55,7 +62,9 @@ class IndeksSQLite(RepozytoriumIndeksu):
             id TEXT PRIMARY KEY, typ TEXT, tytul TEXT,
             status_epistemiczny TEXT, wersja TEXT, dane_json TEXT
         );
-        CREATE TABLE krawedzie (zrodlo TEXT, cel TEXT, typ TEXT);
+        CREATE TABLE krawedzie (
+            zrodlo TEXT, cel TEXT, typ TEXT
+        );
         CREATE TABLE meta (klucz TEXT PRIMARY KEY, wartosc TEXT);
         """)
         c.execute("INSERT INTO meta VALUES ('schema_version', ?)", (SCHEMA_VERSION,))
@@ -78,13 +87,15 @@ class IndeksSQLite(RepozytoriumIndeksu):
         return json.loads(r['dane_json']) if r else None
 
     def wszystkie_wezly(self):
-        return [json.loads(r['dane_json']) for r in self.db.execute("SELECT dane_json FROM wezly")]
+        return [json.loads(r['dane_json'])
+                for r in self.db.execute("SELECT dane_json FROM wezly")]
 
     def krawedzie_z(self, ident):
         return [dict(r) for r in self.db.execute(
             "SELECT zrodlo,cel,typ FROM krawedzie WHERE zrodlo=?", (ident,))]
 
     def martwe_krawedzie(self):
+        """Krawędź wskazująca na nieistniejący węzeł. Czujnik integralności grafu."""
         return [dict(r) for r in self.db.execute("""
             SELECT k.zrodlo, k.cel, k.typ FROM krawedzie k
             LEFT JOIN wezly w ON k.cel = w.id
