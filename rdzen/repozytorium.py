@@ -7,10 +7,11 @@ Indeks jest POCHODNY i odtwarzalny (sekcja II): rebuild() kasuje i buduje od zer
 from abc import ABC, abstractmethod
 import sqlite3, json
 
-SCHEMA_VERSION = "0.1"  # wersja schematu grafu (Konstytucja, sekcja IX)
-
 class RepozytoriumIndeksu(ABC):
-    """Kontrakt, który zna rdzeń. Silnik jest szczegółem implementacyjnym."""
+    """Kontrakt, który zna rdzeń. Silnik jest szczegółem implementacyjnym.
+    Wersja schematu NIE jest stałą w kodzie — jedynym źródłem jest schemat_grafu.json
+    (pole "wersja"), zapisywana do meta przez ustaw_wersje_schematu() podczas budowy
+    indeksu (patrz rdzen/parser.py: transactional_replace)."""
     @abstractmethod
     def rebuild(self): ...
     @abstractmethod
@@ -19,6 +20,8 @@ class RepozytoriumIndeksu(ABC):
     def dodaj_wezel(self, wezel: dict): ...
     @abstractmethod
     def dodaj_krawedz(self, zrodlo: str, cel: str, typ: str): ...
+    @abstractmethod
+    def ustaw_wersje_schematu(self, wersja: str): ...
     @abstractmethod
     def wezel(self, ident: str) -> dict | None: ...
     @abstractmethod
@@ -67,12 +70,20 @@ class IndeksSQLite(RepozytoriumIndeksu):
         );
         CREATE TABLE meta (klucz TEXT PRIMARY KEY, wartosc TEXT);
         """)
-        c.execute("INSERT INTO meta VALUES ('schema_version', ?)", (SCHEMA_VERSION,))
         c.commit()
 
+    def ustaw_wersje_schematu(self, wersja):
+        """Jedyne miejsce, które zapisuje wersję schematu do indeksu.
+        Wywoływane przez transactional_replace() z wartością odczytaną z schemat_grafu.json."""
+        self.db.execute("INSERT OR REPLACE INTO meta VALUES ('schema_version', ?)", (wersja,))
+        self.db.commit()
+
     def dodaj_wezel(self, w):
+        """Zwykły INSERT — duplikat ID ma wybuchnąć (sqlite3.IntegrityError), nie zostać cicho
+        nadpisany. Wykrywanie duplikatów PRZED zapisem należy do validate_graph() (rdzen/parser.py);
+        to jest druga linia obrony na poziomie bazy."""
         self.db.execute(
-            "INSERT OR REPLACE INTO wezly VALUES (?,?,?,?,?,?)",
+            "INSERT INTO wezly VALUES (?,?,?,?,?,?)",
             (w['id'], w.get('typ',''), w.get('tytul',''),
              w.get('status_epistemiczny',''), w.get('wersja',''),
              json.dumps(w, ensure_ascii=False)))

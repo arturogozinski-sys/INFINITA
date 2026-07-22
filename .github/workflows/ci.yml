@@ -8,5 +8,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Testy rdzenia (czujniki integralności)
+      - name: Testy jednostkowe (fikstury_demo/ — testy prototypu, nie audyt kanonu)
         run: python -m unittest discover -s tests -p "test_*.py" -v
+      - name: Audyt produkcyjny kanon/ (walidacja realnych danych, nie fikstur)
+        run: python narzedzia/zbuduj_kanon.py

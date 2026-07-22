@@ -3,15 +3,18 @@
 Dowód, że element przechodzi całą drogę i że graf + czujnik integralności działają."""
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-from rdzen.repozytorium import IndeksSQLite, SCHEMA_VERSION
+from rdzen.repozytorium import IndeksSQLite
 from rdzen.parser import zbuduj_indeks
+from rdzen.walidator import Walidator
 
 KANON = os.path.join(os.path.dirname(__file__), '..', 'fikstury_demo')
+SCHEMAT = os.path.join(os.path.dirname(__file__), '..', 'schemat_grafu.json')
 
 def main():
     indeks = IndeksSQLite(":memory:")   # silnik wymienny; tu SQLite w pamięci
     n = zbuduj_indeks(KANON, indeks)
-    print(f"Zbudowano indeks z {n} plików wejściowych (fikstury demonstracyjne, schema {SCHEMA_VERSION})")
+    schema_version = Walidator(SCHEMAT).wersja_schematu
+    print(f"Zbudowano indeks z {n} plików wejściowych (fikstury demonstracyjne, schema {schema_version})")
 
     # 1. węzeł przeszedł całą drogę
     w = indeks.wezel('M045')

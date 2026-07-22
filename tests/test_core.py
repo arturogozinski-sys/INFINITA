@@ -2,12 +2,13 @@
 """Formalny test wykrywalny przez pytest i unittest (dług techniczny nr 1).
 Uruchomienie: pytest  albo  python -m unittest
 CI (GitHub Actions) wykryje go automatycznie."""
-import os, sys, unittest
+import json, os, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-from rdzen.repozytorium import IndeksSQLite, SCHEMA_VERSION
+from rdzen.repozytorium import IndeksSQLite
 from rdzen.parser import zbuduj_indeks
 
 FIKSTURY = os.path.join(os.path.dirname(__file__), '..', 'fikstury_demo')
+SCHEMAT = os.path.join(os.path.dirname(__file__), '..', 'schemat_grafu.json')
 
 class TestPrzeplywEndToEnd(unittest.TestCase):
     def setUp(self):
@@ -36,8 +37,11 @@ class TestPrzeplywEndToEnd(unittest.TestCase):
         self.assertEqual(przed, len(self.indeks.wszystkie_wezly()))
 
     def test_wersja_schematu_zapisana(self):
+        # jedyne źródło prawdy to plik JSON — czytamy go niezależnie, bez importu stałej z kodu
+        with open(SCHEMAT, encoding='utf-8') as f:
+            wersja_z_pliku = json.load(f)['wersja']
         r = self.indeks.db.execute("SELECT wartosc FROM meta WHERE klucz='schema_version'").fetchone()
-        self.assertEqual(r['wartosc'], SCHEMA_VERSION)
+        self.assertEqual(r['wartosc'], wersja_z_pliku)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
