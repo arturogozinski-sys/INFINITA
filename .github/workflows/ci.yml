@@ -12,3 +12,5 @@ jobs:
         run: python -m unittest discover -s tests -p "test_*.py" -v
       - name: Audyt produkcyjny kanon/ (walidacja realnych danych, nie fikstur)
         run: python narzedzia/zbuduj_kanon.py
+      - name: Czujniki spójności semantycznej (błędy blokują, ostrzeżenia są raportowane)
+        run: python narzedzia/audyt_semantyczny.py
