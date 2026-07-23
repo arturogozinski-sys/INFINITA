@@ -50,7 +50,7 @@ Repozytorium GitHub `arturogozinski-sys/INFINITA` jest trwałym i wersjonowanym 
 5. Copilot analizuje diff i wyniki CI.
 6. GPT i operator oceniają sens, zgodność i ryzyko.
 7. Po akceptacji PR jest scalany do `master`.
-8. `STAN_AKTUALNY.md` jest aktualizowany tylko wtedy, gdy zmienił się punkt wejścia projektu.
+8. Dokument stanu wejściowego projektu jest aktualizowany tylko wtedy, gdy zmienił się punkt wejścia projektu. Nazwa i lokalizacja tego artefaktu muszą być jawnie wskazane w zadaniu lub handoffie.
 
 ## Przekazanie materiału Claude’a
 
