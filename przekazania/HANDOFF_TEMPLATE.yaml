@@ -7,7 +7,7 @@ commit_bazowy: "UZUPELNIJ_PELNY_SHA"
 
 wykonawca: "claude|copilot|gpt|czlowiek"
 data_utworzenia: "YYYY-MM-DD"
-tryb: "propozycja_zmian|audyt|symulacja|raport"
+tryb: "implementacja|audyt|symulacja|synteza|redakcja|diagnoza"
 
 zadanie:
   id: "UZUPELNIJ"
