@@ -1,0 +1,38 @@
+name: Claude snapshot
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  build-snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run repository tests
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+
+      - name: Build Claude snapshot
+        run: python narzedzia/zbuduj_snapshot_claude.py --output-dir dist
+
+      - name: Upload Claude snapshot artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: infinita-claude-${{ github.sha }}
+          path: dist/INFINITA_CLAUDE_*.zip
+          if-no-files-found: error
+          retention-days: 14
