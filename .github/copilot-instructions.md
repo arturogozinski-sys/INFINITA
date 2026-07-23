@@ -53,6 +53,19 @@ Po zmianie:
 3. Sprawdź, czy testy nie zmodyfikowały drzewa roboczego.
 4. Podaj faktyczny wynik, bez deklarowania sukcesu przed potwierdzeniem.
 
+## Odświeżanie stanu procesu
+
+Po każdej operacji zmieniającej plik, commit, PR, review, wątek albo CI ponownie odczytaj aktualny stan z GitHuba.
+
+Nie utożsamiaj:
+
+- prośby o review z wykonanym review,
+- uruchomionego CI z zakończonym sukcesem CI,
+- technicznej możliwości scalenia z dopuszczeniem do scalenia,
+- braku komentarzy z akceptacją.
+
+Przed każdą rekomendacją scalenia sprawdź `przekazania/BRAMKA_PRZED_SCALENIEM.md`. Jeżeli dowolny wymagany warunek nie jest potwierdzony, wynik brzmi `STOP` wraz ze wskazaniem brakującego warunku.
+
 ## Raport i code review
 
 Komentarz powinien rozdzielać:
