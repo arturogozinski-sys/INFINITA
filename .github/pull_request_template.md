@@ -43,6 +43,14 @@ Wynik:
 - CI: 
 - Drzewo robocze po testach: czyste / nieczyste / nie sprawdzono
 
+## Higiena procesu
+
+- [ ] wskazano źródło stanu wejściowego
+- [ ] zapisano identyfikator wersji wejścia lub `head_sha`
+- [ ] po każdej mutacji odczytano faktyczny wynik
+- [ ] kolejny krok wynikał z aktualnego stanu
+- [ ] brak potwierdzenia wyniku powodował `STOP`
+
 ## Kontrola integralności
 
 - [ ] zmiana jest zgodna z dokumentami nadrzędnymi
@@ -62,23 +70,9 @@ Wynik:
 
 ## Recenzja
 
-- [ ] Copilot lub inny niezależny recenzent faktycznie zakończył review
-- [ ] review wykonano po ostatnim commicie albo dla aktualnego `head_sha`
-- [ ] wszystkie uwagi blokujące poprawiono
-- [ ] wszystkie właściwe wątki review rozwiązano
+- [ ] Copilot faktycznie przejrzał aktualny diff
+- [ ] review wykonano po ostatnim commicie
+- [ ] wszystkie właściwe wątki są rozwiązane
+- [ ] CI dla aktualnego `head_sha` zakończyło się sukcesem albo jawnie nie występuje
+- [ ] bezpośrednio przed scaleniem odświeżono PR, review, wątki i CI
 - [ ] operator zatwierdził scalenie
-
-## Bramka przed scaleniem
-
-<!-- Wypełnić na podstawie świeżego odczytu GitHuba bezpośrednio przed scaleniem. -->
-
-- Aktualny `head_sha`: `UZUPEŁNIJ_PEŁNY_SHA`
-- [ ] PR jest otwarty i nie jest draftem
-- [ ] CI i wymagane kontrole zakończyły się sukcesem albo jawnie nie dotyczą zmiany
-- [ ] zakończone review istnieje i jest aktualne
-- [ ] brak nierozwiązanych uwag blokujących
-- [ ] operator jawnie zatwierdził scalenie
-- [ ] stan PR, review, wątków i CI odświeżono po ostatniej operacji
-- [ ] scalenie zostanie wykonane z `expected_head_sha`
-
-Obowiązuje `przekazania/BRAMKA_PRZED_SCALENIEM.md`. Dowolny niespełniony warunek oznacza `STOP`.
