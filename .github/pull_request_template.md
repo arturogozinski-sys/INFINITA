@@ -4,6 +4,8 @@
 
 ## Tryb pracy
 
+<!-- Zaznacz dokładnie jeden tryb. -->
+
 - [ ] implementacja
 - [ ] audyt
 - [ ] symulacja
