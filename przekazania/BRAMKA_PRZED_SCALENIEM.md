@@ -6,6 +6,8 @@ Nie dopuścić do scalenia pull requestu na podstawie nieaktualnego, niepełnego
 
 ## Zasada nadrzędna
 
+Ta procedura jest wyspecjalizowanym zastosowaniem `PROTOKOL_RUCH_ODCZYT.md`.
+
 Prośba o review nie jest review. Uruchomienie CI nie jest wynikiem CI. Brak widocznego błędu nie jest potwierdzeniem sukcesu.
 
 Scalenie jest dozwolone wyłącznie po jawnej weryfikacji wszystkich warunków poniżej na aktualnym `head_sha` pull requestu.
