@@ -1,0 +1,39 @@
+format: infinita-handoff
+wersja_formatu: 1
+
+repozytorium: arturogozinski-sys/INFINITA
+branch_bazowy: master
+commit_bazowy: "UZUPELNIJ_PELNY_SHA"
+
+wykonawca: "claude|copilot|gpt|czlowiek"
+data_utworzenia: "YYYY-MM-DD"
+tryb: "propozycja_zmian|audyt|symulacja|raport"
+
+zadanie:
+  id: "UZUPELNIJ"
+  cel: "Jednoznaczny cel przekazania"
+  zakres:
+    - "sciezka/lub/modul"
+  poza_zakresem:
+    - "rzeczy, ktorych nie wolno zmieniac"
+
+wynik:
+  typ: "snapshot|patch|raport"
+  katalog_lub_plik: "UZUPELNIJ"
+  pliki_zmienione: []
+
+walidacja:
+  polecenia:
+    - "python -m unittest discover -s tests -p 'test_*.py' -v"
+  testy_oczekiwane: null
+  wynik_deklarowany: "nieuruchomione|sukces|blad|czesciowy"
+  drzewo_czyste_po_testach: null
+
+pochodzenie:
+  dokumenty_nadrzedne:
+    - "00_FUNDAMENT/FUNDAMENT.md"
+    - "00_FUNDAMENT/ZASADY_WSPOLPRACY.md"
+  uwagi: ""
+
+ograniczenia: []
+decyzje_wymagane_od_operatora: []
