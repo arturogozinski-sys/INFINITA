@@ -27,18 +27,27 @@ wynik:
   katalog_lub_plik: "robocze/model_energetyczny_enc_v3/README.md"
   pliki_zmienione:
     - "robocze/model_energetyczny_enc_v3/README.md"
-    - "robocze/model_energetyczny_enc_v3/RAPORT_E0_KUMULACJA_v3.md"
-    - "robocze/model_energetyczny_enc_v3/PRZEBIEG_PELNY.txt"
+    - "robocze/model_energetyczny_enc_v3/paczka/model_enc_v3.zip.b64.part-00"
+    - "robocze/model_energetyczny_enc_v3/paczka/model_enc_v3.zip.b64.part-01"
+    - "robocze/model_energetyczny_enc_v3/paczka/model_enc_v3.zip.b64.part-02"
+    - "robocze/model_energetyczny_enc_v3/paczka/model_enc_v3.zip.b64.part-03"
+    - "robocze/model_energetyczny_enc_v3/paczka/model_enc_v3.zip.b64.part-04"
+    - "robocze/model_energetyczny_enc_v3/paczka/model_enc_v3.zip.b64.part-05"
+    - "robocze/model_energetyczny_enc_v3/paczka/model_enc_v3.zip.b64.part-06"
+    - "robocze/model_energetyczny_enc_v3/paczka/model_enc_v3.zip.b64.part-07"
+    - "narzedzia/model_energetyczny_enc_v3/odtworz_paczke.py"
     - "narzedzia/model_energetyczny_enc_v3/rdzen.py"
     - "narzedzia/model_energetyczny_enc_v3/przebieg.py"
     - "narzedzia/model_energetyczny_enc_v3/rownowagi.py"
-    - "narzedzia/model_energetyczny_enc_v3/dobowy.py"
+    - "przekazania/COPILOT_AUDYT_MODEL_ENC_V3.md"
 
 walidacja:
   polecenia:
-    - "python -m py_compile narzedzia/model_energetyczny_enc_v3/*.py"
-    - "cd narzedzia/model_energetyczny_enc_v3 && python dobowy.py > /tmp/enc_v3_stdout.txt"
-    - "cmp -s /tmp/enc_v3_stdout.txt ../../robocze/model_energetyczny_enc_v3/PRZEBIEG_PELNY.txt"
+    - "python narzedzia/model_energetyczny_enc_v3/odtworz_paczke.py --cel /tmp/model_enc_v3"
+    - "python -m py_compile /tmp/model_enc_v3/*.py"
+    - "cd /tmp/model_enc_v3 && python dobowy.py > /tmp/enc_v3_stdout.txt"
+    - "cmp -s /tmp/enc_v3_stdout.txt /tmp/model_enc_v3/PRZEBIEG_PELNY.txt"
+    - "git diff --exit-code && git status --porcelain"
   testy_oczekiwane: null
   wynik_deklarowany: "czesciowy"
   drzewo_czyste_po_testach: null
@@ -48,13 +57,14 @@ pochodzenie:
     - "00_FUNDAMENT/FUNDAMENT.md"
     - "00_FUNDAMENT/ZASADY_WSPOLPRACY.md"
     - ".github/copilot-instructions.md"
-  uwagi: "Import dokładnej zawartości files(3).zip; SHA-256 zapisane w README."
+  uwagi: "Dokładny ZIP files(3).zip zachowany jako 8 części Base64. ZIP SHA-256: 558c05999563b30429adad92709fe2c5680dd1cbe6e78a9c2404ab8ff058f52c."
 
 ograniczenia:
   - "Brak automatycznego scalenia do master."
   - "Brak przenoszenia do kanon/."
   - "Nie traktować parametrów jako skalibrowanych progów człowieka."
   - "Nie przenosić statycznej analizy K=const na K(t) bez analizy okresowej."
+  - "Autorytatywna jest paczka odtworzona i zweryfikowana przez odtworz_paczke.py, nie wygodne kopie pojedynczych plików."
 
 decyzje_wymagane_od_operatora:
   - "Czy po recenzji zachować snapshot w PR #13, wydzielić go do osobnego PR czy odrzucić."
