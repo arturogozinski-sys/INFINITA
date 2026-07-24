@@ -16,6 +16,14 @@ Copilot nie rozstrzyga samodzielnie kierunku merytorycznego projektu, statusu ep
 
 Nie odtwarzaj zasad z pamięci, jeżeli można odczytać je z repozytorium.
 
+## Protokół wykonawczy
+
+Każdą operację wykonuj zgodnie z `przekazania/PROTOKOL_RUCH_ODCZYT.md`:
+
+`odczyt → decyzja → jedna mutacja → odczyt wyniku → porównanie → następna decyzja`
+
+Po każdej mutacji wcześniejszy obraz stanu jest potencjalnie nieaktualny. Brak możliwości odczytu wyniku oznacza `STOP`, a nie domniemany sukces.
+
 ## Zakres pracy
 
 Copilot może:
@@ -48,10 +56,11 @@ Przed zmianą:
 
 Po zmianie:
 
-1. Uruchom odpowiednie testy.
-2. Uruchom wszystkie kroki CI związane z zakresem.
-3. Sprawdź, czy testy nie zmodyfikowały drzewa roboczego.
-4. Podaj faktyczny wynik, bez deklarowania sukcesu przed potwierdzeniem.
+1. Odczytaj faktyczny wynik mutacji.
+2. Uruchom odpowiednie testy.
+3. Uruchom wszystkie kroki CI związane z zakresem.
+4. Sprawdź, czy testy nie zmodyfikowały drzewa roboczego.
+5. Podaj faktyczny wynik, bez deklarowania sukcesu przed potwierdzeniem.
 
 ## Raport i code review
 
@@ -65,6 +74,12 @@ Komentarz powinien rozdzielać:
 Każde zgłoszenie powinno wskazywać plik, miejsce, podstawę i skutek.
 
 Nie generuj raportu całego repo, gdy zadanie dotyczy jednego PR. Nie powtarzaj treści dokumentów, które można wskazać ścieżką.
+
+## Bramka przed scaleniem
+
+Stosuj `przekazania/BRAMKA_PRZED_SCALENIEM.md`.
+
+Jeżeli nie ma aktualnego review, potwierdzonego CI, rozwiązanych uwag, zatwierdzenia operatora lub świeżego `head_sha`, wynik brzmi `STOP`.
 
 ## Granica odpowiedzialności
 
