@@ -1,0 +1,61 @@
+format: infinita-handoff
+wersja_formatu: 1
+
+repozytorium: arturogozinski-sys/INFINITA
+branch_bazowy: master
+commit_bazowy: "52ad34623dc801103b63f5e3adb0d56257008905"
+
+wykonawca: "claude"
+data_utworzenia: "2026-07-24"
+tryb: "symulacja"
+
+zadanie:
+  id: "MODEL-ENC-V3-SNAPSHOT"
+  cel: "Zabezpieczyć i niezależnie zweryfikować stan modelu E-N-C v3 po korektach bifurkacji, semantyki E=0 i śladów wejścia."
+  zakres:
+    - "robocze/model_energetyczny_enc_v3/"
+    - "narzedzia/model_energetyczny_enc_v3/"
+  poza_zakresem:
+    - "kanon/"
+    - "00_FUNDAMENT/"
+    - "zmiana równań lub parametrów"
+    - "kalibracja empiryczna"
+    - "wdrożenie regulatora interakcji"
+
+wynik:
+  typ: "snapshot"
+  katalog_lub_plik: "robocze/model_energetyczny_enc_v3/README.md"
+  pliki_zmienione:
+    - "robocze/model_energetyczny_enc_v3/README.md"
+    - "robocze/model_energetyczny_enc_v3/RAPORT_E0_KUMULACJA_v3.md"
+    - "robocze/model_energetyczny_enc_v3/PRZEBIEG_PELNY.txt"
+    - "narzedzia/model_energetyczny_enc_v3/rdzen.py"
+    - "narzedzia/model_energetyczny_enc_v3/przebieg.py"
+    - "narzedzia/model_energetyczny_enc_v3/rownowagi.py"
+    - "narzedzia/model_energetyczny_enc_v3/dobowy.py"
+
+walidacja:
+  polecenia:
+    - "python -m py_compile narzedzia/model_energetyczny_enc_v3/*.py"
+    - "cd narzedzia/model_energetyczny_enc_v3 && python dobowy.py > /tmp/enc_v3_stdout.txt"
+    - "cmp -s /tmp/enc_v3_stdout.txt ../../robocze/model_energetyczny_enc_v3/PRZEBIEG_PELNY.txt"
+  testy_oczekiwane: null
+  wynik_deklarowany: "czesciowy"
+  drzewo_czyste_po_testach: null
+
+pochodzenie:
+  dokumenty_nadrzedne:
+    - "00_FUNDAMENT/FUNDAMENT.md"
+    - "00_FUNDAMENT/ZASADY_WSPOLPRACY.md"
+    - ".github/copilot-instructions.md"
+  uwagi: "Import dokładnej zawartości files(3).zip; SHA-256 zapisane w README."
+
+ograniczenia:
+  - "Brak automatycznego scalenia do master."
+  - "Brak przenoszenia do kanon/."
+  - "Nie traktować parametrów jako skalibrowanych progów człowieka."
+  - "Nie przenosić statycznej analizy K=const na K(t) bez analizy okresowej."
+
+decyzje_wymagane_od_operatora:
+  - "Czy po recenzji zachować snapshot w PR #13, wydzielić go do osobnego PR czy odrzucić."
+  - "Czy następny etap ma dotyczyć mapy Poincarego, kalibracji przypadków czy zastosowania jakościowego w interakcji."
