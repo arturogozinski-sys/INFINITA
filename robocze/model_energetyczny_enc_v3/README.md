@@ -75,7 +75,7 @@ Nie wolno na podstawie tego snapshotu twierdzić, że:
 - wszystkie 4 źródłowe pliki Python przeszły lokalnie `python -m py_compile` przed importem;
 - pełne uruchomienie `dobowy.py` nie jest deklarowane w tym commicie jako ponownie wykonane;
 - `PRZEBIEG_PELNY.txt` jest artefaktem referencyjnym z paczki Claude’a;
-- pełna reprodukcja, kontrola sum i porównanie stdout bajt w bajt pozostają obowiązkiem Copilota/CI.
+- pełna reprodukcja, kontrola sum i porównanie stdout bajt w bajt pozostają obowiązkiem niezależnych audytorów.
 
 ## SHA-256 plików wewnątrz paczki
 
@@ -87,6 +87,13 @@ Nie wolno na podstawie tego snapshotu twierdzić, że:
 bc52baa1338b8d563082c907e693039434828f16374059fe854df63d0c78a927  RAPORT_E0_KUMULACJA_v3.md
 e95686f59a3a9590052c4e5447a7b66b944304dee123b8a260eb8a45c5a9b359  PRZEBIEG_PELNY.txt
 ```
+
+## Niezależne mandaty audytowe
+
+- Copilot: `przekazania/COPILOT_AUDYT_MODEL_ENC_V3.md`
+- Cursor: `przekazania/CURSOR_AUDYT_MODEL_ENC_V3.md`
+
+Copilot ma wykonać szeroki audyt techniczny i numeryczny. Cursor ma przeprowadzić alternatywny audyt statyczny oraz, jeżeli jego środowisko pozwala, testy transportu i kontrprzykłady. Żaden z nich nie ma prawa zmieniać modelu ani kanonu.
 
 ## Relacja do PR #13
 
