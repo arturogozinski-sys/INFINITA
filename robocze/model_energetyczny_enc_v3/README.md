@@ -1,4 +1,4 @@
-# Model energetyczny E–N–C v3 — snapshot roboczy
+# Model energetyczny E–N–C v3 — zabezpieczony snapshot roboczy
 
 Status produkcyjny: materiał roboczy, zabezpieczony snapshot  
 Status epistemiczny: hipoteza formalna po audycie, bez kalibracji empirycznej  
@@ -20,19 +20,42 @@ Zabezpieczenie dokładnego stanu modelu po korektach dotyczących:
 - poprawienia aktualizacji śladów `S_minus` i `S_plus` do jednego kroku na iterację;
 - wycofania przenoszenia statycznego `K=const` na wymuszenie okresowe `K(t)`.
 
-## Układ plików
+## Autorytatywny artefakt snapshotu
 
-Dokumentacja i wynik referencyjny:
+Dokładna paczka źródłowa jest przechowywana bajt w bajt jako osiem części Base64:
 
-- `robocze/model_energetyczny_enc_v3/RAPORT_E0_KUMULACJA_v3.md`
-- `robocze/model_energetyczny_enc_v3/PRZEBIEG_PELNY.txt`
+`robocze/model_energetyczny_enc_v3/paczka/model_enc_v3.zip.b64.part-00` … `part-07`
 
-Kod:
+Odtworzenie i kontrolę wykonuje:
+
+```bash
+python narzedzia/model_energetyczny_enc_v3/odtworz_paczke.py --cel /tmp/model_enc_v3
+```
+
+Skrypt sprawdza:
+
+1. komplet i kolejność ośmiu części;
+2. SHA-256 połączonego tekstu Base64;
+3. SHA-256 odtworzonego ZIP-a;
+4. dokładny zestaw sześciu plików w ZIP-ie;
+5. SHA-256 każdego wypakowanego pliku.
+
+### Sumy archiwum
+
+```text
+0f711f8052471a10385709a532e1b10a97c5cb43761916c6497570ebbf3315f2  połączony tekst Base64
+558c05999563b30429adad92709fe2c5680dd1cbe6e78a9c2404ab8ff058f52c  model_enc_v3.zip
+```
+
+## Pliki wygodne do przeglądu
+
+W repo bezpośrednio zapisano także trzy pliki najważniejsze dla szybkiego code review:
 
 - `narzedzia/model_energetyczny_enc_v3/rdzen.py`
 - `narzedzia/model_energetyczny_enc_v3/przebieg.py`
 - `narzedzia/model_energetyczny_enc_v3/rownowagi.py`
-- `narzedzia/model_energetyczny_enc_v3/dobowy.py`
+
+Pełna, rozstrzygająca zawartość, obejmująca również `dobowy.py`, raport i wynik referencyjny, pochodzi zawsze z odtworzonego archiwum. Pliki wygodne nie zastępują archiwum.
 
 ## Granice twierdzeń
 
@@ -48,13 +71,13 @@ Nie wolno na podstawie tego snapshotu twierdzić, że:
 
 ## Wynik walidacji przy imporcie
 
-- archiwum zawierało 6 plików;
-- wszystkie 4 pliki Python przeszły `python -m py_compile`;
+- źródłowe archiwum zawierało 6 plików;
+- wszystkie 4 źródłowe pliki Python przeszły lokalnie `python -m py_compile` przed importem;
 - pełne uruchomienie `dobowy.py` nie jest deklarowane w tym commicie jako ponownie wykonane;
-- wynik `PRZEBIEG_PELNY.txt` jest zapisany jako artefakt referencyjny z paczki;
-- pełna reprodukcja oraz porównanie stdout bajt w bajt pozostają zadaniem Copilota/CI.
+- `PRZEBIEG_PELNY.txt` jest artefaktem referencyjnym z paczki Claude’a;
+- pełna reprodukcja, kontrola sum i porównanie stdout bajt w bajt pozostają obowiązkiem Copilota/CI.
 
-## SHA-256 importowanych plików
+## SHA-256 plików wewnątrz paczki
 
 ```text
 5c0b7ca3808d21032ef330f0b2920a704fe6a66d73eb912bae56d8ceddfdc48d  rdzen.py
