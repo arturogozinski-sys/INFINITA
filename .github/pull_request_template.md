@@ -43,6 +43,14 @@ Wynik:
 - CI: 
 - Drzewo robocze po testach: czyste / nieczyste / nie sprawdzono
 
+## Higiena procesu
+
+- [ ] wskazano źródło stanu wejściowego
+- [ ] zapisano identyfikator wersji wejścia lub `head_sha`
+- [ ] po każdej mutacji odczytano faktyczny wynik
+- [ ] kolejny krok wynikał z aktualnego stanu
+- [ ] brak potwierdzenia wyniku powodował `STOP`
+
 ## Kontrola integralności
 
 - [ ] zmiana jest zgodna z dokumentami nadrzędnymi
@@ -62,6 +70,9 @@ Wynik:
 
 ## Recenzja
 
-- [ ] Copilot przejrzał diff
-- [ ] niezależny recenzent zaakceptował zmianę
+- [ ] Copilot faktycznie przejrzał aktualny diff
+- [ ] review wykonano po ostatnim commicie
+- [ ] wszystkie właściwe wątki są rozwiązane
+- [ ] CI dla aktualnego `head_sha` zakończyło się sukcesem albo jawnie nie występuje
+- [ ] bezpośrednio przed scaleniem odświeżono PR, review, wątki i CI
 - [ ] operator zatwierdził scalenie
