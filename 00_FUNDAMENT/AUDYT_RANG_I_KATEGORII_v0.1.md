@@ -44,11 +44,15 @@ M046 pozostawia jawną mapę podziału. M049 wyraźnie stwierdza, że analogia n
 
 ### Pozostałe sygnały mieszania funkcji
 - M003 zawiera sekwencję wykonawczą ekonomii poznawczej.
+- M015 zawiera proces aktualizacji modelu poznawczego.
 - M018 zawiera proces zarządzania budżetem poznawczym.
+- M022 zawiera proces strategicznego myślenia systemowego.
+- M043 zawiera procedurę neutralizacji narzuconej ramy.
 - M044 zawiera procedurę stabilizacji stanu.
 - M049 zawiera procedurę badawczą wewnątrz mechanizmu; pozostaje to dopuszczalne tymczasowo, lecz czujnik powinien raportować sygnał.
+- M047 zawiera numerowane zastosowanie i osobną sekcję sekwencji; wymaga przeglądu mimo braku nagłówka `Proces` albo `Procedura`.
 
-Nie są to obecnie błędy unieważniające dokumenty. Następny przebieg powinien ocenić, czy procedury mają wystarczająco samodzielną funkcję, by utworzyć osobne dokumenty P.
+Nie są to obecnie błędy unieważniające dokumenty. Nie wolno mechanicznie zmieniać ich typu ani tworzyć nowych identyfikatorów. Następny przebieg powinien ocenić, czy każda sekwencja ma samodzielne wejście, bramki, wynik i sens wielokrotnego użycia; dopiero wtedy może stać się kandydatem na osobny dokument P.
 
 ## Czujniki
 `narzedzia/audyt_semantyczny.py` sprawdza między innymi:
@@ -66,7 +70,7 @@ Nie są to obecnie błędy unieważniające dokumenty. Następny przebieg powini
 Błędy obiektywne zatrzymują CI. Sygnały wymagające decyzji właściciela pozostają ostrzeżeniami.
 
 ## Następne prace
-1. Ocenić wydzielenie procesów z M003, M018 i M044.
+1. Ocenić sygnały M/P w M003, M015, M018, M022, M043, M044, M047 i M049.
 2. Zdefiniować jawne typy relacji: `wymaga`, `stosuje`, `ogranicza`, `uzupelnia`, `wynika_z`, `jest_w_napieciu_z`.
 3. Rozstrzygnąć martwe odwołania i odwołania do materiałów roboczych.
 4. Uruchomić audyt szczelności: usunięcie węzła, awaria relacji, konflikt statusu, regulator bez odbiorców oraz regresja kategorii.

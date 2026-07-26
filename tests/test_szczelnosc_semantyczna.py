@@ -67,6 +67,21 @@ class TestSzczelnoscSemantyczna(unittest.TestCase):
         _, warnings = audit(self.root)
         self.assertTrue(any("możliwy dubel" in w for w in warnings))
 
+    def test_numerowana_sekwencja_w_mechanizmie_jest_sygnalem_mp(self):
+        body = """# M
+
+## Teza
+Mechanizm opisuje zmianę stanu.
+
+## Zastosowanie
+1. Ustal wejście.
+2. Przejdź przez bramkę.
+3. Zapisz wynik.
+"""
+        self.zapisz("M001.md", dokument("M001", "mechanizm", body=body))
+        _, warnings = audit(self.root)
+        self.assertTrue(any("mieszanie z P" in w for w in warnings))
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

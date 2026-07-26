@@ -1,7 +1,8 @@
 # SCHEMAT GRAFU INFINITA
 
-Wersja: 1.0 · Status: dokument normatywny (model danych) · Para: `schemat_grafu.json` (kontrakt maszynowy)
-Wersjonowany wg Konstytucji Technicznej, sekcja IX: zmiana typów, relacji lub identyfikatorów podbija wersję schematu. Ten dokument to proza dla decyzji; `schemat_grafu.json` to ten sam kontrakt dla parsera. Muszą pozostać zgodne — rozjazd łapie walidator.
+Status: opis modelu danych · Kontrakt wykonawczy i jedyne źródło numeru wersji: `schemat_grafu.json`
+
+Zmiana typów, relacji lub identyfikatorów podbija pole `wersja` w JSON. Ten dokument wyjaśnia kontrakt człowiekowi, ale nie przechowuje osobnej kopii numeru wersji i nie jest czytany przez parser.
 
 ## Po co schemat
 
@@ -68,4 +69,4 @@ Element w kanonie musi mieć jednocześnie status produkcyjny `kanon` i epistemi
 
 ## Zgodność prozy z kontraktem
 
-Ten dokument i `schemat_grafu.json` opisują ten sam schemat. Kontraktem wykonawczym jest JSON — to on jest czytany przez walidator. Proza służy decyzjom i przeglądowi. Przy zmianie schematu zmienia się oba, z podbiciem wersji; niezgodność między nimi jest wykrywalna (walidator działa wg JSON, więc proza rozjechana z JSON zostanie zauważona przy przeglądzie).
+`schemat_grafu.json` jest jedynym kontraktem wykonawczym i jedynym źródłem jego numeru wersji. Proza służy decyzjom i przeglądowi. Zmiana znaczenia modelu wymaga aktualizacji obu opisów, lecz numer wersji zmienia się tylko w JSON.

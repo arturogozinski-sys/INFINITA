@@ -1,0 +1,92 @@
+{
+  "wersja": 1,
+  "zasady_klas": {
+    "planowany": "Cel ma istniejący materiał roboczy; do terminu ma wejść do kanonu albo odwołanie ma zostać usunięte.",
+    "archiwalny": "Cel istnieje wyłącznie jako historia; do terminu należy wskazać jawny ślad archiwalny albo usunąć krawędź kanoniczną.",
+    "zewnetrzny": "Cel jest poza repozytorium; do terminu należy zapisać jednoznaczny identyfikator lub źródło zewnętrzne.",
+    "blad": "Odwołanie jest błędne; blokuje od razu i wymaga korekty albo usunięcia."
+  },
+  "stan_przejsciowy": {
+    "nierozstrzygniete": "Brak podstawy do przypisania jednej z czterech klas. Nie wolno zgadywać; stan eskaluje po terminie."
+  },
+  "wpisy": {
+    "H001": {
+      "klasa": "planowany",
+      "pierwszy_sygnal": "2026-07-26",
+      "termin": "2026-08-25",
+      "podstawa": "robocze/H001.md"
+    },
+    "M001": {
+      "klasa": "nierozstrzygniete",
+      "pierwszy_sygnal": "2026-07-26",
+      "termin": "2026-08-02",
+      "podstawa": "brak materiału celu w repozytorium"
+    },
+    "M002": {
+      "klasa": "nierozstrzygniete",
+      "pierwszy_sygnal": "2026-07-26",
+      "termin": "2026-08-02",
+      "podstawa": "brak materiału celu w repozytorium"
+    },
+    "M012": {
+      "klasa": "nierozstrzygniete",
+      "pierwszy_sygnal": "2026-07-26",
+      "termin": "2026-08-02",
+      "podstawa": "brak materiału celu w repozytorium"
+    },
+    "M014": {
+      "klasa": "nierozstrzygniete",
+      "pierwszy_sygnal": "2026-07-26",
+      "termin": "2026-08-02",
+      "podstawa": "brak materiału celu w repozytorium"
+    },
+    "M016": {
+      "klasa": "planowany",
+      "pierwszy_sygnal": "2026-07-26",
+      "termin": "2026-08-25",
+      "podstawa": "kanon/M015.md i kanon/M022.md opisują oczekiwaną funkcję integracji"
+    },
+    "M019": {
+      "klasa": "nierozstrzygniete",
+      "pierwszy_sygnal": "2026-07-26",
+      "termin": "2026-08-02",
+      "podstawa": "brak materiału celu w repozytorium"
+    },
+    "M020": {
+      "klasa": "nierozstrzygniete",
+      "pierwszy_sygnal": "2026-07-26",
+      "termin": "2026-08-02",
+      "podstawa": "brak materiału celu w repozytorium"
+    },
+    "M021": {
+      "klasa": "nierozstrzygniete",
+      "pierwszy_sygnal": "2026-07-26",
+      "termin": "2026-08-02",
+      "podstawa": "brak materiału celu w repozytorium"
+    },
+    "M023": {
+      "klasa": "planowany",
+      "pierwszy_sygnal": "2026-07-26",
+      "termin": "2026-08-25",
+      "podstawa": "kanon/M022.md opisuje oczekiwaną funkcję walidacji w wielu kontekstach"
+    },
+    "M024": {
+      "klasa": "nierozstrzygniete",
+      "pierwszy_sygnal": "2026-07-26",
+      "termin": "2026-08-02",
+      "podstawa": "brak materiału celu w repozytorium"
+    },
+    "M029": {
+      "klasa": "nierozstrzygniete",
+      "pierwszy_sygnal": "2026-07-26",
+      "termin": "2026-08-02",
+      "podstawa": "brak materiału celu w repozytorium"
+    },
+    "Z005": {
+      "klasa": "nierozstrzygniete",
+      "pierwszy_sygnal": "2026-07-26",
+      "termin": "2026-08-02",
+      "podstawa": "brak materiału celu w repozytorium"
+    }
+  }
+}

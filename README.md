@@ -1,44 +1,33 @@
-# INFINITA CORE — prototyp rdzenia (parser + indeks)
+# INFINITA
 
-Wersja: 0.6 (linia: 0.5 -> 0.6 dodano walidator schematu + kontrakt danych SCHEMAT_GRAFU v1.0)
+Repozytorium łączy kanon wiedzy, jego warsztat oraz rdzeń techniczny służący do parsowania, indeksowania i kontroli integralności.
 
-Dowód przepływu end-to-end: plik kanonu -> parser -> indeks -> zapytanie -> czujnik integralności.
-Zgodny z Konstytucją Techniczną (warstwa abstrakcji, indeks pochodny) i Procesem Produkcji Wiedzy (parser czyta tylko kanon).
+## Co ma jaki status
 
-## WAŻNE: to jest prototyp, nie kanon
-Pliki w `fikstury_demo/` (M044, M045) są DANYMI DEMONSTRACYJNYMI, status `demonstracyjne`.
-NIE są kanonem repozytorium. Kod udowadnia przepływ; treść musi jeszcze przejść proces produkcji i recenzję właściciela, zanim stanie się kanonem.
+- `kanon/` — aktywne źródło prawdy treściowej. Plik w tym katalogu musi mieć status produkcyjny `kanon` i epistemiczny `zweryfikowane`.
+- `00_FUNDAMENT/` — reguły projektu, rejestry kontroli i raporty przekrojowe. Nie jest workiem na nowe treści kanoniczne.
+- `robocze/` — warsztat, kandydaci, hipotezy, eksperymenty i wyniki prób. Materiał stąd nie staje się kanonem przez samo użycie albo poprawny test.
+- `fikstury_demo/` — dane demonstracyjne rdzenia. Sprawdzają kod, nie prawdziwość ani kompletność kanonu.
+- `rdzen/`, `narzedzia/`, `tests/` — mechanika wykonawcza i jej kontrole.
 
-## Struktura
-- `rdzen/repozytorium.py` — warstwa abstrakcji indeksu (SQLite teraz, Postgres = inna klasa, ten sam kontrakt). Indeks pochodny, odtwarzalny.
-- `rdzen/parser.py` — Markdown + YAML front-matter -> węzły + krawędzie. Czyta wyłącznie kanon.
-- `fikstury_demo/` — dane demonstracyjne (NIE kanon).
-- `tests/test_core.py` — formalny test (unittest/pytest, wykrywany przez CI).
-- `tests/test_e2e.py` — skrypt poglądowy z wypisem.
-- `.github/workflows/ci.yml` — CI uruchamia testy na każdy push.
+„Prototyp” opisuje dojrzałość mechaniki technicznej, nie status dokumentu. Statusy dokumentów określają pola zapisane w materiale i reguły `kanon/S002.md`.
 
-## Uruchomienie
-    python -m unittest discover -s tests -p "test_*.py" -v   # formalne, jak w CI
-    python tests/test_e2e.py                                  # poglądowe z wypisem
+## Źródła wykonawcze
 
-## Raport testu (2026-07-21, v0.3)
-5 testów, wszystkie OK przez unittest:
-- węzeł przechodzi całą drogę (status = demonstracyjne, nie kanon),
-- krawędzie grafu powstają,
-- czujnik martwych krawędzi wykrywa nieistniejące odwołania,
-- indeks odtwarzalny (przebudowa daje identyczny wynik),
-- wersja schematu zapisana w indeksie.
+- treść kanoniczna: `kanon/`,
+- kontrakt danych i jego jedyna wersja: `schemat_grafu.json`,
+- opis kontraktu dla człowieka: `SCHEMAT_GRAFU_INFINITA.md`,
+- zasady pracy: `00_FUNDAMENT/`,
+- kontrakt przekazania: `przekazania/HANDOFF_TEMPLATE.yaml`.
 
-## Naprawione w v0.5
-- Komunikat diagnostyczny mówił „z N plików kanonu”, choć czyta fikstury_demo. Zmieniono na „pliki wejściowe (fikstury demonstracyjne)” — ostatni ślad starego nazewnictwa usunięty, żeby napis nie sugerował kanonu.
+## Pełna kontrola lokalna
 
-## Naprawione w v0.4
-- Wyciek połączenia SQLite (unclosed database). Dodano close(), context manager i __del__ w IndeksSQLite; testy zamykają przez addCleanup. Zweryfikowane PEŁNYM `discover -W error::ResourceWarning` (nie zawężonym do jednego pliku).
-- Kontrakt RepozytoriumIndeksu wymaga teraz close() — każdy silnik musi go zaimplementować.
+```text
+python -m unittest discover -s tests -p "test_*.py" -v
+python narzedzia/zbuduj_kanon.py
+python narzedzia/audyt_semantyczny.py
+python narzedzia/generuj_raport_martwych_odwolan.py --check
+python narzedzia/waliduj_handoff.py przekazania/HANDOFF_TEMPLATE.yaml --template
+```
 
-## Naprawione w v0.3
-- Wyciek uchwytu pliku w parserze (open bez zamknięcia) -> context manager. Zweryfikowane: testy przechodzą pod `-W error::ResourceWarning`.
-
-## Dług techniczny (świadomy)
-- Parser YAML jest minimalny (klucz:wartość + listy). Przy bogatszych metadanych rozważyć pyyaml.
-- Walidacja schematu wejdzie po powstaniu SCHEMAT_GRAFU.md (typy węzłów/krawędzi są teraz dowolne).
+Testy mają być bez efektów ubocznych w śledzonych plikach. Snapshot transportowy jest budowany wyłącznie z obiektów wskazanego commita, więc zawartość niezapisana w Git nie może wejść do pakietu podpisanego jego SHA.

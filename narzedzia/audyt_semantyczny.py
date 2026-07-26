@@ -107,7 +107,11 @@ def audit(katalog: Path = KANON) -> tuple[list[str], list[str]]:
         if typ == "mechanizm":
             if not re.search(r"\b(teza|definicja|punkt wyjścia)\b", heading_text):
                 warnings.append(f"{ident}: mechanizm bez Tezy/Definicji/Punktu wyjścia")
-            if re.search(r"^##\s+(Proces|Procedura)\b", body, re.MULTILINE | re.IGNORECASE):
+            numerowane_kroki = NUMEROWANY_RE.findall(body)
+            if (
+                re.search(r"^##\s+(Proces|Procedura)\b", body, re.MULTILINE | re.IGNORECASE)
+                or len(numerowane_kroki) >= 3
+            ):
                 warnings.append(f"{ident}: mechanizm zawiera procedurę; możliwe mieszanie z P")
             if len(headings) >= 8:
                 warnings.append(f"{ident}: {len(headings)} sekcji H2; możliwy dokument wielofunkcyjny")

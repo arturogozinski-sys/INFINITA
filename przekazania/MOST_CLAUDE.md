@@ -7,7 +7,7 @@ Zapewnić Claude’owi potwierdzony, wersjonowany stan repozytorium bez udawania
 ## Zasada źródła prawdy
 
 - `master` na GitHubie jest jedynym źródłem prawdy.
-- ZIP jest wyłącznie snapshotem transportowym.
+- ZIP jest wyłącznie snapshotem transportowym zbudowanym z obiektów wskazanego commita.
 - Każdy snapshot zawiera `CLAUDE_SNAPSHOT.yaml` z pełnym `commit_bazowy`.
 - Claude nie może zakładać, że snapshot jest aktualny względem GitHuba.
 
@@ -18,6 +18,8 @@ Zapewnić Claude’owi potwierdzony, wersjonowany stan repozytorium bez udawania
 3. GitHub Actions publikuje artefakt `infinita-claude-<SHA>` na 14 dni.
 4. Artefakt jest pobierany i przekazywany Claude’owi jako jedyny stan roboczy.
 5. Claude przed rozpoczęciem pracy odczytuje `CLAUDE_SNAPSHOT.yaml`.
+
+Niezapisane zmiany i pliki niesledzone w katalogu roboczym nie wchodzą do snapshotu. Manifest nie może deklarować SHA innego stanu niż bajty znajdujące się w pakiecie.
 
 ## Przepływ wyjściowy
 

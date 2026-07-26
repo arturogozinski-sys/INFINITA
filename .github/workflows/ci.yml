@@ -1,5 +1,8 @@
 name: CI
 on: [push, pull_request]
+env:
+  PYTHONUTF8: "1"
+  PYTHONIOENCODING: "utf-8"
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -12,6 +15,10 @@ jobs:
           python-version: '3.12'
       - name: Testy jednostkowe (fikstury_demo/ — testy prototypu, nie audyt kanonu)
         run: python -m unittest discover -s tests -p "test_*.py" -v
+      - name: Jawna kontrola FRAME (ochrona przed pustym zbiorem testów)
+        run: python -m unittest tests.test_frame_klasyfikacja -v
+      - name: Testy nie mogą zmieniać śledzonych plików
+        run: git diff --exit-code
       - name: Audyt produkcyjny kanon/ (walidacja realnych danych, nie fikstur)
         run: python narzedzia/zbuduj_kanon.py
       - name: Czujniki spójności semantycznej (błędy blokują, ostrzeżenia są raportowane)
@@ -22,6 +29,13 @@ jobs:
           python narzedzia/raport_kondycji.py \
             --md .raporty/RAPORT_KONDYCJI.md \
             --json .raporty/raport_kondycji.json
+      - name: Martwe odwołania z klasyfikacją i terminami
+        run: |
+          mkdir -p .raporty
+          python narzedzia/generuj_raport_martwych_odwolan.py --check
+          cp 00_FUNDAMENT/BRAKUJACE_ODWOLANIA.md .raporty/BRAKUJACE_ODWOLANIA.md
+      - name: Kontrakt przekazania
+        run: python narzedzia/waliduj_handoff.py przekazania/HANDOFF_TEMPLATE.yaml --template
       - name: Raport różnicowy dla modeli
         shell: bash
         run: |

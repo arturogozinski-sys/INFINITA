@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Walidator schematu (Konstytucja, sekcja IX; SCHEMAT_GRAFU v1.0).
+"""Walidator schematu odczytywanego wyłącznie z schemat_grafu.json.
 Egzekwuje kontrakt danych: typ, prefiks identyfikatora, pola wymagane, statusy.
 Bez schematu parser przyjmie elegancko opisany nonsens. Z walidatorem — nie.
 Zwraca listę naruszeń (pustą = OK). To jest walidacja AUTOMATYCZNA z procesu produkcji."""

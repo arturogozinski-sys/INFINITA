@@ -1,4 +1,7 @@
 name: Claude snapshot
+env:
+  PYTHONUTF8: "1"
+  PYTHONIOENCODING: "utf-8"
 
 on:
   workflow_dispatch:
@@ -25,9 +28,11 @@ jobs:
 
       - name: Run repository tests
         run: python -m unittest discover -s tests -p "test_*.py" -v
+      - name: Tests must not modify tracked files
+        run: git diff --exit-code
 
       - name: Build Claude snapshot
-        run: python narzedzia/zbuduj_snapshot_claude.py --output-dir dist
+        run: python narzedzia/zbuduj_snapshot_claude.py --output-dir dist --ref "${{ github.sha }}"
 
       - name: Upload Claude snapshot artifact
         uses: actions/upload-artifact@v4

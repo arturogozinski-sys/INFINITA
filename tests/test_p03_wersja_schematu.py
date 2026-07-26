@@ -46,6 +46,13 @@ class TestWersjaSchematuZJednegoZrodla(unittest.TestCase):
         self.assertFalse(hasattr(repo, 'SCHEMA_VERSION'),
                           "SCHEMA_VERSION nie powinno już istnieć jako stała w kodzie")
 
+    def test_proza_nie_przechowuje_drugiego_numeru_wersji(self):
+        dokument = os.path.join(ROOT, "SCHEMAT_GRAFU_INFINITA.md")
+        with open(dokument, encoding="utf-8") as f:
+            tresc = f.read()
+        self.assertNotRegex(tresc, r"(?im)^wersja\s*:\s*\d")
+        self.assertIn("jedyne źródło numeru wersji", tresc)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
