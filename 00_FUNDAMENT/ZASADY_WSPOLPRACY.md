@@ -5,84 +5,58 @@ Miejsce: `00_FUNDAMENT/ZASADY_WSPOLPRACY.md`
 Zakres obowiązywania: do odwołania  
 Pozycja: poza grafem kanonu
 
-## I. Zasady
+## 1. Zasada zero
 
-### 1. Zasada zero
+Operator Artur jest właścicielem projektu, recenzentem i ostatecznym decydentem.
 
-Operator jest jedynym źródłem projektu.
+Jego energia ma służyć rozwojowi, decyzjom i tworzeniu. Nie wolno zużywać jej na ręczne kopiowanie kontekstu, przełączanie modeli, odszumianie proceduralnych sporów ani odtwarzanie stanu, który narzędzia mogą ustalić samodzielnie.
 
-Jego energia powinna być kierowana na rozwój, decyzje i tworzenie. Nie wolno zużywać jej na odszumianie pracy modeli, prostowanie ich chaosu ani odtwarzanie stanu, który narzędzia mogły ustalić samodzielnie.
+## 2. Domyślny tryb pracy
 
-Strata energii operatora na wejściu kurczy sferę rozwoju projektu i jest niedopuszczalna.
+Na etapie prototypowania, testów mechanicznych i wdrożeniowych:
 
-### 2. Zasada potwierdzonego stanu
+- ChatGPT/Codex jest głównym środowiskiem wykonawczym;
+- praca odbywa się w jednym przepływie, z użyciem wewnętrznych agentów tylko wtedy, gdy upraszczają wykonanie;
+- nie stosuje się obowiązkowej orkiestracji wielu modeli ani ręcznego przekazywania materiału między nimi;
+- wystarczającą kontrolą są adekwatne testy, odczyt wyniku i recenzja operatora;
+- dokumentacja i procedury pozostają minimalne.
 
-Żaden uczestnik nie działa na stanie, którego nie potwierdził.
+Model ma wykonywać zadanie, a nie prowadzić spór proceduralny sam ze sobą. Pytanie do operatora jest potrzebne tylko wtedy, gdy brak decyzji rzeczywiście zmienia wynik lub zakres.
 
-Brak potwierdzenia oznacza zatrzymanie działania, nie domysł.
+## 3. Stan projektu
 
-Zasada obowiązuje symetrycznie operatora, GPT i Claude’a.
+Repozytorium jest jedynym źródłem stanu projektu.
 
-### 3. Podział pracy według profilu kosztu
+- GitHub i gałąź `master` przechowują przyjętą wersję główną.
+- Lokalna kopia na dysku C jest warsztatem roboczym Codexa.
+- Backup archiwalny jest kopią bezpieczeństwa, nie równoległym źródłem prawdy.
+- Pamięć modelu, rozmowa ani ZIP nie zastępują zapisu w repozytorium.
 
-Podział pracy wynika z profilu kosztu, nie z hierarchii kompetencji.
+Przed zmianą należy sprawdzić aktualny stan repozytorium. Nie wymaga to osobnego rytuału, jeżeli stan można potwierdzić bezpośrednio narzędziami.
 
-- GPT: praca ciągła, produkcja, iteracje, kontynuacja i dokańczanie.
-- Claude: rozstrzygnięcia projektowe, recenzja adwersarialna i wychwytywanie błędów subtelnych.
+## 4. Bramki proporcjonalne do ryzyka
 
-Każdy wynik musi być możliwy do przejęcia i dokończenia przez drugiego modela.
+Anonimizacja, formalny audyt, niezależna recenzja, rozbudowany pakiet przekazania, specjalistyczny interfejs lub dodatkowy model nie są domyślną bramką pracy warsztatowej.
 
-Nikt nie pozostawia pracy wymagającej własnego powrotu.
+Uruchamia się je, gdy:
 
-### 4. Trwałość ustaleń
+- produkt jest gotowy lub stabilny i ma wyjść poza prywatny warsztat;
+- materiał ma zostać udostępniony zewnętrznie;
+- zadanie dotyczy danych osób trzecich, bezpieczeństwa, prawa, zdrowia lub innego realnego ryzyka;
+- koszt błędu uzasadnia dodatkową kontrolę;
+- operator zażąda jej wprost.
 
-Ustalenia obowiązują do odwołania.
+Bramka ma odpowiadać konkretnemu ryzyku i nie może automatycznie rozrastać się na cały proces.
 
-Repozytorium jest jedynym miejscem wspólnej pamięci projektu.
+## 5. Tryb wynikający z polecenia
 
-Pamięć pojedynczego modelu nie jest uznawana za zapis.
+- `oceń`, `sprawdź`, `zaproponuj` oznaczają odpowiedź bez zmiany plików;
+- `zrób`, `napisz`, `wygeneruj`, `zaktualizuj` oznaczają wykonanie i zapis w uzgodnionym zakresie;
+- polecenie jednoznaczne i odwracalne wykonuje się bez dodatkowego potwierdzenia;
+- dodatkowe potwierdzenie jest wymagane przed działaniem zewnętrznym, kosztownym, nieodwracalnym albo wykraczającym poza podany zakres.
 
-## II. Protokoły
+## 6. Kryterium zakończenia
 
-### 5. Protokół potwierdzeń
+Zadanie jest zakończone, gdy uzgodniony rezultat istnieje, został sprawdzony proporcjonalnie do ryzyka, stan repozytorium jest czytelny, a operator otrzymał krótkie podsumowanie.
 
-- `1` oznacza tak.
-- `0` oznacza nie.
-
-Przy działaniu kosztownym, nieodwracalnym albo istotnie zmieniającym projekt pierwszy sygnał `1` nie uruchamia wykonania.
-
-Model:
-
-1. powtarza zakres działania,
-2. wskazuje najważniejszą konsekwencję,
-3. czeka na drugie `1`.
-
-Przy oczywistych poprawkach, zadaniach odwracalnych i jednoznacznych wystarcza jedno `1`.
-
-### 6. Tryb wynikający z czasownika
-
-Czasownik użyty przez operatora rozstrzyga tryb pracy.
-
-- `oceń`, `sprawdź`, `zaproponuj` oznaczają odpowiedź bez tworzenia ani modyfikowania plików;
-- `zrób`, `napisz`, `wygeneruj` oznaczają produkcję;
-- polecenie niejasne oznacza jedno pytanie wyjaśniające, bez produkcji.
-
-## III. Kryteria
-
-### 7. Kryterium automatyzacji
-
-Automatyzujemy wyłącznie działania deterministyczne, dla których można z góry zapisać warunek poprawnego wyniku.
-
-Każdy automat musi sprawdzalnie zdejmować więcej pracy, niż wnosi kosztu utrzymania.
-
-Ocena nie może opierać się wyłącznie na przekonaniu, że automat jest użyteczny.
-
-Automat, którego alarmy przez trzy miesiące nie doprowadziły do żadnej decyzji, zostaje usunięty albo wyłączony.
-
-## IV. Reguła wyjątków
-
-Jeżeli zasada wymaga wyjątku, jest to sygnał, że może być źle sformułowana.
-
-Wyjątek nie powinien być dopisywany automatycznie.
-
-Najpierw należy sprawdzić, czy zasada wymaga korekty, zawężenia albo podziału.
+Nie tworzy się dodatkowych raportów, rejestrów ani interfejsów, jeżeli nie są potrzebne do wykonania lub sprawdzenia zadania.

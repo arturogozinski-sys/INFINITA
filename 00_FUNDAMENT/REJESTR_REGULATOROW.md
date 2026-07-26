@@ -2,7 +2,7 @@
 
 Status: pilotaż  
 Miejsce: `00_FUNDAMENT/REJESTR_REGULATOROW.md`  
-Zakres: regulacje współpracy operatora, GPT i Claude’a  
+Zakres: regulacje współpracy operatora i ChatGPT/Codex
 Pozycja: poza grafem kanonu
 
 ## 1. Funkcja
@@ -37,7 +37,7 @@ Jeżeli rejestr nie wskazuje odstępstwa:
 - egzekwowanie: CI, jeżeli reguła jest automatyzowalna; w pozostałych przypadkach model,
 - przegląd: operator,
 - zgłaszający naruszenie techniczne: automat,
-- zgłaszający naruszenie pracy modelu: sprawca, drugi model albo operator.
+- zgłaszający naruszenie pracy modelu: model albo operator.
 
 W rejestrze wpisuje się role tylko wtedy, gdy odbiegają od tych wartości.
 
@@ -54,11 +54,11 @@ Sposób rozpoznania działania reguły określa się przy jej tworzeniu, nie dop
 |---|---|---|---:|---|---|---|---|---|---|
 | W01 | Żaden uczestnik nie rozpoczyna pracy na stanie, którego nie potwierdził. Brak potwierdzenia oznacza zatrzymanie, nie domysł. | `ZASADY_WSPOLPRACY.md`, zasada 2 | L2 | do ustalenia | bramka commita i jawne potwierdzenie wejścia | nieistniejący albo niezgodny SHA | zatrzymanie przed analizą lub produkcją | zapisana / wykonywana / częściowo mierzona | liczba przypadków pracy rozpoczętej na błędnym stanie |
 | W02 | Czasownik operatora rozstrzyga tryb: `oceń`, `sprawdź`, `zaproponuj` nie tworzą plików; `zrób`, `napisz`, `wygeneruj` uruchamiają produkcję. | `ZASADY_WSPOLPRACY.md`, protokół 6 | L2 | do ustalenia | model przed rozpoczęciem zadania | polecenie `oceń` powoduje utworzenie lub zmianę pliku | zatrzymanie produkcji i zgłoszenie naruszenia | zapisana / wykonywana | liczba przypadków niezamówionej produkcji |
-| W03 | Działanie kosztowne, nieodwracalne albo istotnie zmieniające projekt wymaga dwóch potwierdzeń `1`. | `ZASADY_WSPOLPRACY.md`, protokół 5 | L2 lub L3 zależnie od skutku | do ustalenia | model i mechanizm zapisu | pojedyncze `1` przy operacji wymagającej dwóch potwierdzeń | brak wykonania; przy skutku zewnętrznym blokada | zapisana / wykonywana | liczba operacji wykonanych bez wymaganego drugiego potwierdzenia |
+| W03 | Działanie zewnętrzne, kosztowne, nieodwracalne albo wykraczające poza podany zakres wymaga dodatkowego potwierdzenia. | `ZASADY_WSPOLPRACY.md`, zasada 5 | L2 lub L3 zależnie od skutku | do ustalenia | model i mechanizm zapisu | wykonanie działania wysokiego ryzyka bez potwierdzenia | brak wykonania; przy skutku zewnętrznym blokada | zapisana / wykonywana | liczba operacji wykonanych bez wymaganego potwierdzenia |
 | W04 | Model nie twierdzi, że stan został zmieniony, zapisany, scalony, przetestowany albo wdrożony bez potwierdzenia po wykonaniu. Dozwolone stany raportowania: `zweryfikowane`, `niezweryfikowane`, `sprzeczne z wcześniejszym twierdzeniem`. | ustalenie robocze R1; wymaga wpisania do dokumentu źródłowego | L2 | zasada uczciwości epistemicznej — do wskazania | kontrola wyniku przez narzędzie lub ponowny odczyt | raport `zrobione` bez odczytu stanu docelowego | korekta raportu, jawne oznaczenie stanu i zatrzymanie dalszych zależnych działań | uzgodniona / jeszcze niezapisana w źródle | liczba korekt twierdzeń o wykonanym stanie |
 | W05 | Model nie przerzuca na operatora nieuzgodnionego ręcznego transportu artefaktu, jeżeli dostępny uczestnik albo narzędzie może umieścić go bezpośrednio. Jeżeli transport jest nieunikniony, wymaga uzgodnienia przed produkcją. | ustalenie robocze R2; wymaga wpisania do dokumentu źródłowego | L1 | zasada zero | model planujący produkcję | przygotowanie artefaktu wymagającego pobrania i ręcznego przeniesienia mimo dostępnego zapisu bezpośredniego | korekta ścieżki dostarczenia albo uzgodnienie ręcznego transportu | uzgodniona / jeszcze niezapisana w źródle | liczba ręcznych przekazań narzuconych operatorowi |
 | W06 | Model nie produkuje kolejnej pełnej wersji tego samego artefaktu bez jednoznacznego sygnału zastąpienia, wariantu albo korekty poprzedniej wersji. | ustalenie robocze R3; wymaga wpisania do dokumentu źródłowego | L1 | minimalizacja kosztu i jednego aktywnego źródła funkcji — do wskazania | model przed utworzeniem kolejnej wersji | druga pełna wersja bez `0`, `skróć`, `popraw`, `wariant` albo równoważnej komendy | zatrzymanie i wskazanie istniejącej wersji | uzgodniona / jeszcze niezapisana w źródle | liczba niezamówionych równoległych wersji |
-| W07 | Wynik modelu musi być przejmowalny. Kończąc pracę, model pozostawia minimalny stan pozwalający drugiemu uczestnikowi ją kontynuować bez własnego powrotu. | `ZASADY_WSPOLPRACY.md`, zasada 3; rozwinięcie R4 | L2 | do ustalenia | model kończący etap | wynik wymaga powrotu tego samego modelu albo nie wskazuje stanu, ograniczeń i następnego kroku | zatrzymanie zamknięcia zadania i uzupełnienie przekazania | zapisana / wykonywana | liczba zadań zablokowanych przez brak przejmowalnego stanu |
+| W07 | Wynik ma pozostawić czytelny stan repozytorium i krótkie podsumowanie dla operatora. | `ZASADY_WSPOLPRACY.md`, zasady 3 i 6 | L1 | do ustalenia | model kończący etap | nieczytelny stan zmian albo brak istotnego ograniczenia | uzupełnienie stanu lub podsumowania | zapisana / wykonywana | liczba zadań wymagających odtwarzania stanu |
 
 ## 7. Ograniczenia pilotażu
 

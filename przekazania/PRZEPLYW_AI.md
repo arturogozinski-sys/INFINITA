@@ -2,117 +2,33 @@
 
 ## Cel
 
-Utrzymać jedno źródło prawdy, ograniczyć ręczne przenoszenie kontekstu i umożliwić niezależną kontrolę pracy modeli.
+Zapewnić Arturowi prostą pracę w jednym środowisku bez ręcznego transportu kontekstu i wielomodelowej biurokracji.
 
-## Jedno źródło prawdy
+## Układ podstawowy
 
-Repozytorium GitHub `arturogozinski-sys/INFINITA` jest trwałym i wersjonowanym miejscem pracy.
+1. Artur określa cel albo korektę.
+2. ChatGPT/Codex sprawdza lokalny stan repozytorium.
+3. Codex wykonuje zmianę, używając agentów pomocniczych tylko wtedy, gdy realnie upraszczają pracę.
+4. Codex uruchamia testy lub inne kontrole adekwatne do zmiany.
+5. Artur recenzuje wynik i podejmuje ostateczną decyzję.
+6. Przyjęty stan trafia do `master` na GitHubie.
 
-- `master` zawiera stan przyjęty.
-- Krótkie gałęzie robocze zawierają propozycje zmian.
-- Pull request jest miejscem testów, dyskusji i recenzji.
-- ZIP jest wyłącznie nośnikiem transportowym i nie stanowi źródła prawdy.
+Nie ma obowiązku przekazywania pracy między różnymi markami modeli, tworzenia pakietów handoff ani uzyskiwania akceptacji niezależnego modelu.
 
-## Role
+## Stan i kopie
 
-### Operator
+- GitHub `arturogozinski-sys/INFINITA`, gałąź `master`: wersja główna.
+- Lokalna kopia na dysku C: bieżący warsztat.
+- Backup archiwalny: okresowa kopia bezpieczeństwa poza repozytorium.
 
-- wyznacza kierunek,
-- zatwierdza zakres i decyzje merytoryczne,
-- dopuszcza zmianę do `master`.
+ZIP, rozmowa i pamięć modelu nie są źródłem prawdy.
 
-### GPT
+## Kontrola proporcjonalna
 
-- pomaga planować i priorytetyzować,
-- porównuje wyniki z celem i dokumentami nadrzędnymi,
-- recenzuje raporty i rozstrzyga z operatorem dalszą drogę.
+W prototypach oraz testach mechanicznych i wdrożeniowych wystarczają kontrole potrzebne do potwierdzenia działania. Formalne audyty, anonimizacja, specjalistyczne interfejsy, dodatkowi recenzenci i rozbudowane procedury wchodzą dopiero przy stabilnym lub gotowym produkcie, udostępnianiu materiału na zewnątrz albo realnie wysokim koszcie błędu.
 
-### Claude
-
-- wykonuje cięższe audyty, symulacje i większe pakiety zmian,
-- pracuje na stanie wskazanym pełnym SHA,
-- oddaje wynik wraz z `HANDOFF.yaml` i raportem.
-
-### GitHub Copilot
-
-- działa przy aktualnym repozytorium,
-- uruchamia testy i analizuje diff,
-- robi code review,
-- przygotowuje małe poprawki techniczne,
-- nie zatwierdza samodzielnie własnej pracy.
-
-## Podstawowy cykl zmiany
-
-1. Operator określa jedno zadanie i kryterium zakończenia.
-2. Wykonawca pracuje na wskazanym commicie bazowym.
-3. Zmiany trafiają na krótką gałąź roboczą.
-4. CI uruchamia testy i kontrole integralności.
-5. Copilot analizuje diff i wyniki CI.
-6. GPT i operator oceniają sens, zgodność i ryzyko.
-7. Po akceptacji PR jest scalany do `master`.
-8. Dokument stanu wejściowego projektu jest aktualizowany tylko wtedy, gdy zmienił się punkt wejścia projektu. Nazwa i lokalizacja tego artefaktu muszą być jawnie wskazane w zadaniu lub handoffie.
-
-## Przekazanie materiału Claude’a
-
-Każde przekazanie musi zawierać:
-
-- `HANDOFF.yaml`,
-- dokładny commit bazowy,
-- opis celu i zakresu,
-- wynik jako patch, snapshot lub raport,
-- listę zmienionych plików,
-- wykonane testy i ich wynik,
-- ograniczenia i decyzje pozostawione operatorowi.
-
-Raporty techniczne trafiają do:
-
-`audyty/claude/YYYY-MM-DD_nazwa-zadania/`
-
-Nie trafiają do `kanon/`, chyba że operator przeprowadzi osobny proces produkcji wiedzy.
-
-## Zasady dla ZIP
-
-- Nie commitujemy ZIP obok rozpakowanej zawartości.
-- ZIP po imporcie może zostać zachowany poza repo jako kopia transportowa.
-- Snapshot nie może zastąpić nowszego stanu repo bez porównania z `commit_bazowy`.
-- Brak zgodności commita bazowego zatrzymuje automatyczny import.
-
-## Klasy zadań
-
-Każde zadanie otrzymuje jeden tryb:
-
-- `implementacja`,
-- `audyt`,
-- `symulacja`,
-- `synteza`,
-- `redakcja`,
-- `diagnoza`.
-
-Nie łączymy pełnego audytu repo z implementacją drobnej poprawki w jednym przebiegu, chyba że zakres jawnie tego wymaga.
+Bezpieczeństwo, prawo, zdrowie i dane osób trzecich nadal wymagają reakcji adekwatnej do rzeczywistego ryzyka.
 
 ## Kryterium zakończenia
 
-Zadanie jest zakończone, gdy:
-
-- uzgodniony rezultat istnieje,
-- odpowiednie testy przeszły,
-- CI nie zgłasza błędu,
-- drzewo robocze pozostaje czyste,
-- raport wskazuje niepewności,
-- niezależny recenzent zaakceptował zmianę.
-
-## Automatyzacja etapami
-
-### Etap 1 — kontrolowany
-
-Import materiałów jest wykonywany przez GPT lub człowieka. Narzędzie przygotowuje diff i testy, ale nie scala zmian automatycznie.
-
-### Etap 2 — półautomatyczny
-
-Skrypt importu tworzy gałąź i draft PR po potwierdzeniu commita bazowego oraz przejściu testów.
-
-### Etap 3 — automatyczny technicznie
-
-Copilot może realizować małe, dobrze określone issues. Scalanie nadal wymaga niezależnej recenzji.
-
-Automatyzacja nie obejmuje samodzielnej zmiany kanonu ani dokumentów najwyższej rangi.
+Rezultat istnieje, potrzebne kontrole przeszły, zmienione pliki i stan Git są czytelne, a Artur otrzymał krótkie podsumowanie. Czyste drzewo robocze, pull request, CI, formalny raport lub niezależna recenzja są wymagane tylko wtedy, gdy wynikają z konkretnego zadania.
