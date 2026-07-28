@@ -139,7 +139,7 @@ Opis serii w dokumencie proceduralnym przypisuje serii szóstej również przypa
 
 Każda odrębna ścieżka wykonawcza ma zamknięty rekord, zamknięty klucz i dwie utrwalone oceny. Wszystkie wyniki końcowe są zgodne z kluczem.
 
-Historyczne pełne odtworzenie wykonawcze potwierdziło zgodność dekodera z kluczem we wszystkich trzystu dziesięciu rekordach. Przed włączeniem literalnego testu domknięcia pozostawało dwadzieścia osiem różnic, wyłącznie w sprzecznych wariantach serii piątej. Po włączeniu testu nie pozostała żadna różnica wyniku, etapu ani listy kandydatów. Publiczne repozytorium zachowuje raport, klucze i wyniki, lecz nie prywatny materiał potrzebny do samodzielnego powtórzenia całego odtworzenia.
+Historyczne pełne odtworzenie wykonawcze potwierdziło zgodność dekodera z kluczem we wszystkich trzystu dziesięciu rekordach. Przed włączeniem literalnego testu domknięcia pozostawało dwadzieścia osiem różnic, wyłącznie w sprzecznych wariantach serii piątej. Po włączeniu testu nie pozostała żadna różnica wyniku, etapu ani listy kandydatów. Publiczne repozytorium zachowuje raport zbiorczy i opis procedury. Materiały, szczegółowe klucze oraz wyniki rekordów znajdują się w archiwum prywatnym, dlatego całego odtworzenia nie można samodzielnie powtórzyć wyłącznie z warstwy publicznej.
 
 Wynik należy odczytywać wyłącznie następująco:
 
@@ -229,22 +229,11 @@ Rola: źródło składniowego adaptera, literalnego testu domknięcia, pełnego 
 
 REJESTR DOWODÓW SERII
 
-Materiały ślepe pozostają w archiwum prywatnym. Repozytorium publiczne zachowuje zamknięte klucze i zapisy wyników, lecz nie przedstawia ich jako walidacji wykonywanej przez publiczne CI:
-
-| Seria | Materiał | Klucz | Wynik |
-| --- | --- | --- | --- |
-| pierwsza | — | `dowody/serie/01/KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIERWSZA.md` | `dowody/serie/01/WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIERWSZA.md` |
-| druga | — | `dowody/serie/02/KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_DRUGA.md` | `dowody/serie/02/WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_DRUGA.md` |
-| trzecia | — | `dowody/serie/03/KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_TRZECIA.md` | `dowody/serie/03/WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_TRZECIA.md` |
-| czwarta | — | `dowody/serie/04/KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_CZWARTA.md` | `dowody/serie/04/WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_CZWARTA.md` |
-| piąta | — | `dowody/serie/05/KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIATA.md` | `dowody/serie/05/WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIATA.md` |
-| szósta | — | `dowody/serie/06/KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_SZOSTA.md` | `dowody/serie/06/WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_SZOSTA.md` |
-
-Skróty SHA-256 dowodów serii zostały utrwalone w odbiorze montażu. Dokumenty dowodowe nie są przepisywane do kręgosłupa.
+Materiały ślepe, szczegółowe klucze i wyniki sześciu serii znajdują się w archiwum prywatnym. Repozytorium publiczne zachowuje opis procedury, zakres serii i raporty zbiorcze, lecz nie zawiera rekordów potrzebnych do pełnego odtworzenia walidacji.
 
 REJESTR DOWODÓW WSTĘPNYCH
 
-Katalog `dowody/wstepne` zachowuje publicznie dwa klucze z prób matryc i pierwszej walidacji kolizyjnej. Powiązane materiały ślepe znajdują się w archiwum prywatnym. Publiczny zapis pozwala prześledzić część genezy wyniku, lecz nie odtworzyć całej próby. Nie zmienia to diagnostycznego statusu wadliwej próby matrycy podstawowej ani konstrukcyjnego charakteru pozostałych prób.
+Materiały i klucze prób wstępnych znajdują się w archiwum prywatnym. Repozytorium publiczne zachowuje ich opis proceduralny i wynik zbiorczy. Nie zmienia to diagnostycznego statusu wadliwej próby matrycy podstawowej ani konstrukcyjnego charakteru pozostałych prób.
 
 REJESTR DOWODÓW POWTÓRZENIA
 
@@ -252,7 +241,7 @@ Katalog `dowody/powtorzenie_matrycy_podstawowej` zachowuje publicznie zamknięty
 
 MANIFEST INTEGRALNOŚCI
 
-Plik `MANIFEST.sha256` obejmuje wszystkie pliki aktywnej wersji poza samym manifestem. Zawiera dokument nadrzędny, dziewięć źródeł podstawowych, dwadzieścia sześć dokumentów dowodowych oraz dwa pliki projekcji maszynowej.
+Plik `MANIFEST.sha256` obejmuje wszystkie pliki aktywnej wersji poza samym manifestem. Zawiera dokument nadrzędny, dziewięć źródeł podstawowych, dwa dokumenty dowodowe oraz dwa pliki projekcji maszynowej.
 
 Manifest tworzy się z wierszy uporządkowanych alfabetycznie według ścieżki. Każdy wiersz zawiera ścieżkę względną zapisaną ukośnikami, dwie spacje i małymi literami zapisany skrót SHA-256 pliku. Wiersze łączy znak końca linii bez końcowego znaku po ostatnim wierszu.
 
@@ -270,7 +259,7 @@ ODBIÓR MONTAŻU
 
 Historyczna kontrola lokalna, wykonana przed wydzieleniem archiwum prywatnego, potwierdziła obecność czternastu rodzin, dwunastu wymiarów filtra, wszystkich ówczesnych dokumentów źródłowych i dowodowych oraz brak uszkodzeń zapisu.
 
-Dokumenty źródłowe, filtr, klucze i wyniki pozostają w repozytorium publicznym. Materiały ślepe przeniesiono do archiwum prywatnego. Zmiana widoczności materiałów ograniczyła publiczną odtwarzalność historycznej walidacji, nie zmieniając utrwalonych kluczy ani wyników.
+Dokumenty źródłowe, filtr, raporty zbiorcze oraz publiczna para dowodów powtórzenia pozostają w repozytorium publicznym. Materiały ślepe, szczegółowe klucze i wyniki przeniesiono do archiwum prywatnego. Zmiana widoczności ograniczyła publiczną odtwarzalność historycznej walidacji, nie zmieniając treści zachowanych źródeł prywatnych.
 
 Orient przyjął montaż bez uwag. Gemini wykrył trzy pominięcia identyfikowalności: nieaktywny warunek wykluczający, granice słownika serii trzeciej oraz rozbieżność między ogólnym opisem serii szóstej a jej faktycznym materiałem. Pominięcia uzupełniono bez zmiany źródeł, zmiennych i reguł. Ponowny audyt Orienta i Gemini zakończył się werdyktem przyjąć bez błędów blokujących i nieblokujących.
 
