@@ -113,6 +113,8 @@ Moduł `rdzen/emocje.py` wykonuje syntezę kandydatów, test kierunku działania
 
 Moduł `rdzen/emocje_dowody.py` jest składniowym adapterem utrwalonych rekordów. Odczytuje literalne wartości, zachowuje zapis źródłowy i porównuje jawnie nazwany mechanizm domknięcia z istniejącym wzorcem rodziny. Nie interpretuje swobodnej narracji.
 
+Publiczne CI sprawdza kontrakt adaptera na jawnej, sztucznej próbce tworzonej w katalogu tymczasowym. Nie ładuje i nie waliduje prywatnego korpusu 310 rekordów.
+
 Projekcja wykonawcza nie tłumaczy narracji na wartości filtra, nie diagnozuje człowieka i nie podnosi statusu epistemicznego modelu.
 
 WYNIK WALIDACJI WEWNĘTRZNEJ
@@ -227,7 +229,7 @@ Rola: źródło składniowego adaptera, literalnego testu domknięcia, pełnego 
 
 REJESTR DOWODÓW SERII
 
-Każda seria posiada materiał ślepy, zamknięty klucz i zapis wyniku:
+Materiały ślepe pozostają w archiwum prywatnym. Repozytorium publiczne zachowuje zamknięte klucze i zapisy wyników, lecz nie przedstawia ich jako walidacji wykonywanej przez publiczne CI:
 
 | Seria | Materiał | Klucz | Wynik |
 | --- | --- | --- | --- |
