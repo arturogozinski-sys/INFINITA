@@ -1,6 +1,6 @@
-PRODUKCYJNA WALIDACJA WARIANTOWA FILTRA EMOCJI
+WEWNĘTRZNA WALIDACJA STRUKTURALNA WARIANTÓW FILTRA EMOCJI
 
-Status produkcyjny: zamknięta
+Status dokumentu: historyczny raport zamkniętej próby
 
 Status epistemiczny: walidacja ścieżek decyzyjnych na kontrolowanym materiale strukturalnym
 

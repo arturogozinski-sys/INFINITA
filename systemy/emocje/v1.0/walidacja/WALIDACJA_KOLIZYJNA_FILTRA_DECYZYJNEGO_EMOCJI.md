@@ -1,6 +1,6 @@
 WALIDACJA KOLIZYJNA FILTRA DECYZYJNEGO EMOCJI
 
-Status produkcyjny: pierwsza próba zakończona wynikiem dodatnim
+Status dokumentu: raport pierwszej próby zakończonej wynikiem dodatnim
 
 Status epistemiczny: potwierdzona rozróżnialność operacyjna filtra na materiale konstrukcyjnym
 

@@ -1,6 +1,6 @@
 MATRYCA PODSTAWOWYCH MECHANIZMÓW EMOCJONALNYCH
 
-Status produkcyjny: kandydat
+Status dokumentu: kandydat
 
 Status epistemiczny: hipoteza
 

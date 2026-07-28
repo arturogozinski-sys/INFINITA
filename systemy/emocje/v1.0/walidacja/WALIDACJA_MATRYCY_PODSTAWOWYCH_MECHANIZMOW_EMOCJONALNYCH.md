@@ -1,6 +1,6 @@
 WALIDACJA MATRYCY PODSTAWOWYCH MECHANIZMÓW EMOCJONALNYCH
 
-Status produkcyjny: pierwsza próba diagnostyczna; powtórzenie wewnętrzne zakończone
+Status dokumentu: raport pierwszej próby diagnostycznej i zakończonego powtórzenia wewnętrznego
 
 Status epistemiczny: wynik obciążony wadą procedury
 

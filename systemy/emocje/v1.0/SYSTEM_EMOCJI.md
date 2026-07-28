@@ -1,6 +1,6 @@
 SYSTEM EMOCJI INFINITA
 
-Status produkcyjny: zamknięty po pełnym odtworzeniu wykonawczym
+Status dokumentu: aktywny opis historycznie domkniętego etapu wykonawczego
 
 Status epistemiczny: montaż architektury łączący hipotezy opisowe, dekoder operacyjny i wyniki kontroli jego spójności wykonawczej
 
@@ -121,7 +121,7 @@ WYNIK WALIDACJI WEWNĘTRZNEJ
 
 Walidacja kolizyjna zakończyła się pełną zgodnością dwóch ocen z kluczem w czterdziestu opisach.
 
-Produkcyjna walidacja wariantowa objęła sześć serii:
+Wewnętrzna walidacja strukturalna wariantów objęła sześć serii:
 
 Seria pierwsza sprawdziła poprawne przejścia rodzin i utratę jednego warunku koniecznego w dwudziestu ośmiu rekordach.
 
@@ -151,7 +151,7 @@ STATUS LOGICZNY
 
 Faktem dokumentacyjnym jest istnienie dwóch matryc o wspólnej strukturze, jednego filtra obejmującego czternaście rodzin oraz zamkniętej walidacji wszystkich jego ścieżek wykonawczych.
 
-Faktem wynikowym jest zgodność dwóch ocen z kluczem konstrukcyjnym we wszystkich wynikach końcowych produkcyjnej walidacji wariantowej oraz wykonawcze odtworzenie tych wyników przez aktywny kod.
+Faktem wynikowym jest zgodność dwóch ocen z kluczem konstrukcyjnym we wszystkich wynikach końcowych wewnętrznej walidacji strukturalnej wariantów oraz historyczne wykonawcze odtworzenie tych wyników przez kod.
 
 Wnioskiem architektonicznym jest możliwość połączenia matryc, filtra i walidacji przez jawny interfejs bez utożsamiania ich funkcji.
 
@@ -175,49 +175,49 @@ REJESTR ŹRÓDEŁ PODSTAWOWYCH
 
 `systemy/emocje/v1.0/model/MATRYCA_PODSTAWOWYCH_MECHANIZMOW_EMOCJONALNYCH_v1.4.md`
 
-Skrót SHA-256: `bc1dbd5554e6d5af286a3e01e7abc9dcc41b3a351967e618e98dda74136b57b3`
+Skrót SHA-256: `a49a142ce79cd246cca82b7cb3f8be039ad67d6c3343d6f03cbcdb74079501c1`
 
 Rola: źródło sześciu rodzin, wspólnego obiegu, parametrów dynamiki, statusów i granic.
 
 `systemy/emocje/v1.0/model/MATRYCA_SPOLECZNYCH_MECHANIZMOW_EMOCJONALNYCH.md`
 
-Skrót SHA-256: `0f05e11f8678ece5c27b56c8e12311f08c7ab006040f4a0c77f451993853e631`
+Skrót SHA-256: `b0b6e163a9ee323199eb43c1befe4f80653f23476fc5ed4545accf6b29c294aa`
 
 Rola: źródło ośmiu rodzin społecznych, wspólnego obiegu, parametrów dynamiki, statusów i granic.
 
 `systemy/emocje/v1.0/walidacja/WALIDACJA_MATRYCY_PODSTAWOWYCH_MECHANIZMOW_EMOCJONALNYCH.md`
 
-Skrót SHA-256: `ca9627c295fac3cdac7510247f5160810d3f9d7e2430de4d3bce1fd735e6930a`
+Skrót SHA-256: `f0e778f4c483191e662fcefe3ba8d5bb06bf2d880dab2635a2f139b3bad9dc8f`
 
 Rola: źródło diagnostycznego wyniku pierwszej próby, jej wady proceduralnej i dodatniego powtórzenia wewnętrznego.
 
 `systemy/emocje/v1.0/walidacja/WALIDACJA_MATRYCY_SPOLECZNYCH_MECHANIZMOW_EMOCJONALNYCH.md`
 
-Skrót SHA-256: `3464353a0cc678da6fe64da7e97006c600433eea58a60d5a90011305935efa55`
+Skrót SHA-256: `014198ad438518c81fed377cef29da6d25c6404edaa2b3620ab102a2f7fd9619`
 
 Rola: źródło dodatniego wyniku rozróżnialności operacyjnej na materiale konstrukcyjnym.
 
 `systemy/emocje/v1.0/model/FILTR_DECYZYJNY_MECHANIZMOW_EMOCJONALNYCH.md`
 
-Skrót SHA-256: `d4d16ffe57c67bc6b6348ab76c4c78316e67cab30d674c7fa748313e4201687e`
+Skrót SHA-256: `945bf6e87de5ce48ea39ecab82c3de0e4028e33612c506f83605ce05e2613127`
 
 Rola: źródło słownika, reguł włączania, testu działania, testu domknięcia i wyników końcowych.
 
 `systemy/emocje/v1.0/walidacja/WALIDACJA_KOLIZYJNA_FILTRA_DECYZYJNEGO_EMOCJI.md`
 
-Skrót SHA-256: `7aa86dcdcefa8c6606e8890d42c175d13460447c26b3223015707f784a9939f8`
+Skrót SHA-256: `828c51ed064d0e669610de0eb514661d255e2a76c177ec34c7ed88dd48fa60e5`
 
 Rola: źródło wyniku pierwszej walidacji kolizyjnej na czterdziestu opisach konstrukcyjnych.
 
 `systemy/emocje/v1.0/walidacja/PRODUKCYJNA_WALIDACJA_WARIANTOWA_FILTRA_EMOCJI.md`
 
-Skrót SHA-256: `45485690cb52c5f72d0505694ef3c09b8a85e4d19d6f34527b18bfc4fa75191d`
+Skrót SHA-256: `80699a99870bea95a5b4dcdb893dfc51e79e769a38148e198ddcb68dd8e162d1`
 
 Rola: źródło procedury, zakresu sześciu serii, wyniku zbiorczego i granic walidacji strukturalnej.
 
 `systemy/emocje/v1.0/walidacja/MATRYCA_POKRYCIA_PRODUKCYJNEJ_WALIDACJI_FILTRA_EMOCJI.md`
 
-Skrót SHA-256: `09bdc036bb5b2b48b19ab7760d8cc44ec44029ec5026daa3f48e9125c4d465c3`
+Skrót SHA-256: `d5eb56378b2f0ead68283e7d47cd0153b100a84a93025f43984adecd75493f7c`
 
 Rola: źródło jednostek pokrycia i kryterium kompletności strukturalnej.
 

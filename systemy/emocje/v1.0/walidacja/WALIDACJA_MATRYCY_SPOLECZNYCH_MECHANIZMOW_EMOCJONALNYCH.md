@@ -1,6 +1,6 @@
 WALIDACJA MATRYCY SPOŁECZNYCH MECHANIZMÓW EMOCJONALNYCH
 
-Status produkcyjny: próba zakończona wynikiem dodatnim
+Status dokumentu: raport wewnętrznej próby strukturalnej zakończonej wynikiem dodatnim
 
 Status epistemiczny: potwierdzona rozróżnialność operacyjna na materiale konstrukcyjnym
 

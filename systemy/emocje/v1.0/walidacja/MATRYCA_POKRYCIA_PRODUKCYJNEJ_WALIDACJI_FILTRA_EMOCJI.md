@@ -1,6 +1,6 @@
-MATRYCA POKRYCIA PRODUKCYJNEJ WALIDACJI FILTRA EMOCJI
+MATRYCA POKRYCIA WEWNĘTRZNEJ WALIDACJI STRUKTURALNEJ FILTRA EMOCJI
 
-Status: zamknięta
+Status dokumentu: zamknięty zapis pokrycia
 
 Jednostka pokrycia
 
