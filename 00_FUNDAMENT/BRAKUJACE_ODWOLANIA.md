@@ -6,7 +6,7 @@ Razem martwych krawędzi: **17**, unikalnych celów: **13**.
 
 | cel | ile odwołań | źródła |
 |---|---|---|
-| H001 | 1 | M046 |
+| H001 | 1 | M049 |
 | M001 | 2 | M015, M022 |
 | M002 | 1 | M022 |
 | M012 | 1 | M015 |

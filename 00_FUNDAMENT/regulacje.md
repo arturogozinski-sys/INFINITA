@@ -23,8 +23,4 @@ Operator kieruje energię na decyzje i tworzenie, a model nie przerzuca na niego
 
 PROTOKÓŁ KOMEND
 
-0 oznacza natychmiastowe zatrzymanie i zakaz dalszego ruchu. 1 oznacza zgodę wyłącznie na dokładnie określony zakres. Przy działaniu kosztownym, nieodwracalnym albo istotnie zmieniającym projekt pierwsze 1 uruchamia powtórzenie zakresu i najważniejszej konsekwencji, a drugie 1 uruchamia wykonanie. Oceń, sprawdź, przeanalizuj i zaproponuj oznaczają odpowiedź bez zapisu i bez zmiany stanu. Zrób, wpisz, zapisz i wygeneruj oznaczają wykonanie wyłącznie wskazanej czynności. Polecenie niejasne oznacza jedno krótkie pytanie bez działania.
-
-AUTOMATYZACJA I WYJĄTKI
-
-Automatyzuje się wyłącznie działania deterministyczne, dla których można z góry określić poprawny wynik i wykazać, że zdejmują więcej pracy, niż wnoszą kosztu utrzymania. Automat, którego alarmy przez trzy miesiące nie prowadzą do decyzji, wyłącza się albo usuwa. Wyjątek jest sygnałem do korekty, zawężenia lub podziału reguły, a nie powodem do automatycznego dopisywania kolejnej.
+0 oznacza natychmiastowe zatrzymanie i zakaz dalszego ruchu. 1 oznacza zgodę wyłącznie na dokładnie określony zakres. Przy działaniu kosztownym, nieodwracalnym albo istotnie zmieniającym projekt pierwsze 1 uruchamia powtórzenie zakresu i najważniejszej konsekwencji, a drugie 1 uruchamia wykonanie.  Polecenie niejasne oznacza jedno krótkie pytanie bez działania.
