@@ -32,7 +32,7 @@ walidacja:
 pochodzenie:
   dokumenty_nadrzedne:
     - "00_FUNDAMENT/FUNDAMENT.md"
-    - "00_FUNDAMENT/ZASADY_WSPOLPRACY.md"
+    - "00_FUNDAMENT/regulacje.md"
   uwagi: ""
 
 ograniczenia: []
