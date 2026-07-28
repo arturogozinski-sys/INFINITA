@@ -1,6 +1,6 @@
 SYSTEM EMOCJI INFINITA
 
-Status produkcyjny: zamknięty po odbiorze wewnętrznym
+Status produkcyjny: zamknięty po pełnym odtworzeniu wykonawczym
 
 Status epistemiczny: montaż architektury łączący hipotezy opisowe, dekoder operacyjny i wyniki kontroli jego spójności wykonawczej
 
@@ -30,7 +30,7 @@ Dwie matryce opisują czternaście rodzin za pomocą wspólnego obiegu i wspóln
 
 Warstwa rozróżnialności operacyjnej
 
-Reguły rozstrzygające sprawdzają, czy cechy zachowane w matrycach pozwalają odróżniać rodziny na kontrolowanych opisach. Próba matrycy podstawowej pozostaje diagnostyczna, ponieważ materiał ujawniał strukturę klucza, a jedna ocena otrzymała regułę rozstrzygającą mimo procedury przewidującej wyłącznie matrycę. Próba matrycy społecznej potwierdziła rozróżnialność operacyjną matrycy wraz z regułami na materiale konstrukcyjnym.
+Reguły rozstrzygające sprawdzają, czy cechy zachowane w matrycach pozwalają odróżniać rodziny na kontrolowanych opisach. Pierwsza próba matrycy podstawowej pozostała diagnostyczna z powodu wady procedury. Powtórzenie na nowym, przemieszanym materiale konstrukcyjnym, z użyciem wyłącznie matrycy i dwóch odizolowanych ocen modeli, zakończyło się pełną zgodnością z kluczem i ze sobą. Próba matrycy społecznej potwierdziła rozróżnialność operacyjną matrycy wraz z regułami na materiale konstrukcyjnym.
 
 Warstwa dekodera
 
@@ -38,7 +38,7 @@ Filtr przekształca jawnie podane cechy obserwowanego obiegu w zbiór kandydató
 
 Warstwa kontroli wykonania
 
-Walidacja kolizyjna sprawdziła czterdzieści przygotowanych opisów. Produkcyjna walidacja wariantowa sprawdziła trzysta dziesięć rekordów w sześciu seriach i zamknęła pokrycie wszystkich odrębnych ścieżek filtra. Materiał i klucze powstały na podstawie reguł filtra, dlatego wynik potwierdza spójność jego wykonania na materiale strukturalnym, a nie prawdziwość matryc.
+Walidacja kolizyjna sprawdziła czterdzieści przygotowanych opisów. Produkcyjna walidacja wariantowa sprawdziła trzysta dziesięć rekordów w sześciu seriach i zamknęła pokrycie wszystkich odrębnych ścieżek filtra. Składniowy adapter oraz literalny test domknięcia odtworzyły następnie w kodzie wynik, etap odrzucenia i kandydatów wszystkich trzystu dziesięciu rekordów. Materiał i klucze powstały na podstawie reguł filtra, dlatego wynik potwierdza spójność jego wykonania na materiale strukturalnym, a nie prawdziwość matryc.
 
 RODZINY
 
@@ -109,7 +109,9 @@ PROJEKCJA WYKONAWCZA
 
 Plik `model/model_emocji.json` zapisuje dwanaście wymiarów, czternaście rodzin, warunki konieczne, kierunki działania i literalne wzorce domknięcia w postaci maszynowej. Identyfikatory techniczne normalizują zapis wartości źródłowych i nie tworzą nowych kategorii merytorycznych.
 
-Moduł `rdzen/emocje.py` wykonuje syntezę kandydatów i test kierunku działania. Test domknięcia zachowuje granicę dokumentu źródłowego: zgodność mechanizmu domknięcia z rodziną musi zostać dostarczona przez odrębną analizę tekstową. Brak tej oceny nie odrzuca kandydata i pozostaje jawnie oznaczony.
+Moduł `rdzen/emocje.py` wykonuje syntezę kandydatów, test kierunku działania i przyjmuje jawną ocenę zgodności domknięcia.
+
+Moduł `rdzen/emocje_dowody.py` jest składniowym adapterem utrwalonych rekordów. Odczytuje literalne wartości, zachowuje zapis źródłowy i porównuje jawnie nazwany mechanizm domknięcia z istniejącym wzorcem rodziny. Nie interpretuje swobodnej narracji.
 
 Projekcja wykonawcza nie tłumaczy narracji na wartości filtra, nie diagnozuje człowieka i nie podnosi statusu epistemicznego modelu.
 
@@ -135,6 +137,8 @@ Opis serii w dokumencie proceduralnym przypisuje serii szóstej również przypa
 
 Każda odrębna ścieżka wykonawcza ma zamknięty rekord, zamknięty klucz i dwie utrwalone oceny. Wszystkie wyniki końcowe są zgodne z kluczem.
 
+Pełne odtworzenie wykonawcze potwierdziło dodatkowo zgodność aktywnego dekodera z kluczem we wszystkich trzystu dziesięciu rekordach. Przed włączeniem literalnego testu domknięcia pozostawało dwadzieścia osiem różnic, wyłącznie w sprzecznych wariantach serii piątej. Po włączeniu testu nie pozostała żadna różnica wyniku, etapu ani listy kandydatów.
+
 Wynik należy odczytywać wyłącznie następująco:
 
 Potwierdzono, że zamrożony filtr wykonuje zdefiniowane ścieżki na trzystu dziesięciu kontrolowanych rekordach strukturalnych zgodnie z kluczem wyprowadzonym z jego własnych reguł.
@@ -145,7 +149,7 @@ STATUS LOGICZNY
 
 Faktem dokumentacyjnym jest istnienie dwóch matryc o wspólnej strukturze, jednego filtra obejmującego czternaście rodzin oraz zamkniętej walidacji wszystkich jego ścieżek wykonawczych.
 
-Faktem wynikowym jest zgodność dwóch ocen z kluczem konstrukcyjnym we wszystkich wynikach końcowych produkcyjnej walidacji wariantowej.
+Faktem wynikowym jest zgodność dwóch ocen z kluczem konstrukcyjnym we wszystkich wynikach końcowych produkcyjnej walidacji wariantowej oraz wykonawcze odtworzenie tych wyników przez aktywny kod.
 
 Wnioskiem architektonicznym jest możliwość połączenia matryc, filtra i walidacji przez jawny interfejs bez utożsamiania ich funkcji.
 
@@ -181,9 +185,9 @@ Rola: źródło ośmiu rodzin społecznych, wspólnego obiegu, parametrów dynam
 
 `systemy/emocje/v1.0/walidacja/WALIDACJA_MATRYCY_PODSTAWOWYCH_MECHANIZMOW_EMOCJONALNYCH.md`
 
-Skrót SHA-256: `9b2704cc480936cddf787d0a19156f0cf87b23a01791c2b8d4762cdda9e59240`
+Skrót SHA-256: `4bf933f934280c496f7dbc8a85c3fb79efd16bb6fce1cb24864605dcf8a24750`
 
-Rola: źródło diagnostycznego wyniku pierwszej próby i jej wady proceduralnej.
+Rola: źródło diagnostycznego wyniku pierwszej próby, jej wady proceduralnej i dodatniego powtórzenia wewnętrznego.
 
 `systemy/emocje/v1.0/walidacja/WALIDACJA_MATRYCY_SPOLECZNYCH_MECHANIZMOW_EMOCJONALNYCH.md`
 
@@ -215,6 +219,12 @@ Skrót SHA-256: `09bdc036bb5b2b48b19ab7760d8cc44ec44029ec5026daa3f48e9125c4d465c
 
 Rola: źródło jednostek pokrycia i kryterium kompletności strukturalnej.
 
+`systemy/emocje/v1.0/walidacja/WALIDACJA_WYKONAWCZA_KORPUSU_310.md`
+
+Skrót SHA-256: `c6c5958528961040ad3af6331de0996b94fee36c9f7ba91bd9390c55a9f3dfda`
+
+Rola: źródło składniowego adaptera, literalnego testu domknięcia, pełnego odtworzenia wykonawczego i rozstrzygnięcia granicy warstwy.
+
 REJESTR DOWODÓW SERII
 
 Każda seria posiada materiał ślepy, zamknięty klucz i zapis wyniku:
@@ -234,17 +244,25 @@ REJESTR DOWODÓW WSTĘPNYCH
 
 Katalog `dowody/wstepne` zachowuje pięć materiałów i kluczy z prób matryc oraz pierwszej walidacji kolizyjnej. Są zapisem przebiegu i pozwalają odtworzyć genezę wyniku. Nie zmieniają diagnostycznego statusu wadliwej próby matrycy podstawowej ani konstrukcyjnego charakteru pozostałych prób.
 
+REJESTR DOWODÓW POWTÓRZENIA
+
+Katalog `dowody/powtorzenie_matrycy_podstawowej` zawiera nowy materiał ślepy, zamknięty klucz oraz pełny wynik dwóch odizolowanych ocen. Dowody dotyczą wyłącznie powtórzenia wewnętrznego na materiale konstrukcyjnym.
+
 MANIFEST INTEGRALNOŚCI
 
-Plik `MANIFEST.sha256` obejmuje wszystkie pliki aktywnej wersji poza samym manifestem. Zawiera dokument nadrzędny, osiem źródeł podstawowych, dwadzieścia trzy dokumenty dowodowe oraz dwa pliki projekcji maszynowej.
+Plik `MANIFEST.sha256` obejmuje wszystkie pliki aktywnej wersji poza samym manifestem. Zawiera dokument nadrzędny, dziewięć źródeł podstawowych, dwadzieścia sześć dokumentów dowodowych oraz dwa pliki projekcji maszynowej.
 
 Manifest tworzy się z wierszy uporządkowanych alfabetycznie według ścieżki. Każdy wiersz zawiera ścieżkę względną zapisaną ukośnikami, dwie spacje i małymi literami zapisany skrót SHA-256 pliku. Wiersze łączy znak końca linii bez końcowego znaku po ostatnim wierszu.
 
 Skrót poprzedniego manifestu montażowego pozostaje utrwalony w historii Git. Bieżący manifest jest jedynym rejestrem integralności aktywnej wersji.
 
-OTWARTE POŁĄCZENIE
+GRANICA WARSTWY
 
-Następną warstwą może być translacja nieustrukturyzowanego opisu na wartości kategorialne filtra. Warstwa ta wymaga osobnych reguł, materiału i walidacji. Nie należy do obecnego montażu i nie jest przez niego przesądzona.
+Żaden utrwalony rekord ani test obecnego dekodera nie wymaga parametrów dynamiki, reakcji organizmu ani pomostu fizyczno-chemicznego do uzyskania wyniku.
+
+Obecna warstwa kończy się na dekoderze danych kategorialnych, składniowym adapterze dowodów i literalnym teście domknięcia.
+
+Poza obecną warstwą pozostają translacja nieustrukturyzowanego opisu na wartości filtra, wykonanie parametrów dynamiki, połączenie dynamiki z reakcją organizmu, operacjonalizacja pomostu fizyczno-chemicznego oraz przejścia między emocjami. Każdy z tych zakresów wymaga osobnej decyzji, reguł, materiału i walidacji.
 
 ODBIÓR MONTAŻU
 
@@ -255,3 +273,7 @@ Dokumenty źródłowe, filtr, materiały, klucze i wyniki zachowują treść zab
 Orient przyjął montaż bez uwag. Gemini wykrył trzy pominięcia identyfikowalności: nieaktywny warunek wykluczający, granice słownika serii trzeciej oraz rozbieżność między ogólnym opisem serii szóstej a jej faktycznym materiałem. Pominięcia uzupełniono bez zmiany źródeł, zmiennych i reguł. Ponowny audyt Orienta i Gemini zakończył się werdyktem przyjąć bez błędów blokujących i nieblokujących.
 
 Odbiór dotyczy wyłącznie kompletności montażu, identyfikowalności i spójności wewnętrznej. Nie obejmuje testu zewnętrznego, trafności biologicznej ani translacji narracji na wartości filtra.
+
+Domknięcie wykonawcze objęło składniowy adapter całego korpusu, dodatnie powtórzenie wewnętrzne matrycy podstawowej, literalny test domknięcia oraz zgodność kodu z kluczami wszystkich trzystu dziesięciu rekordów.
+
+Końcowy audyt Orienta i Gemini przyjął domknięcie bez błędów blokujących i nieblokujących.

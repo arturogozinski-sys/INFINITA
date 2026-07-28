@@ -1,6 +1,6 @@
 WALIDACJA MATRYCY PODSTAWOWYCH MECHANIZMÓW EMOCJONALNYCH
 
-Status produkcyjny: próba wymaga powtórzenia
+Status produkcyjny: pierwsza próba diagnostyczna; powtórzenie wewnętrzne zakończone
 
 Status epistemiczny: wynik obciążony wadą procedury
 
@@ -61,3 +61,11 @@ Materiał został ułożony w sześciu kolejnych grupach odpowiadających przypi
 Wniosek
 
 Pierwsza próba potwierdza, że zestaw opisów, matrycy i reguły rozstrzygającej tworzy spójne klasyfikacje, lecz nie wystarcza do uznania walidacji samej matrycy. Próbę należy powtórzyć na nowym materiale, ułożonym w kolejności niezależnej od przypisań źródłowych, z użyciem wyłącznie matrycy i materiału ślepego. Do czasu powtórzenia wynik pozostaje diagnostyczny.
+
+Powtórzenie wewnętrzne
+
+Powtórzenie wykonano na dwudziestu czterech nowych opisach konstrukcyjnych, przemieszanych bez grupowania rodzin. Dwie odizolowane sesje modeli otrzymały wyłącznie matrycę, identyczną instrukcję i materiał ślepy. Obie uzyskały pełną zgodność z zamkniętym kluczem i ze sobą.
+
+Wynik usuwa wadę proceduralną pierwszej próby w zakresie kontroli wewnętrznej. Nie jest testem zewnętrznym ani potwierdzeniem trafności biologicznej.
+
+Materiał, klucz i pełny wynik znajdują się w katalogu `dowody/powtorzenie_matrycy_podstawowej`.
