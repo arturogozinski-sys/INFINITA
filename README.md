@@ -124,3 +124,7 @@ Formalne `CONTRIBUTING.md`, role, zasady przeglądu i polityka bezpieczeństwa s
 ## Licencja
 
 Licencja projektu nie została jeszcze rozstrzygnięta. Jej wybór oraz osobne zasady dla kodu i dokumentacji są otwartymi decyzjami projektowymi.
+
+Materiały pochodzące ze źródeł zewnętrznych i ich warunki są opisane w
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). Dokument ten nie nadaje
+licencji pozostałej części projektu.
