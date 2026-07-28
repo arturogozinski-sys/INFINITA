@@ -1,0 +1,55 @@
+name: Pomysł dla INFINITA
+description: Zgłoś problem, kierunek lub sprawdzalny eksperyment.
+title: "[POMYSŁ] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Zgłoszenie jest materiałem do oceny. Nie oznacza przyjęcia do roadmapy ani zgody na realizację.
+        Nie umieszczaj danych prywatnych, sekretów ani treści bez prawa do publikacji.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Co obecnie nie działa albo czego brakuje?
+      placeholder: Opisz obserwowalny problem bez zakładania rozwiązania.
+    validations:
+      required: true
+  - type: textarea
+    id: skutek
+    attributes:
+      label: Oczekiwany skutek
+      description: Co ma się zmienić i dla kogo?
+    validations:
+      required: true
+  - type: textarea
+    id: propozycja
+    attributes:
+      label: Propozycja
+      description: Jaki najmniejszy krok lub eksperyment warto sprawdzić?
+    validations:
+      required: true
+  - type: textarea
+    id: walidacja
+    attributes:
+      label: Sposób sprawdzenia
+      description: Po czym poznamy, że pomysł działa albo nie działa?
+    validations:
+      required: true
+  - type: textarea
+    id: ryzyka
+    attributes:
+      label: Ryzyka i granice
+      description: Wymień koszty, zależności, kwestie prywatności, bezpieczeństwa lub praw osób trzecich.
+  - type: checkboxes
+    id: potwierdzenia
+    attributes:
+      label: Potwierdzenia
+      options:
+        - label: Sprawdziłem istniejące zgłoszenia i nie znalazłem tego samego pomysłu.
+          required: true
+        - label: Zgłoszenie nie zawiera danych prywatnych, sekretów ani materiałów bez prawa do publikacji.
+          required: true
+        - label: Rozumiem, że zgłoszenie nie gwarantuje realizacji ani scalenia.
+          required: true
+
