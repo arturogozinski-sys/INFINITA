@@ -1,0 +1,692 @@
+{
+  "system": "model_emocji",
+  "wersja": "1.0",
+  "status": "walidacja_wewnetrzna_zamknieta",
+  "funkcja": "Dekoder danych kategorialnych. Nie tłumaczy narracji i nie rozstrzyga trafności biologicznej.",
+  "zrodlo": "systemy/emocje/v1.0/model/FILTR_DECYZYJNY_MECHANIZMOW_EMOCJONALNYCH.md",
+  "normalizacja": "Identyfikatory techniczne porządkują literalne wartości filtra i nie tworzą nowych kategorii merytorycznych.",
+  "wymiary": {
+    "przedmiot_oceny": [
+      "wlasne_ja",
+      "wlasne_dzialanie",
+      "wlasna_grupa",
+      "inna_osoba",
+      "relacja",
+      "zasob_lub_pozycja",
+      "stan_organizmu",
+      "zdarzenie",
+      "przewidywanie",
+      "nieokreslony"
+    ],
+    "sprawstwo": [
+      "wlasne",
+      "wlasnej_grupy",
+      "innej_osoby",
+      "okolicznosci_zewnetrznych",
+      "nieokreslone"
+    ],
+    "czas": [
+      "aktualne",
+      "dokonane",
+      "przewidywane",
+      "nieokreslony"
+    ],
+    "struktura_relacji": [
+      "brak_lub_nieistotna",
+      "porownanie_spoleczne",
+      "zagrozenie_wiezi",
+      "interakcja_spoleczna",
+      "ekspozycja_spoleczna",
+      "nieokreslona"
+    ],
+    "zgodnosc_z_przewidywaniem": [
+      "zgodne",
+      "niezgodne",
+      "brak_aktywnego_przewidywania",
+      "nieokreslona"
+    ],
+    "wplyw": [
+      "zagrozenie_bezpieczenstwa_lub_integralnosci",
+      "przeszkoda_w_dazeniu_do_celu",
+      "utrata_lub_niedostepnosc",
+      "osiagniecie_lub_korzysc",
+      "naruszenie_normy",
+      "skazenie_lub_naruszenie_integralnosci_ciala",
+      "zagrozenie_wiezi",
+      "brak_istotnego_wplywu",
+      "nieokreslony"
+    ],
+    "mozliwosc_kontroli": [
+      "mozliwa",
+      "ograniczona",
+      "brak",
+      "nieokreslona"
+    ],
+    "zakres_przypisania": [
+      "czyn",
+      "cala_osoba",
+      "nieokreslony"
+    ],
+    "ocena_intencji": [
+      "pozytywna",
+      "negatywna",
+      "obojetna",
+      "nieokreslona"
+    ],
+    "stabilnosc_oceny": [
+      "stala",
+      "zmienna",
+      "nieokreslona"
+    ],
+    "kierunek_dzialania": [
+      "ochrona",
+      "unikanie",
+      "ucieczka",
+      "sprzeciw",
+      "nacisk",
+      "konfrontacja",
+      "wycofanie",
+      "ograniczenie_aktywnosci",
+      "podtrzymanie",
+      "powtorzenie",
+      "eksploracja",
+      "odrzucenie",
+      "odsuniecie",
+      "oczyszczenie",
+      "zatrzymanie",
+      "orientacja",
+      "ukrycie",
+      "zmniejszenie_widocznosci",
+      "naprawa",
+      "przeprosiny",
+      "rekompensata",
+      "korekta_zachowania",
+      "normalizacja_kontaktu",
+      "ujawnienie_osiagniecia",
+      "podtrzymanie_standardu",
+      "uznanie",
+      "podziekowanie",
+      "wzajemnosc",
+      "dystans",
+      "lekcewazenie",
+      "wykluczenie",
+      "poprawa_wlasnej_pozycji",
+      "zmiana_dziedziny_porownania",
+      "pomniejszanie_cudzej_przewagi",
+      "ochrona_wiezi",
+      "odzyskanie_zaangazowania",
+      "sprawdzenie_zagrozenia",
+      "poszukiwanie_wsparcia",
+      "przyznanie_odpowiedzialnosci",
+      "zebranie_informacji",
+      "zwiekszenie_zaufania",
+      "nieokreslony"
+    ],
+    "warunek_domkniecia": [
+      "wygasanie",
+      "utrwalanie",
+      "nieokreslony"
+    ]
+  },
+  "rodziny": {
+    "strach": {
+      "warunki_konieczne": {
+        "warunek": {
+          "wymiar": "wplyw",
+          "jedna_z": [
+            "zagrozenie_bezpieczenstwa_lub_integralnosci"
+          ]
+        }
+      },
+      "kierunki_dzialania": [
+        "ochrona",
+        "unikanie",
+        "ucieczka",
+        "zatrzymanie",
+        "orientacja",
+        "poszukiwanie_wsparcia"
+      ],
+      "domkniecie": {
+        "wygasanie": "spadek zagrożenia",
+        "utrwalanie": "trwające zagrożenie"
+      }
+    },
+    "zlosc": {
+      "warunki_konieczne": {
+        "wszystkie": [
+          {
+            "warunek": {
+              "wymiar": "wplyw",
+              "jedna_z": [
+                "przeszkoda_w_dazeniu_do_celu",
+                "naruszenie_normy"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "mozliwosc_kontroli",
+              "jedna_z": [
+                "mozliwa",
+                "ograniczona"
+              ]
+            }
+          }
+        ]
+      },
+      "kierunki_dzialania": [
+        "sprzeciw",
+        "nacisk",
+        "konfrontacja"
+      ],
+      "domkniecie": {
+        "wygasanie": "odzyskanie wpływu albo usunięcie przeszkody",
+        "utrwalanie": "trwająca przeszkoda lub naruszenie"
+      }
+    },
+    "smutek": {
+      "warunki_konieczne": {
+        "wszystkie": [
+          {
+            "warunek": {
+              "wymiar": "wplyw",
+              "jedna_z": [
+                "utrata_lub_niedostepnosc"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "czas",
+              "jedna_z": [
+                "dokonane"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "mozliwosc_kontroli",
+              "jedna_z": [
+                "brak",
+                "ograniczona"
+              ]
+            }
+          }
+        ]
+      },
+      "kierunki_dzialania": [
+        "wycofanie",
+        "ograniczenie_aktywnosci",
+        "poszukiwanie_wsparcia"
+      ],
+      "domkniecie": {
+        "wygasanie": "integracja straty i nowy kierunek",
+        "utrwalanie": "brak integracji i powracające przypomnienia"
+      }
+    },
+    "radosc": {
+      "warunki_konieczne": {
+        "warunek": {
+          "wymiar": "wplyw",
+          "jedna_z": [
+            "osiagniecie_lub_korzysc"
+          ]
+        }
+      },
+      "kierunki_dzialania": [
+        "podtrzymanie",
+        "powtorzenie",
+        "eksploracja"
+      ],
+      "domkniecie": {
+        "wygasanie": "nasycenie, przyzwyczajenie albo ustanie korzyści",
+        "utrwalanie": "powtarzalny korzystny wynik"
+      }
+    },
+    "wstret": {
+      "warunki_konieczne": {
+        "warunek": {
+          "wymiar": "wplyw",
+          "jedna_z": [
+            "skazenie_lub_naruszenie_integralnosci_ciala"
+          ]
+        }
+      },
+      "kierunki_dzialania": [
+        "odrzucenie",
+        "odsuniecie",
+        "oczyszczenie"
+      ],
+      "domkniecie": {
+        "wygasanie": "ustanie ekspozycji i reakcji ciała",
+        "utrwalanie": "trwające sygnały skażenia"
+      }
+    },
+    "zaskoczenie": {
+      "warunki_konieczne": {
+        "wszystkie": [
+          {
+            "dowolny": [
+              {
+                "warunek": {
+                  "wymiar": "przedmiot_oceny",
+                  "jedna_z": [
+                    "przewidywanie"
+                  ]
+                }
+              },
+              {
+                "warunek": {
+                  "wymiar": "zgodnosc_z_przewidywaniem",
+                  "jedna_z": [
+                    "niezgodne"
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "warunek": {
+              "wymiar": "wplyw",
+              "jedna_z": [
+                "brak_istotnego_wplywu"
+              ]
+            }
+          }
+        ]
+      },
+      "kierunki_dzialania": [
+        "zatrzymanie",
+        "orientacja",
+        "zebranie_informacji"
+      ],
+      "domkniecie": {
+        "wygasanie": "zmniejszenie niezgodności",
+        "utrwalanie": "dalsza niejasność"
+      }
+    },
+    "wstyd": {
+      "warunki_konieczne": {
+        "wszystkie": [
+          {
+            "warunek": {
+              "wymiar": "przedmiot_oceny",
+              "jedna_z": [
+                "wlasne_ja"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "wplyw",
+              "jedna_z": [
+                "naruszenie_normy",
+                "utrata_lub_niedostepnosc"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "zakres_przypisania",
+              "jedna_z": [
+                "cala_osoba"
+              ]
+            }
+          }
+        ]
+      },
+      "kierunki_dzialania": [
+        "ukrycie",
+        "zmniejszenie_widocznosci"
+      ],
+      "domkniecie": {
+        "wygasanie": "odzyskanie akceptacji albo oddzielenie zdarzenia od wartości własnego ja",
+        "utrwalanie": "dalsze odrzucenie albo utrzymanie globalnej negatywnej samooceny"
+      }
+    },
+    "poczucie_winy": {
+      "warunki_konieczne": {
+        "wszystkie": [
+          {
+            "warunek": {
+              "wymiar": "przedmiot_oceny",
+              "jedna_z": [
+                "wlasne_dzialanie"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "sprawstwo",
+              "jedna_z": [
+                "wlasne"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "wplyw",
+              "jedna_z": [
+                "naruszenie_normy",
+                "utrata_lub_niedostepnosc"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "zakres_przypisania",
+              "jedna_z": [
+                "czyn"
+              ]
+            }
+          }
+        ]
+      },
+      "kierunki_dzialania": [
+        "naprawa",
+        "przeprosiny",
+        "rekompensata",
+        "przyznanie_odpowiedzialnosci"
+      ],
+      "domkniecie": {
+        "wygasanie": "wykonana i uznana naprawa",
+        "utrwalanie": "trwająca szkoda, odrzucona naprawa albo niewypełniona odpowiedzialność"
+      }
+    },
+    "zazenowanie": {
+      "warunki_konieczne": {
+        "wszystkie": [
+          {
+            "warunek": {
+              "wymiar": "przedmiot_oceny",
+              "jedna_z": [
+                "wlasne_dzialanie"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "struktura_relacji",
+              "jedna_z": [
+                "ekspozycja_spoleczna"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "wplyw",
+              "jedna_z": [
+                "naruszenie_normy",
+                "brak_istotnego_wplywu"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "zakres_przypisania",
+              "jedna_z": [
+                "czyn"
+              ]
+            }
+          }
+        ]
+      },
+      "kierunki_dzialania": [
+        "korekta_zachowania",
+        "normalizacja_kontaktu"
+      ],
+      "domkniecie": {
+        "wygasanie": "normalizacja kontaktu",
+        "utrwalanie": "dalsze skupienie otoczenia na wpadce"
+      }
+    },
+    "duma": {
+      "warunki_konieczne": {
+        "wszystkie": [
+          {
+            "warunek": {
+              "wymiar": "wplyw",
+              "jedna_z": [
+                "osiagniecie_lub_korzysc"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "sprawstwo",
+              "jedna_z": [
+                "wlasne",
+                "wlasnej_grupy"
+              ]
+            }
+          }
+        ]
+      },
+      "kierunki_dzialania": [
+        "ujawnienie_osiagniecia",
+        "podtrzymanie_standardu"
+      ],
+      "domkniecie": {
+        "wygasanie": "adaptacja, utrata znaczenia wyniku albo jego podważenie",
+        "utrwalanie": "trwające uznanie i potwierdzanie osiągnięcia"
+      }
+    },
+    "wdziecznosc": {
+      "warunki_konieczne": {
+        "wszystkie": [
+          {
+            "warunek": {
+              "wymiar": "przedmiot_oceny",
+              "jedna_z": [
+                "inna_osoba",
+                "relacja"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "sprawstwo",
+              "jedna_z": [
+                "innej_osoby"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "struktura_relacji",
+              "jedna_z": [
+                "interakcja_spoleczna"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "wplyw",
+              "jedna_z": [
+                "osiagniecie_lub_korzysc"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "ocena_intencji",
+              "jedna_z": [
+                "pozytywna"
+              ]
+            }
+          }
+        ]
+      },
+      "kierunki_dzialania": [
+        "uznanie",
+        "podziekowanie",
+        "wzajemnosc",
+        "zwiekszenie_zaufania"
+      ],
+      "domkniecie": {
+        "wygasanie": "wyrażenie i włączenie korzyści do modelu relacji",
+        "utrwalanie": "powtarzające się życzliwe działania"
+      }
+    },
+    "zawisc": {
+      "warunki_konieczne": {
+        "wszystkie": [
+          {
+            "dowolny": [
+              {
+                "warunek": {
+                  "wymiar": "przedmiot_oceny",
+                  "jedna_z": [
+                    "zasob_lub_pozycja"
+                  ]
+                }
+              },
+              {
+                "wszystkie": [
+                  {
+                    "warunek": {
+                      "wymiar": "przedmiot_oceny",
+                      "jedna_z": [
+                        "inna_osoba"
+                      ]
+                    }
+                  },
+                  {
+                    "warunek": {
+                      "wymiar": "struktura_relacji",
+                      "jedna_z": [
+                        "porownanie_spoleczne"
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "warunek": {
+              "wymiar": "struktura_relacji",
+              "jedna_z": [
+                "porownanie_spoleczne"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "wplyw",
+              "jedna_z": [
+                "przeszkoda_w_dazeniu_do_celu",
+                "utrata_lub_niedostepnosc"
+              ]
+            }
+          }
+        ]
+      },
+      "kierunki_dzialania": [
+        "poprawa_wlasnej_pozycji",
+        "zmiana_dziedziny_porownania",
+        "pomniejszanie_cudzej_przewagi"
+      ],
+      "domkniecie": {
+        "wygasanie": "zmniejszenie różnicy albo utrata znaczenia porównania",
+        "utrwalanie": "dalsza widoczna przewaga i brak skutecznego kierunku zmiany"
+      }
+    },
+    "zazdrosc": {
+      "warunki_konieczne": {
+        "wszystkie": [
+          {
+            "warunek": {
+              "wymiar": "przedmiot_oceny",
+              "jedna_z": [
+                "relacja"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "struktura_relacji",
+              "jedna_z": [
+                "zagrozenie_wiezi"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "wplyw",
+              "jedna_z": [
+                "zagrozenie_wiezi",
+                "utrata_lub_niedostepnosc"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "czas",
+              "jedna_z": [
+                "aktualne",
+                "przewidywane"
+              ]
+            }
+          }
+        ]
+      },
+      "kierunki_dzialania": [
+        "ochrona_wiezi",
+        "odzyskanie_zaangazowania",
+        "sprawdzenie_zagrozenia"
+      ],
+      "domkniecie": {
+        "wygasanie": "wiarygodne potwierdzenie bezpieczeństwa więzi",
+        "utrwalanie": "trwająca niejasność, oddalenie albo dalsza obecność zagrożenia"
+      }
+    },
+    "pogarda": {
+      "warunki_konieczne": {
+        "wszystkie": [
+          {
+            "warunek": {
+              "wymiar": "przedmiot_oceny",
+              "jedna_z": [
+                "inna_osoba"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "wplyw",
+              "jedna_z": [
+                "naruszenie_normy"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "zakres_przypisania",
+              "jedna_z": [
+                "cala_osoba"
+              ]
+            }
+          },
+          {
+            "warunek": {
+              "wymiar": "stabilnosc_oceny",
+              "jedna_z": [
+                "stala"
+              ]
+            }
+          }
+        ]
+      },
+      "kierunki_dzialania": [
+        "dystans",
+        "lekcewazenie",
+        "wykluczenie"
+      ],
+      "domkniecie": {
+        "wygasanie": "uznanie rzeczywistej zmiany u obiektu",
+        "utrwalanie": "powtarzające się naruszenia i potwierdzanie obniżonej wartości"
+      }
+    }
+  }
+}

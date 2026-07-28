@@ -1,0 +1,8 @@
+{
+  "system": "model_emocji",
+  "aktywna_wersja": "1.0",
+  "katalog": "systemy/emocje/v1.0",
+  "dokument_nadrzedny": "systemy/emocje/v1.0/SYSTEM_EMOCJI.md",
+  "model_wykonawczy": "systemy/emocje/v1.0/model/model_emocji.json",
+  "manifest": "systemy/emocje/v1.0/MANIFEST.sha256"
+}

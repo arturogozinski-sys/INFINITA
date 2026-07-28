@@ -1,4 +1,4 @@
-MODEL EMOCJI OD MATRYC DO WALIDACJI STRUKTURALNEJ
+SYSTEM EMOCJI INFINITA
 
 Status produkcyjny: zamknięty po odbiorze wewnętrznym
 
@@ -8,7 +8,7 @@ Funkcja: nadrzędny kręgosłup logiczny zamkniętego odcinka modelu emocji
 
 Zakres: czternaście rodzin emocji, wspólny obieg, interfejs matryca–filtr, filtr decyzyjny i jego walidacja strukturalna
 
-Pozycja: dokument roboczy; nie jest aktem kanonu
+Pozycja: aktywny system roboczy; nie jest aktem kanonu
 
 AUTORYTET ŹRÓDEŁ
 
@@ -105,6 +105,14 @@ Filtr definiuje również warunek wykluczający, lecz żadna z czternastu aktual
 
 Jeden pozostały kandydat daje nazwę rodziny. Brak kandydatów daje wynik nierozstrzygnięty brak pasującej rodziny. Kilku kandydatów daje wynik nierozstrzygnięty konflikt kandydatów.
 
+PROJEKCJA WYKONAWCZA
+
+Plik `model/model_emocji.json` zapisuje dwanaście wymiarów, czternaście rodzin, warunki konieczne, kierunki działania i literalne wzorce domknięcia w postaci maszynowej. Identyfikatory techniczne normalizują zapis wartości źródłowych i nie tworzą nowych kategorii merytorycznych.
+
+Moduł `rdzen/emocje.py` wykonuje syntezę kandydatów i test kierunku działania. Test domknięcia zachowuje granicę dokumentu źródłowego: zgodność mechanizmu domknięcia z rodziną musi zostać dostarczona przez odrębną analizę tekstową. Brak tej oceny nie odrzuca kandydata i pozostaje jawnie oznaczony.
+
+Projekcja wykonawcza nie tłumaczy narracji na wartości filtra, nie diagnozuje człowieka i nie podnosi statusu epistemicznego modelu.
+
 WYNIK WALIDACJI WEWNĘTRZNEJ
 
 Walidacja kolizyjna zakończyła się pełną zgodnością dwóch ocen z kluczem w czterdziestu opisach.
@@ -159,49 +167,49 @@ Nie opisuje zależności ani przejść między rodzinami. Konflikt kandydatów o
 
 REJESTR ŹRÓDEŁ PODSTAWOWYCH
 
-`robocze/MATRYCA_PODSTAWOWYCH_MECHANIZMOW_EMOCJONALNYCH_v1.4.md`
+`systemy/emocje/v1.0/model/MATRYCA_PODSTAWOWYCH_MECHANIZMOW_EMOCJONALNYCH_v1.4.md`
 
 Skrót SHA-256: `bc1dbd5554e6d5af286a3e01e7abc9dcc41b3a351967e618e98dda74136b57b3`
 
 Rola: źródło sześciu rodzin, wspólnego obiegu, parametrów dynamiki, statusów i granic.
 
-`robocze/MATRYCA_SPOLECZNYCH_MECHANIZMOW_EMOCJONALNYCH.md`
+`systemy/emocje/v1.0/model/MATRYCA_SPOLECZNYCH_MECHANIZMOW_EMOCJONALNYCH.md`
 
 Skrót SHA-256: `0f05e11f8678ece5c27b56c8e12311f08c7ab006040f4a0c77f451993853e631`
 
 Rola: źródło ośmiu rodzin społecznych, wspólnego obiegu, parametrów dynamiki, statusów i granic.
 
-`robocze/WALIDACJA_MATRYCY_PODSTAWOWYCH_MECHANIZMOW_EMOCJONALNYCH.md`
+`systemy/emocje/v1.0/walidacja/WALIDACJA_MATRYCY_PODSTAWOWYCH_MECHANIZMOW_EMOCJONALNYCH.md`
 
 Skrót SHA-256: `9b2704cc480936cddf787d0a19156f0cf87b23a01791c2b8d4762cdda9e59240`
 
 Rola: źródło diagnostycznego wyniku pierwszej próby i jej wady proceduralnej.
 
-`robocze/WALIDACJA_MATRYCY_SPOLECZNYCH_MECHANIZMOW_EMOCJONALNYCH.md`
+`systemy/emocje/v1.0/walidacja/WALIDACJA_MATRYCY_SPOLECZNYCH_MECHANIZMOW_EMOCJONALNYCH.md`
 
 Skrót SHA-256: `36c2f3556b70366468f898c5ffc75890908990a56de6b264bbaab304be1d6678`
 
 Rola: źródło dodatniego wyniku rozróżnialności operacyjnej na materiale konstrukcyjnym.
 
-`robocze/FILTR_DECYZYJNY_MECHANIZMOW_EMOCJONALNYCH.md`
+`systemy/emocje/v1.0/model/FILTR_DECYZYJNY_MECHANIZMOW_EMOCJONALNYCH.md`
 
 Skrót SHA-256: `d4d16ffe57c67bc6b6348ab76c4c78316e67cab30d674c7fa748313e4201687e`
 
 Rola: źródło słownika, reguł włączania, testu działania, testu domknięcia i wyników końcowych.
 
-`robocze/WALIDACJA_KOLIZYJNA_FILTRA_DECYZYJNEGO_EMOCJI.md`
+`systemy/emocje/v1.0/walidacja/WALIDACJA_KOLIZYJNA_FILTRA_DECYZYJNEGO_EMOCJI.md`
 
 Skrót SHA-256: `7aa86dcdcefa8c6606e8890d42c175d13460447c26b3223015707f784a9939f8`
 
 Rola: źródło wyniku pierwszej walidacji kolizyjnej na czterdziestu opisach konstrukcyjnych.
 
-`robocze/PRODUKCYJNA_WALIDACJA_WARIANTOWA_FILTRA_EMOCJI.md`
+`systemy/emocje/v1.0/walidacja/PRODUKCYJNA_WALIDACJA_WARIANTOWA_FILTRA_EMOCJI.md`
 
 Skrót SHA-256: `45485690cb52c5f72d0505694ef3c09b8a85e4d19d6f34527b18bfc4fa75191d`
 
 Rola: źródło procedury, zakresu sześciu serii, wyniku zbiorczego i granic walidacji strukturalnej.
 
-`robocze/MATRYCA_POKRYCIA_PRODUKCYJNEJ_WALIDACJI_FILTRA_EMOCJI.md`
+`systemy/emocje/v1.0/walidacja/MATRYCA_POKRYCIA_PRODUKCYJNEJ_WALIDACJI_FILTRA_EMOCJI.md`
 
 Skrót SHA-256: `09bdc036bb5b2b48b19ab7760d8cc44ec44029ec5026daa3f48e9125c4d465c3`
 
@@ -213,22 +221,26 @@ Każda seria posiada materiał ślepy, zamknięty klucz i zapis wyniku:
 
 | Seria | Materiał | Klucz | Wynik |
 | --- | --- | --- | --- |
-| pierwsza | `MATERIAL_SLEPY_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIERWSZA.md` | `KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIERWSZA.md` | `WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIERWSZA.md` |
-| druga | `MATERIAL_SLEPY_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_DRUGA.md` | `KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_DRUGA.md` | `WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_DRUGA.md` |
-| trzecia | `MATERIAL_SLEPY_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_TRZECIA.md` | `KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_TRZECIA.md` | `WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_TRZECIA.md` |
-| czwarta | `MATERIAL_SLEPY_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_CZWARTA.md` | `KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_CZWARTA.md` | `WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_CZWARTA.md` |
-| piąta | `MATERIAL_SLEPY_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIATA.md` | `KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIATA.md` | `WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIATA.md` |
-| szósta | `MATERIAL_SLEPY_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_SZOSTA.md` | `KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_SZOSTA.md` | `WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_SZOSTA.md` |
+| pierwsza | `dowody/serie/01/MATERIAL_SLEPY_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIERWSZA.md` | `dowody/serie/01/KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIERWSZA.md` | `dowody/serie/01/WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIERWSZA.md` |
+| druga | `dowody/serie/02/MATERIAL_SLEPY_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_DRUGA.md` | `dowody/serie/02/KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_DRUGA.md` | `dowody/serie/02/WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_DRUGA.md` |
+| trzecia | `dowody/serie/03/MATERIAL_SLEPY_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_TRZECIA.md` | `dowody/serie/03/KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_TRZECIA.md` | `dowody/serie/03/WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_TRZECIA.md` |
+| czwarta | `dowody/serie/04/MATERIAL_SLEPY_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_CZWARTA.md` | `dowody/serie/04/KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_CZWARTA.md` | `dowody/serie/04/WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_CZWARTA.md` |
+| piąta | `dowody/serie/05/MATERIAL_SLEPY_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIATA.md` | `dowody/serie/05/KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIATA.md` | `dowody/serie/05/WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_PIATA.md` |
+| szósta | `dowody/serie/06/MATERIAL_SLEPY_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_SZOSTA.md` | `dowody/serie/06/KLUCZ_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_SZOSTA.md` | `dowody/serie/06/WYNIK_PRODUKCYJNEJ_WALIDACJI_WARIANTOWEJ_SERIA_SZOSTA.md` |
 
 Skróty SHA-256 dowodów serii zostały utrwalone w odbiorze montażu. Dokumenty dowodowe nie są przepisywane do kręgosłupa.
 
+REJESTR DOWODÓW WSTĘPNYCH
+
+Katalog `dowody/wstepne` zachowuje pięć materiałów i kluczy z prób matryc oraz pierwszej walidacji kolizyjnej. Są zapisem przebiegu i pozwalają odtworzyć genezę wyniku. Nie zmieniają diagnostycznego statusu wadliwej próby matrycy podstawowej ani konstrukcyjnego charakteru pozostałych prób.
+
 MANIFEST INTEGRALNOŚCI
 
-Manifest obejmuje dwadzieścia sześć dokumentów źródłowych i dowodowych: osiem dokumentów podstawowych oraz osiemnaście plików materiałów, kluczy i wyników sześciu serii.
+Plik `MANIFEST.sha256` obejmuje wszystkie pliki aktywnej wersji poza samym manifestem. Zawiera dokument nadrzędny, osiem źródeł podstawowych, dwadzieścia trzy dokumenty dowodowe oraz dwa pliki projekcji maszynowej.
 
 Manifest tworzy się z wierszy uporządkowanych alfabetycznie według ścieżki. Każdy wiersz zawiera ścieżkę względną zapisaną ukośnikami, dwie spacje i małymi literami zapisany skrót SHA-256 pliku. Wiersze łączy znak końca linii bez końcowego znaku po ostatnim wierszu.
 
-Skrót SHA-256 manifestu przed montażem: `1b69c430213eb464a4a97919559808ec9c13a01133b970ea8e5ba8ce3d6b3328`
+Skrót poprzedniego manifestu montażowego pozostaje utrwalony w historii Git. Bieżący manifest jest jedynym rejestrem integralności aktywnej wersji.
 
 OTWARTE POŁĄCZENIE
 
@@ -236,9 +248,9 @@ Następną warstwą może być translacja nieustrukturyzowanego opisu na wartoś
 
 ODBIÓR MONTAŻU
 
-Kontrola lokalna potwierdziła obecność czternastu rodzin, dwunastu wymiarów filtra, wszystkich dwudziestu sześciu dokumentów źródłowych i dowodowych oraz brak uszkodzeń zapisu.
+Kontrola lokalna potwierdziła obecność czternastu rodzin, dwunastu wymiarów filtra, wszystkich dokumentów źródłowych i dowodowych oraz brak uszkodzeń zapisu.
 
-Skrót manifestu po montażu jest zgodny ze skrótem sprzed montażu. Dokumenty źródłowe, filtr, materiały, klucze i wyniki nie zostały zmienione.
+Dokumenty źródłowe, filtr, materiały, klucze i wyniki zachowują treść zabezpieczoną przed organizacją systemu. Zmieniło się wyłącznie ich położenie oraz dokument nadrzędny opisujący nową strukturę i projekcję wykonawczą.
 
 Orient przyjął montaż bez uwag. Gemini wykrył trzy pominięcia identyfikowalności: nieaktywny warunek wykluczający, granice słownika serii trzeciej oraz rozbieżność między ogólnym opisem serii szóstej a jej faktycznym materiałem. Pominięcia uzupełniono bez zmiany źródeł, zmiennych i reguł. Ponowny audyt Orienta i Gemini zakończył się werdyktem przyjąć bez błędów blokujących i nieblokujących.
 
