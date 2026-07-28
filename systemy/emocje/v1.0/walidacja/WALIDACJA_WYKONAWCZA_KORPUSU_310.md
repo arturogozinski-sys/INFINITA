@@ -1,18 +1,20 @@
 WALIDACJA WYKONAWCZA KORPUSU TRZYSTU DZIESIĘCIU REKORDÓW
 
-Status produkcyjny: zamknięta
+Status dokumentu: historyczny raport zamkniętej próby
 
-Status epistemiczny: odtworzenie wykonawcze walidacji strukturalnej
+Status epistemiczny: historyczne odtworzenie wykonawcze wewnętrznej walidacji strukturalnej
+
+Status publicznej odtwarzalności: ograniczony; materiały wejściowe korpusu znajdują się w archiwum prywatnym
 
 Cel
 
-Walidacja sprawdza, czy aktywny dekoder wykonuje wszystkie trzysta dziesięć utrwalonych rekordów zgodnie z zamkniętymi kluczami sześciu serii.
+Walidacja sprawdziła, czy ówczesny aktywny dekoder wykonywał wszystkie trzysta dziesięć utrwalonych rekordów zgodnie z zamkniętymi kluczami sześciu serii. Dokument zachowuje wynik tej próby, ale repozytorium publiczne nie zawiera obecnie materiałów wejściowych potrzebnych do jej pełnego powtórzenia.
 
 Adapter składniowy
 
-Adapter odczytuje wyłącznie jawne pola i literalne wartości dwunastu wymiarów. Zachowuje nazwę rekordu, każdy wiersz źródłowy, surowy opis domknięcia, wynik klucza, etap odrzucenia i pozostałych kandydatów.
+Adapter odczytywał wyłącznie jawne pola i literalne wartości dwunastu wymiarów. Zachowywał nazwę rekordu, każdy wiersz źródłowy, surowy opis domknięcia, wynik klucza, etap odrzucenia i pozostałych kandydatów.
 
-Adapter nie tłumaczy narracji, nie uzupełnia brakujących danych, nie wybiera znaczenia bodźca i nie dopasowuje opisów do rodzin. Zapis źródłowy każdego rekordu można odtworzyć z danych zachowanych przez adapter.
+Adapter nie tłumaczył narracji, nie uzupełniał brakujących danych, nie wybierał znaczenia bodźca i nie dopasowywał opisów do rodzin. Zapis źródłowy każdego rekordu można odtworzyć z danych zachowanych w archiwum prywatnym; nie można go odtworzyć wyłącznie z obecnej warstwy publicznej.
 
 Kompletność
 
@@ -50,4 +52,4 @@ Parametry dynamiki, reakcja organizmu i pomost fizyczno-chemiczny pozostają cz�
 
 Granice
 
-Wynik potwierdza odtwarzalność zamkniętej walidacji strukturalnej. Nie potwierdza translacji narracji na dwanaście wymiarów, semantycznego rozpoznawania dowolnych opisów domknięcia, trafności biologicznej ani działania na rzeczywistych epizodach.
+Wynik potwierdził wewnętrzną zgodność wykonania zamkniętej walidacji strukturalnej w chwili przeprowadzenia próby. Obecne repozytorium publiczne nie wystarcza do pełnego powtórzenia wyniku bez prywatnego korpusu. Wynik nie potwierdza translacji narracji na dwanaście wymiarów, semantycznego rozpoznawania dowolnych opisów domknięcia, trafności biologicznej ani działania na rzeczywistych epizodach.

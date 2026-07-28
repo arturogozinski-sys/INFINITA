@@ -38,7 +38,7 @@ Filtr przekształca jawnie podane cechy obserwowanego obiegu w zbiór kandydató
 
 Warstwa kontroli wykonania
 
-Walidacja kolizyjna sprawdziła czterdzieści przygotowanych opisów. Produkcyjna walidacja wariantowa sprawdziła trzysta dziesięć rekordów w sześciu seriach i zamknęła pokrycie wszystkich odrębnych ścieżek filtra. Składniowy adapter oraz literalny test domknięcia odtworzyły następnie w kodzie wynik, etap odrzucenia i kandydatów wszystkich trzystu dziesięciu rekordów. Materiał i klucze powstały na podstawie reguł filtra, dlatego wynik potwierdza spójność jego wykonania na materiale strukturalnym, a nie prawdziwość matryc.
+Historyczna walidacja kolizyjna sprawdziła czterdzieści przygotowanych opisów. Historyczna walidacja wariantowa sprawdziła trzysta dziesięć rekordów w sześciu seriach i zamknęła pokrycie wszystkich odrębnych ścieżek filtra. Składniowy adapter oraz literalny test domknięcia odtworzyły następnie w kodzie wynik, etap odrzucenia i kandydatów wszystkich trzystu dziesięciu rekordów. Materiały ślepe tego korpusu znajdują się obecnie w archiwum prywatnym, dlatego pełne odtworzenie próby nie jest możliwe wyłącznie z repozytorium publicznego. Materiał i klucze powstały na podstawie reguł filtra, dlatego wynik potwierdza spójność jego wykonania na materiale strukturalnym, a nie prawdziwość matryc.
 
 RODZINY
 
@@ -139,7 +139,7 @@ Opis serii w dokumencie proceduralnym przypisuje serii szóstej również przypa
 
 Każda odrębna ścieżka wykonawcza ma zamknięty rekord, zamknięty klucz i dwie utrwalone oceny. Wszystkie wyniki końcowe są zgodne z kluczem.
 
-Pełne odtworzenie wykonawcze potwierdziło dodatkowo zgodność aktywnego dekodera z kluczem we wszystkich trzystu dziesięciu rekordach. Przed włączeniem literalnego testu domknięcia pozostawało dwadzieścia osiem różnic, wyłącznie w sprzecznych wariantach serii piątej. Po włączeniu testu nie pozostała żadna różnica wyniku, etapu ani listy kandydatów.
+Historyczne pełne odtworzenie wykonawcze potwierdziło zgodność dekodera z kluczem we wszystkich trzystu dziesięciu rekordach. Przed włączeniem literalnego testu domknięcia pozostawało dwadzieścia osiem różnic, wyłącznie w sprzecznych wariantach serii piątej. Po włączeniu testu nie pozostała żadna różnica wyniku, etapu ani listy kandydatów. Publiczne repozytorium zachowuje raport, klucze i wyniki, lecz nie prywatny materiał potrzebny do samodzielnego powtórzenia całego odtworzenia.
 
 Wynik należy odczytywać wyłącznie następująco:
 
@@ -187,13 +187,13 @@ Rola: źródło ośmiu rodzin społecznych, wspólnego obiegu, parametrów dynam
 
 `systemy/emocje/v1.0/walidacja/WALIDACJA_MATRYCY_PODSTAWOWYCH_MECHANIZMOW_EMOCJONALNYCH.md`
 
-Skrót SHA-256: `4bf933f934280c496f7dbc8a85c3fb79efd16bb6fce1cb24864605dcf8a24750`
+Skrót SHA-256: `ca9627c295fac3cdac7510247f5160810d3f9d7e2430de4d3bce1fd735e6930a`
 
 Rola: źródło diagnostycznego wyniku pierwszej próby, jej wady proceduralnej i dodatniego powtórzenia wewnętrznego.
 
 `systemy/emocje/v1.0/walidacja/WALIDACJA_MATRYCY_SPOLECZNYCH_MECHANIZMOW_EMOCJONALNYCH.md`
 
-Skrót SHA-256: `36c2f3556b70366468f898c5ffc75890908990a56de6b264bbaab304be1d6678`
+Skrót SHA-256: `3464353a0cc678da6fe64da7e97006c600433eea58a60d5a90011305935efa55`
 
 Rola: źródło dodatniego wyniku rozróżnialności operacyjnej na materiale konstrukcyjnym.
 
@@ -223,7 +223,7 @@ Rola: źródło jednostek pokrycia i kryterium kompletności strukturalnej.
 
 `systemy/emocje/v1.0/walidacja/WALIDACJA_WYKONAWCZA_KORPUSU_310.md`
 
-Skrót SHA-256: `c6c5958528961040ad3af6331de0996b94fee36c9f7ba91bd9390c55a9f3dfda`
+Skrót SHA-256: `770719ffa0294803fb95b4fa155a79f92adaed9257d347ac3007026cd2ecd4e6`
 
 Rola: źródło składniowego adaptera, literalnego testu domknięcia, pełnego odtworzenia wykonawczego i rozstrzygnięcia granicy warstwy.
 
@@ -244,11 +244,11 @@ Skróty SHA-256 dowodów serii zostały utrwalone w odbiorze montażu. Dokumenty
 
 REJESTR DOWODÓW WSTĘPNYCH
 
-Katalog `dowody/wstepne` zachowuje pięć materiałów i kluczy z prób matryc oraz pierwszej walidacji kolizyjnej. Są zapisem przebiegu i pozwalają odtworzyć genezę wyniku. Nie zmieniają diagnostycznego statusu wadliwej próby matrycy podstawowej ani konstrukcyjnego charakteru pozostałych prób.
+Katalog `dowody/wstepne` zachowuje publicznie dwa klucze z prób matryc i pierwszej walidacji kolizyjnej. Powiązane materiały ślepe znajdują się w archiwum prywatnym. Publiczny zapis pozwala prześledzić część genezy wyniku, lecz nie odtworzyć całej próby. Nie zmienia to diagnostycznego statusu wadliwej próby matrycy podstawowej ani konstrukcyjnego charakteru pozostałych prób.
 
 REJESTR DOWODÓW POWTÓRZENIA
 
-Katalog `dowody/powtorzenie_matrycy_podstawowej` zawiera nowy materiał ślepy, zamknięty klucz oraz pełny wynik dwóch odizolowanych ocen. Dowody dotyczą wyłącznie powtórzenia wewnętrznego na materiale konstrukcyjnym.
+Katalog `dowody/powtorzenie_matrycy_podstawowej` zachowuje publicznie zamknięty klucz oraz pełny wynik dwóch odizolowanych sesji modeli. Powiązany materiał ślepy znajduje się w archiwum prywatnym. Dowody dotyczą wyłącznie historycznego powtórzenia wewnętrznego na materiale konstrukcyjnym.
 
 MANIFEST INTEGRALNOŚCI
 
@@ -268,14 +268,14 @@ Poza obecną warstwą pozostają translacja nieustrukturyzowanego opisu na warto
 
 ODBIÓR MONTAŻU
 
-Kontrola lokalna potwierdziła obecność czternastu rodzin, dwunastu wymiarów filtra, wszystkich dokumentów źródłowych i dowodowych oraz brak uszkodzeń zapisu.
+Historyczna kontrola lokalna, wykonana przed wydzieleniem archiwum prywatnego, potwierdziła obecność czternastu rodzin, dwunastu wymiarów filtra, wszystkich ówczesnych dokumentów źródłowych i dowodowych oraz brak uszkodzeń zapisu.
 
-Dokumenty źródłowe, filtr, materiały, klucze i wyniki zachowują treść zabezpieczoną przed organizacją systemu. Zmieniło się wyłącznie ich położenie oraz dokument nadrzędny opisujący nową strukturę i projekcję wykonawczą.
+Dokumenty źródłowe, filtr, klucze i wyniki pozostają w repozytorium publicznym. Materiały ślepe przeniesiono do archiwum prywatnego. Zmiana widoczności materiałów ograniczyła publiczną odtwarzalność historycznej walidacji, nie zmieniając utrwalonych kluczy ani wyników.
 
 Orient przyjął montaż bez uwag. Gemini wykrył trzy pominięcia identyfikowalności: nieaktywny warunek wykluczający, granice słownika serii trzeciej oraz rozbieżność między ogólnym opisem serii szóstej a jej faktycznym materiałem. Pominięcia uzupełniono bez zmiany źródeł, zmiennych i reguł. Ponowny audyt Orienta i Gemini zakończył się werdyktem przyjąć bez błędów blokujących i nieblokujących.
 
 Odbiór dotyczy wyłącznie kompletności montażu, identyfikowalności i spójności wewnętrznej. Nie obejmuje testu zewnętrznego, trafności biologicznej ani translacji narracji na wartości filtra.
 
-Domknięcie wykonawcze objęło składniowy adapter całego korpusu, dodatnie powtórzenie wewnętrzne matrycy podstawowej, literalny test domknięcia oraz zgodność kodu z kluczami wszystkich trzystu dziesięciu rekordów.
+Historyczne domknięcie wykonawcze objęło składniowy adapter całego korpusu, dodatnie powtórzenie wewnętrzne matrycy podstawowej, literalny test domknięcia oraz zgodność kodu z kluczami wszystkich trzystu dziesięciu rekordów. Pełny korpus wejściowy jest obecnie archiwum prywatnym.
 
 Końcowy audyt Orienta i Gemini przyjął domknięcie bez błędów blokujących i nieblokujących.

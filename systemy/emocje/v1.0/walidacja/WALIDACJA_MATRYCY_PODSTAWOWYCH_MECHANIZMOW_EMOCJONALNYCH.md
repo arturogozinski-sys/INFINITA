@@ -8,7 +8,7 @@ Powiązany dokument: Matryca podstawowych mechanizmów emocjonalnych
 
 Cel
 
-Walidacja sprawdza, czy matryca zawiera dość informacji, aby niezależni oceniający rozróżnili sześć rodzin na podstawie opisu epizodu. Nie sprawdza biologicznej odrębności rodzin ani nie dowodzi istnienia ich uniwersalnych sygnatur fizjologicznych.
+Walidacja sprawdza, czy matryca zawiera dość informacji, aby dwie odizolowane sesje modeli rozróżniły sześć rodzin na podstawie opisu epizodu. Odizolowanie zapewnia niezależność proceduralną odpowiedzi, nie stanowi niezależnej walidacji empirycznej. Próba nie sprawdza biologicznej odrębności rodzin ani nie dowodzi istnienia ich uniwersalnych sygnatur fizjologicznych.
 
 Reguła rozstrzygająca
 
@@ -36,13 +36,13 @@ Przypisania źródłowe i identyfikatory pozostają w oddzielnym kluczu. Oceniaj
 
 Przebieg
 
-Dwie osoby klasyfikują każdy opis niezależnie. Nie znają klucza ani odpowiedzi drugiej osoby. Każda wskazuje jedną rodzinę albo wynik nierozstrzygnięty. Odpowiedzi zostają utrwalone przed otwarciem klucza.
+Dwie odizolowane sesje modeli klasyfikują każdy opis bez dostępu do klucza ani odpowiedzi drugiej sesji. Każda wskazuje jedną rodzinę albo wynik nierozstrzygnięty. Odpowiedzi zostają utrwalone przed otwarciem klucza.
 
-Po otwarciu klucza porównuje się zgodność każdej osoby z przypisaniem źródłowym, zgodność obu osób oraz zgodność skorygowaną o wynik możliwy do uzyskania przypadkowo.
+Po otwarciu klucza porównuje się zgodność każdej sesji z przypisaniem źródłowym, zgodność obu sesji oraz zgodność skorygowaną o wynik możliwy do uzyskania przypadkowo.
 
 Próg przyjęcia
 
-Przed rozpoczęciem oceny przyjmuje się, że każda osoba musi uzyskać zgodność źródłową w co najmniej trzech czwartych materiału, obie osoby muszą być zgodne w co najmniej czterech piątych materiału, a zgodność skorygowana o przypadek nie może być niższa niż sześć dziesiątych.
+Przed rozpoczęciem oceny przyjmuje się, że każda sesja musi uzyskać zgodność źródłową w co najmniej trzech czwartych materiału, obie sesje muszą być zgodne w co najmniej czterech piątych materiału, a zgodność skorygowana o przypadek nie może być niższa niż sześć dziesiątych.
 
 Wynik dodatni oznacza, że matryca jest wystarczająco informacyjna do tej próby klasyfikacyjnej. Wynik ujemny wskazuje granice wymagające korekty. Żaden wynik nie rozstrzyga, czy sześć rodzin stanowi naturalny i uniwersalny podział emocji.
 

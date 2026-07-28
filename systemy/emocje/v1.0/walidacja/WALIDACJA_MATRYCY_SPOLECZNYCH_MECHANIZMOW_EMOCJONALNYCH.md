@@ -8,7 +8,7 @@ Powiązany dokument: Matryca społecznych mechanizmów emocjonalnych
 
 Cel
 
-Walidacja sprawdza, czy matryca wraz z regułą rozstrzygającą zawiera dość informacji, aby niezależni oceniający rozróżnili osiem rodzin na podstawie opisu pojedynczego epizodu. Nie sprawdza biologicznej odrębności rodzin, nie dowodzi ich uniwersalności i nie rozstrzyga o ich granicach poza przyjętym materiałem.
+Walidacja sprawdza, czy matryca wraz z regułą rozstrzygającą zawiera dość informacji, aby dwie odizolowane sesje modeli rozróżniły osiem rodzin na podstawie opisu pojedynczego epizodu. Odizolowanie zapewnia niezależność proceduralną odpowiedzi, nie stanowi niezależnej walidacji empirycznej. Próba nie sprawdza biologicznej odrębności rodzin, nie dowodzi ich uniwersalności i nie rozstrzyga o ich granicach poza przyjętym materiałem.
 
 Reguła rozstrzygająca
 
@@ -50,25 +50,25 @@ Materiał obejmuje trzydzieści dwa krótkie opisy przemieszane niezależnie od 
 
 Każdy opis przedstawia jeden epizod, nie zawiera nazwy badanej emocji i zachowuje informacje o znaczeniu bodźca, kierunku działania albo warunku domknięcia. Przypisania zostały utrwalone w oddzielnym kluczu przed rozpoczęciem oceny.
 
-Oceniający otrzymują matrycę, niniejsze reguły oraz materiał ślepy. Nie otrzymują klucza ani odpowiedzi drugiej osoby.
+Dwie odizolowane sesje modeli otrzymują matrycę, niniejsze reguły oraz materiał ślepy. Nie otrzymują klucza ani odpowiedzi drugiej sesji.
 
 Przebieg
 
-Dwie osoby klasyfikują każdy opis niezależnie. Każda wskazuje jedną rodzinę albo wynik nierozstrzygnięty. Odpowiedzi zostają utrwalone przed otwarciem klucza.
+Dwie odizolowane sesje modeli klasyfikują każdy opis niezależnie proceduralnie. Każda wskazuje jedną rodzinę albo wynik nierozstrzygnięty. Odpowiedzi zostają utrwalone przed otwarciem klucza.
 
-Po otwarciu klucza porównuje się zgodność każdej osoby z przypisaniem konstrukcyjnym, zgodność obu osób, zgodność skorygowaną o wynik możliwy do uzyskania przypadkowo oraz wyniki każdej rodziny osobno.
+Po otwarciu klucza porównuje się zgodność każdej sesji z przypisaniem konstrukcyjnym, zgodność obu sesji, zgodność skorygowaną o wynik możliwy do uzyskania przypadkowo oraz wyniki każdej rodziny osobno.
 
 Próg przyjęcia
 
 Próg zostaje spełniony wyłącznie wtedy, gdy wszystkie warunki są spełnione równocześnie.
 
-Każda osoba musi uzyskać zgodność z kluczem w co najmniej dwudziestu czterech z trzydziestu dwóch opisów.
+Każda sesja musi uzyskać zgodność z kluczem w co najmniej dwudziestu czterech z trzydziestu dwóch opisów.
 
-Każda osoba musi poprawnie rozstrzygnąć co najmniej trzy z czterech opisów przypisanych do każdej rodziny.
+Każda sesja musi poprawnie rozstrzygnąć co najmniej trzy z czterech opisów przypisanych do każdej rodziny.
 
-Obie osoby muszą być zgodne w co najmniej dwudziestu sześciu z trzydziestu dwóch opisów.
+Obie sesje muszą być zgodne w co najmniej dwudziestu sześciu z trzydziestu dwóch opisów.
 
-Zgodność obu osób skorygowana o przypadek nie może być niższa niż sześć dziesiątych.
+Zgodność obu sesji skorygowana o przypadek nie może być niższa niż sześć dziesiątych.
 
 Wynik dodatni oznacza, że matryca wraz z regułami jest wystarczająco informacyjna do rozróżnienia ośmiu rodzin w tej próbie konstrukcyjnej. Wynik ujemny wskazuje konkretną granicę wymagającą ponownego sprawdzenia. Żaden wynik nie dowodzi, że osiem rodzin stanowi naturalny, biologicznie odrębny i uniwersalny podział emocji.
 
