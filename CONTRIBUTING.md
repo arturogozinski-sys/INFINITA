@@ -4,6 +4,8 @@ INFINITA jest otwarta na pytania, pomysły, testy, dokumentację i kod. Otwarto�
 na wkład nie oznacza automatycznego przyjęcia zmiany. Operator odpowiada za
 kierunek projektu i podejmuje ostateczną decyzję o scaleniu.
 
+Role i droga pomysłu od zgłoszenia do decyzji są opisane w `GOVERNANCE.md`.
+
 ## Zanim zaczniesz
 
 1. Sprawdź istniejące zgłoszenia i pull requesty.
