@@ -2,6 +2,14 @@
 
 Wersja: 0.6 (linia: 0.5 -> 0.6 dodano walidator schematu + kontrakt danych SCHEMAT_GRAFU v1.0)
 
+## Aktywne systemy robocze
+
+- `systemy/emocje/AKTYWNA_WERSJA.json` — jedyny wskaźnik aktywnej wersji systemu emocji.
+- `systemy/emocje/v1.0/SYSTEM_EMOCJI.md` — dokument nadrzędny modelu, filtra i walidacji strukturalnej.
+- `rdzen/emocje.py` — dekoder danych już przetłumaczonych na wartości kategorialne.
+
+System emocji jest aktywnym systemem roboczym, nie aktem kanonu i nie potwierdzeniem biologicznym.
+
 Dowód przepływu end-to-end: plik kanonu -> parser -> indeks -> zapytanie -> czujnik integralności.
 Zgodny z Konstytucją Techniczną (warstwa abstrakcji, indeks pochodny) i Procesem Produkcji Wiedzy (parser czyta tylko kanon).
 

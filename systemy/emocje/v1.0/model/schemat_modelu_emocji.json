@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Model emocji INFINITA",
+  "type": "object",
+  "required": [
+    "system",
+    "wersja",
+    "status",
+    "wymiary",
+    "rodziny"
+  ],
+  "properties": {
+    "system": {
+      "const": "model_emocji"
+    },
+    "wersja": {
+      "type": "string"
+    },
+    "status": {
+      "const": "walidacja_wewnetrzna_zamknieta"
+    },
+    "wymiary": {
+      "type": "object",
+      "minProperties": 12,
+      "maxProperties": 12,
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 2,
+        "uniqueItems": true,
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "rodziny": {
+      "type": "object",
+      "minProperties": 14,
+      "maxProperties": 14,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "warunki_konieczne",
+          "kierunki_dzialania",
+          "domkniecie"
+        ],
+        "properties": {
+          "warunki_konieczne": {
+            "type": "object"
+          },
+          "kierunki_dzialania": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "domkniecie": {
+            "type": "object",
+            "required": [
+              "wygasanie",
+              "utrwalanie"
+            ],
+            "properties": {
+              "wygasanie": {
+                "type": "string"
+              },
+              "utrwalanie": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
