@@ -122,8 +122,6 @@ Ten protokół jest zasadą ogólną.
 
 `BRAMKA_PRZED_SCALENIEM.md` jest jego wyspecjalizowanym zastosowaniem dla pull requestów.
 
-`MOST_CLAUDE.md` stosuje go przy eksporcie snapshotu, przekazaniu materiału i imporcie zmian Claude’a.
-
 ## Kryterium jakości
 
 Wolniejszy proces z potwierdzonym stanem jest lepszy niż szybszy proces wymagający powtórzenia pracy po chaosie.
