@@ -1,270 +1,273 @@
-SYSTEM EMOCJI INFINITA
+# SYSTEM EMOCJI INFINITA
 
-Status dokumentu: aktywny opis historycznie domkniętego etapu wykonawczego
+## FUNKCJA I STATUS
 
-Status epistemiczny: montaż architektury łączący hipotezy opisowe, dekoder operacyjny i wyniki kontroli jego spójności wykonawczej
+Funkcja: roboczy dokument czystej treści logicznej modelu emocji.
 
-Funkcja: nadrzędny kręgosłup logiczny zamkniętego odcinka modelu emocji
+Zakres: czternaście rodzin emocji, wspólny obieg, interfejs matryca–filtr, dekoder kategorialny, granice oraz otwarte połączenia.
 
-Zakres: czternaście rodzin emocji, wspólny obieg, interfejs matryca–filtr, filtr decyzyjny i jego walidacja strukturalna
+Status konstrukcyjny: wejścia, operacje i wyjścia są przyjętą strukturą roboczą. Ich zgodność empiryczna pozostaje poza tym dokumentem i zostanie rozpatrzona po zamknięciu trzeciej warstwy modelu.
 
-Pozycja: aktywny system roboczy; nie jest aktem kanonu
+Dokument nie jest aktem kanonu, diagnozą, modelem klinicznym ani katalogiem wszystkich emocji.
 
-AUTORYTET ŹRÓDEŁ
+## ARCHITEKTURA
 
-Dokument łączy zamknięte moduły, lecz ich nie zastępuje. Matryce pozostają źródłem opisów rodzin i przebiegów. Filtr pozostaje źródłem słownika cech i reguł klasyfikacji. Dokumenty walidacyjne pozostają źródłem procedur, kluczy i wyników. W przypadku różnicy pierwszeństwo ma właściwy moduł źródłowy.
+Model zawiera dwa połączone kierunki opisu:
 
-Dokument nie zmienia definicji rodzin, nie dodaje zmiennej merytorycznej i nie rozszerza wyniku walidacji.
+1. Matryca prowadzi od bodźca przez zmianę stanu, dynamikę, reakcję organizmu i działanie do skutku oraz nowego wejścia.
+2. Filtr otrzymuje kategorialne ślady obiegu i wyznacza rodziny zgodne z tymi śladami.
 
-CEL
+Matryca opisuje przebieg. Filtr dekoduje opis. Filtr nie wyjaśnia przyczyny powstania emocji, nie symuluje dynamiki i nie odtwarza reakcji organizmu.
 
-Celem montażu jest pokazanie jednego kontrolowanego przejścia od porównawczego opisu przebiegu emocji do operacyjnego dekodera oraz od dekodera do sprawdzenia wszystkich jego ścieżek wykonawczych.
+## RODZINY
 
-Montaż nie potwierdza biologicznej prawdziwości rodzin, pełności taksonomii, odczytywania cech z narracji ani skuteczności na rzeczywistych epizodach. Nie opisuje również przejść między emocjami.
+Rodziny podstawowe:
 
-ARCHITEKTURA ODCINKA
+- strach;
+- złość;
+- smutek;
+- radość;
+- wstręt;
+- zaskoczenie.
 
-Warstwa opisowa
+Rodziny społeczne:
 
-Dwie matryce opisują czternaście rodzin za pomocą wspólnego obiegu i wspólnego zestawu parametrów dynamiki. Matryce są hipotezami porządkującymi przebieg, nie dowodem istnienia odrębnych rodzajów naturalnych.
+- wstyd;
+- poczucie winy;
+- zażenowanie;
+- duma;
+- wdzięczność;
+- zawiść;
+- zazdrość;
+- pogarda.
 
-Warstwa rozróżnialności operacyjnej
+Podział jest operacyjny. Lista nie jest uznana za pełną, granice rodzin za naturalne ani sygnatury rodzin za biologicznie niezmienne.
 
-Reguły rozstrzygające sprawdzają, czy cechy zachowane w matrycach pozwalają odróżniać rodziny na kontrolowanych opisach. Pierwsza próba matrycy podstawowej pozostała diagnostyczna z powodu wady procedury. Powtórzenie na nowym, przemieszanym materiale konstrukcyjnym, z użyciem wyłącznie matrycy i dwóch odizolowanych ocen modeli, zakończyło się pełną zgodnością z kluczem i ze sobą. Próba matrycy społecznej potwierdziła rozróżnialność operacyjną matrycy wraz z regułami na materiale konstrukcyjnym.
+## WSPÓLNY OBIEG
 
-Warstwa dekodera
+### 1. Bodziec
 
-Filtr przekształca jawnie podane cechy obserwowanego obiegu w zbiór kandydatów, sprawdza kierunek przygotowanego działania i mechanizm domknięcia, a następnie zwraca jedną rodzinę, konflikt kandydatów albo brak pasującej rodziny.
+Bodziec jest zmianą zewnętrzną albo wewnętrzną.
 
-Warstwa kontroli wykonania
+### 2. Nadanie znaczenia
 
-Historyczna walidacja kolizyjna sprawdziła czterdzieści przygotowanych opisów. Historyczna walidacja wariantowa sprawdziła trzysta dziesięć rekordów w sześciu seriach i zamknęła pokrycie wszystkich odrębnych ścieżek filtra. Składniowy adapter oraz literalny test domknięcia odtworzyły następnie w kodzie wynik, etap odrzucenia i kandydatów wszystkich trzystu dziesięciu rekordów. Materiały ślepe tego korpusu znajdują się obecnie w archiwum prywatnym, dlatego pełne odtworzenie próby nie jest możliwe wyłącznie z repozytorium publicznego. Materiał i klucze powstały na podstawie reguł filtra, dlatego wynik potwierdza spójność jego wykonania na materiale strukturalnym, a nie prawdziwość matryc.
+Organizm odnosi zmianę do jednego lub wielu elementów:
 
-RODZINY
+- aktualnego stanu;
+- potrzeb;
+- celu;
+- przewidywania;
+- normy;
+- własnego obrazu;
+- pozycji;
+- porównania;
+- więzi;
+- działania innej osoby.
 
-Matryca podstawowych mechanizmów emocjonalnych zawiera następujące identyfikatory rodzin: strach, złość, smutek, radość, wstręt i zaskoczenie.
+### 3. Zmiana stanu
 
-Matryca społecznych mechanizmów emocjonalnych zawiera następujące identyfikatory rodzin: wstyd, poczucie winy, zażenowanie, duma, wdzięczność, zawiść, zazdrość i pogarda.
+Ocena znaczenia organizuje czasowo:
 
-Podział jest operacyjny. Dokument nie przesądza, że lista jest pełna, że granice rodzin są naturalne ani że przypadki jednej rodziny mają niezmienną sygnaturę biologiczną lub chemiczną.
+- uwagę;
+- pobudzenie;
+- odczuwanie;
+- gotowość do działania.
 
-WSPÓLNY OBIEG
+### 4. Dynamika
 
-Bodziec jest zmianą zewnętrzną albo wewnętrzną, której organizm nadaje znaczenie względem stanu, potrzeb, przewidywań, normy, własnego obrazu, pozycji, porównania, więzi albo działania innej osoby.
+Dynamika zawiera:
 
-Ocena bodźca uruchamia zmianę stanu obejmującą czasową organizację uwagi, pobudzenia, odczuwania i gotowości do działania.
+- kierunek zmiany;
+- szybkość narastania;
+- natężenie;
+- czas trwania;
+- próg uruchomienia;
+- podatność na sprzężenie zwrotne;
+- sposób powrotu.
 
-Dynamika opisuje kierunek zmiany, szybkość narastania, natężenie, czas trwania, próg uruchomienia, podatność na sprzężenie zwrotne i sposób powrotu.
+### 5. Reakcja organizmu
 
-Reakcja organizmu obejmuje skoordynowane procesy nerwowe, autonomiczne, hormonalne, metaboliczne i ruchowe. Nie jest skutkiem jednej substancji.
+Reakcja obejmuje skoordynowane procesy:
 
-Działanie zmienia sytuację, relację organizmu z sytuacją albo jej model wewnętrzny.
+- nerwowe;
+- autonomiczne;
+- hormonalne;
+- metaboliczne;
+- ruchowe.
 
-Skutek działania oraz sygnały zewnętrzne i wewnętrzne wracają jako nowe wejście. Obieg wygasa, gdy nowe wejście osłabia warunki podtrzymujące stan, albo utrwala się, gdy je potwierdza.
+Reakcja nie jest skutkiem jednej substancji.
 
-MAPA MATRYCA–FILTR
+### 6. Działanie
 
-Mapa określa funkcjonalne połączenia między polami opisu i cechami dekodera. Nie oznacza tożsamości matrycy z filtrem. Relacja operacyjna oznacza, że filtr rozkłada opis znaczenia lub przebiegu na kategorie potrzebne do klasyfikacji.
+Działanie zmienia:
 
-| Pole matrycy | Cecha filtra | Rodzaj relacji | Zakres |
-| --- | --- | --- | --- |
-| Bodziec i nadane mu znaczenie | Przedmiot oceny | operacyjne uszczegółowienie | wskazuje, czego dotyczy ocena |
-| Bodziec i nadane mu znaczenie | Sprawstwo | operacyjne uszczegółowienie | wskazuje przypisane źródło zdarzenia lub wyniku |
-| Bodziec i nadane mu znaczenie | Czas | operacyjne uszczegółowienie | rozróżnia zdarzenie aktualne, dokonane i przewidywane |
-| Bodziec społeczny i nadane mu znaczenie | Struktura relacji | operacyjne uszczegółowienie | rozróżnia porównanie, więź, interakcję i ekspozycję |
-| Bodziec względem przewidywań | Zgodność z przewidywaniem | połączenie bezpośrednie | zachowuje zgodność, niezgodność albo brak aktywnego przewidywania |
-| Znaczenie bodźca względem potrzeb, celów, norm, integralności i więzi | Wpływ na cel, normę, integralność lub więź | operacyjne uszczegółowienie | tworzy główny zbiór znaczeń używany podczas syntezy kandydatów |
-| Ocena znaczenia bodźca i możliwego działania | Możliwość kontroli | relacja operacyjna | odróżnia możliwość zmiany, ograniczenie i brak wpływu |
-| Ocena własnego ja, działania albo drugiej osoby | Zakres przypisania | relacja operacyjna | rozróżnia pojedynczy czyn i całą osobę |
-| Ocena działania innej osoby | Ocena intencji | relacja operacyjna | zachowuje rozpoznaną intencję społeczną |
-| Ocena drugiej osoby | Stabilność oceny | relacja operacyjna | rozróżnia ocenę stałą, zmienną i nieokreśloną |
-| Działanie | Kierunek przygotowanego działania | połączenie bezpośrednie funkcjonalnie | filtr sprawdza zgodność obserwowanego kierunku ze zbiorem dopuszczalnym dla rodziny |
-| Skutek odpowiedzi, nowe wejście i wynik obiegu | Warunek domknięcia | synteza operacyjna | filtr sprawdza mechanizm wygasania, utrwalania albo brak danych |
-| Zmiana stanu | brak bezpośredniej cechy filtra | zakres niewykorzystywany | filtr nie mierzy organizacji uwagi, pobudzenia, odczuwania ani gotowości |
-| Kierunek, szybkość, natężenie, czas trwania, próg, podatność i sposób powrotu dynamiki | brak bezpośredniej cechy filtra | zakres niewykorzystywany | filtr nie klasyfikuje na podstawie parametrów trajektorii |
-| Reakcja organizmu | brak bezpośredniej cechy filtra | zakres niewykorzystywany | filtr nie używa parametrów nerwowych, autonomicznych, hormonalnych, metabolicznych ani ruchowych |
-| Założenie warstwy fizycznej i chemicznej | brak cechy filtra | poza funkcją dekodera | założenie ustanawia pomost teoretyczny, lecz nie rozróżnia rodzin |
+- sytuację;
+- relację organizmu z sytuacją;
+- model wewnętrzny sytuacji.
 
-Zakres niewykorzystywany wynika z literalnego porównania pól obu matryc ze słownikiem i regułami zamrożonego filtra. Oznacza brak użycia w tym dekoderze, nie brak znaczenia dla modelu emocji.
+### 7. Skutek i sprzężenie zwrotne
 
-MAPA PRZEBIEGU I DEKODER
+Skutek działania oraz sygnały zewnętrzne i wewnętrzne stają się nowym wejściem.
 
-Matryca prowadzi opis w kierunku od wejścia do wyniku obiegu. Filtr działa w kierunku odwrotnym: otrzymuje ślady obiegu i sprawdza, które rodziny są z nimi zgodne.
+Obieg wygasa, gdy nowe wejście osłabia warunki podtrzymujące stan. Obieg utrwala się, gdy nowe wejście je potwierdza.
 
-Matryca jest mapą przebiegu. Filtr jest dekoderem tej mapy. Dekoder nie wyjaśnia, dlaczego emocja powstała, nie symuluje jej dynamiki i nie odtwarza reakcji organizmu.
+## WYMIARY DEKODERA
 
-ZASADA DZIAŁANIA FILTRA
+Filtr przyjmuje dwanaście wymiarów wejściowych:
 
-Filtr przyjmuje dwanaście wymiarów wejściowych: przedmiot oceny, sprawstwo, czas, strukturę relacji, zgodność z przewidywaniem, wpływ na cel, normę, integralność lub więź, możliwość kontroli, zakres przypisania, ocenę intencji, stabilność oceny, kierunek przygotowanego działania oraz warunek domknięcia.
+1. przedmiot oceny;
+2. sprawstwo;
+3. czas;
+4. struktura relacji;
+5. zgodność z przewidywaniem;
+6. wpływ na cel, normę, integralność lub więź;
+7. możliwość kontroli;
+8. zakres przypisania;
+9. ocena intencji;
+10. stabilność oceny;
+11. kierunek przygotowanego działania;
+12. warunek domknięcia.
 
-Każdy wymiar zawiera jedną lub kilka wartości określonych albo pojedynczą wartość nieokreśloną. Wartość nieokreślona nie spełnia warunku koniecznego, lecz sama nie odrzuca kandydata.
+Każdy wymiar zawiera jedną lub kilka wartości określonych albo pojedynczą wartość nieokreśloną.
 
-Najpierw reguły konieczne tworzą zbiór kandydatów. Następnie test działania zachowuje kandydatów posiadających część wspólną z obserwowanym kierunkiem albo nieokreślony kierunek. Test domknięcia zachowuje kandydatów zgodnych z opisanym mechanizmem albo z domknięciem nieokreślonym.
+Wartość nieokreślona nie spełnia warunku koniecznego. Sama wartość nieokreślona nie odrzuca jednak kandydata na późniejszym etapie działania lub domknięcia.
 
-Filtr definiuje również warunek wykluczający, lecz żadna z czternastu aktualnych reguł włączania go nie używa. Mechanizm pozostaje nieaktywnym elementem gramatyki wykonawczej i nie tworzy osobnej ścieżki w zamrożonym filtrze.
+## MAPA MATRYCA–FILTR
 
-Jeden pozostały kandydat daje nazwę rodziny. Brak kandydatów daje wynik nierozstrzygnięty brak pasującej rodziny. Kilku kandydatów daje wynik nierozstrzygnięty konflikt kandydatów.
+| Element przebiegu | Wymiar dekodera | Relacja logiczna |
+| --- | --- | --- |
+| Bodziec i jego znaczenie | Przedmiot oceny | wskazuje, czego dotyczy ocena |
+| Bodziec i jego znaczenie | Sprawstwo | wskazuje przypisane źródło zdarzenia lub wyniku |
+| Bodziec i jego znaczenie | Czas | rozróżnia zdarzenie aktualne, dokonane i przewidywane |
+| Bodziec społeczny i jego znaczenie | Struktura relacji | rozróżnia porównanie, więź, interakcję i ekspozycję |
+| Bodziec względem przewidywania | Zgodność z przewidywaniem | zachowuje zgodność, niezgodność albo brak aktywnego przewidywania |
+| Znaczenie względem potrzeb, celów, norm, integralności i więzi | Wpływ | określa główne znaczenie używane do syntezy kandydatów |
+| Ocena znaczenia i możliwego działania | Możliwość kontroli | rozróżnia możliwość zmiany, ograniczenie i brak wpływu |
+| Ocena własnego ja, działania albo drugiej osoby | Zakres przypisania | rozróżnia pojedynczy czyn i całą osobę |
+| Ocena działania innej osoby | Ocena intencji | zachowuje rozpoznaną intencję społeczną |
+| Ocena drugiej osoby | Stabilność oceny | rozróżnia ocenę stałą, zmienną i nieokreśloną |
+| Działanie | Kierunek przygotowanego działania | sprawdza zgodność kierunku ze zbiorem dopuszczalnym dla rodziny |
+| Skutek, nowe wejście i wynik obiegu | Warunek domknięcia | sprawdza wygasanie, utrwalanie albo brak danych |
+| Zmiana stanu | brak bezpośredniego wymiaru | połączenie otwarte |
+| Parametry dynamiki | brak bezpośredniego wymiaru | połączenie otwarte |
+| Reakcja organizmu | brak bezpośredniego wymiaru | połączenie otwarte |
+| Warstwa fizyczna i chemiczna | brak bezpośredniego wymiaru | pomost założony, lecz niewykonany |
 
-PROJEKCJA WYKONAWCZA
+Mapowanie oznacza relację funkcjonalną, nie tożsamość matrycy z filtrem.
 
-Plik `model/model_emocji.json` zapisuje dwanaście wymiarów, czternaście rodzin, warunki konieczne, kierunki działania i literalne wzorce domknięcia w postaci maszynowej. Identyfikatory techniczne normalizują zapis wartości źródłowych i nie tworzą nowych kategorii merytorycznych.
+Brak bezpośredniego wymiaru oznacza, że obecny dekoder nie używa danego elementu. Nie oznacza, że element jest zbędny dla całego modelu.
 
-Moduł `rdzen/emocje.py` wykonuje syntezę kandydatów, test kierunku działania i przyjmuje jawną ocenę zgodności domknięcia.
+## ALGORYTM FILTRA
 
-Moduł `rdzen/emocje_dowody.py` jest składniowym adapterem utrwalonych rekordów. Odczytuje literalne wartości, zachowuje zapis źródłowy i porównuje jawnie nazwany mechanizm domknięcia z istniejącym wzorcem rodziny. Nie interpretuje swobodnej narracji.
+### 1. Synteza kandydatów
 
-Publiczne CI sprawdza kontrakt adaptera na jawnej, sztucznej próbce tworzonej w katalogu tymczasowym. Nie ładuje i nie waliduje prywatnego korpusu 310 rekordów.
+Dla każdej rodziny sprawdzane są jej warunki konieczne.
 
-Projekcja wykonawcza nie tłumaczy narracji na wartości filtra, nie diagnozuje człowieka i nie podnosi statusu epistemicznego modelu.
+Rodzina przechodzi do zbioru kandydatów, gdy każdy jej warunek konieczny ma część wspólną z odpowiednim wymiarem wejścia.
 
-WYNIK WALIDACJI WEWNĘTRZNEJ
+Filtr przewiduje także warunki wykluczające. W aktualnej strukturze żadna z czternastu rodzin nie używa aktywnego warunku wykluczającego.
 
-Walidacja kolizyjna zakończyła się pełną zgodnością dwóch ocen z kluczem w czterdziestu opisach.
+### 2. Test działania
 
-Wewnętrzna walidacja strukturalna wariantów objęła sześć serii:
+Kandydat pozostaje, gdy:
 
-Seria pierwsza sprawdziła poprawne przejścia rodzin i utratę jednego warunku koniecznego w dwudziestu ośmiu rekordach.
+- obserwowany kierunek działania ma część wspólną z kierunkami dopuszczalnymi dla rodziny; albo
+- kierunek działania jest nieokreślony.
 
-Seria druga sprawdziła pozostałe warunki konieczne i gałęzie alternatyw w trzydziestu ośmiu rekordach.
+### 3. Test domknięcia
 
-Seria trzecia sprawdziła wartości nieokreślone i zbiory wielowartościowe w dwudziestu siedmiu rekordach. Trzy niemożliwe konstrukcje dla możliwości kontroli, zakresu przypisania i stabilności oceny zapisano jako granice słownika. Jedna omyłka zapisu etapu została skorygowana w ślepym ponownym sprawdzeniu bez zmiany filtra, materiału ani klucza.
+Kandydat pozostaje, gdy:
 
-Seria czwarta sprawdziła test działania w pięćdziesięciu sześciu rekordach.
+- opisany mechanizm domknięcia jest zgodny z mechanizmem rodziny; albo
+- domknięcie jest nieokreślone.
 
-Seria piąta sprawdziła test domknięcia w siedemdziesięciu rekordach.
+### 4. Wynik
 
-Seria szósta sprawdziła wszystkie dziewięćdziesiąt jeden par rodzin oraz konflikty wielorodzinne.
+- Jeden kandydat: nazwa rodziny.
+- Brak kandydatów: nierozstrzygnięty brak pasującej rodziny.
+- Więcej niż jeden kandydat: nierozstrzygnięty konflikt kandydatów.
 
-Opis serii w dokumencie proceduralnym przypisuje serii szóstej również przypadki braku kandydata. Faktyczny materiał serii szóstej obejmuje dziewięćdziesiąt jeden par oraz konflikty wielorodzinne. Przypadki braku kandydata po syntezie, teście działania i teście domknięcia zostały zamknięte w seriach od drugiej do piątej, a wynik serii szóstej przejmuje to świadectwo bez powielania tych samych ścieżek. Pokrycie pozostaje pełne, lecz ogólny opis serii jest szerszy od faktycznego materiału serii szóstej.
+Konflikt oznacza współzgodność wejścia z kilkoma regułami. Nie oznacza przejścia jednej emocji w drugą.
 
-Każda odrębna ścieżka wykonawcza ma zamknięty rekord, zamknięty klucz i dwie utrwalone oceny. Wszystkie wyniki końcowe są zgodne z kluczem.
+## GRANICE AKTUALNEJ STRUKTURY
 
-Historyczne pełne odtworzenie wykonawcze potwierdziło zgodność dekodera z kluczem we wszystkich trzystu dziesięciu rekordach. Przed włączeniem literalnego testu domknięcia pozostawało dwadzieścia osiem różnic, wyłącznie w sprzecznych wariantach serii piątej. Po włączeniu testu nie pozostała żadna różnica wyniku, etapu ani listy kandydatów. Publiczne repozytorium zachowuje raport zbiorczy i opis procedury. Materiały, szczegółowe klucze oraz wyniki rekordów znajdują się w archiwum prywatnym, dlatego całego odtworzenia nie można samodzielnie powtórzyć wyłącznie z warstwy publicznej.
+Dekoder zaczyna pracę na wartościach kategorialnych. Nie zawiera jeszcze reguł tłumaczących narrację, zachowanie ani pomiar organizmu na te wartości.
 
-Wynik należy odczytywać wyłącznie następująco:
+Dekoder nie używa bezpośrednio:
 
-Potwierdzono, że zamrożony filtr wykonuje zdefiniowane ścieżki na trzystu dziesięciu kontrolowanych rekordach strukturalnych zgodnie z kluczem wyprowadzonym z jego własnych reguł.
+- organizacji uwagi;
+- poziomu pobudzenia;
+- jakości odczuwania;
+- parametrów dynamiki;
+- procesów nerwowych;
+- procesów autonomicznych;
+- procesów hormonalnych;
+- procesów metabolicznych;
+- parametrów ruchowych;
+- realizacji fizycznej i chemicznej.
 
-Wynik nie jest niezależnym potwierdzeniem matryc, ponieważ filtr wyprowadzono z ich rozróżnień operacyjnych, a materiał strukturalny zbudowano z reguł filtra.
+Dekoder klasyfikuje stan wejściowy. Nie opisuje zależności ani przejść między rodzinami.
 
-STATUS LOGICZNY
+## OTWARTE POŁĄCZENIA
 
-Faktem dokumentacyjnym jest istnienie dwóch matryc o wspólnej strukturze, jednego filtra obejmującego czternaście rodzin oraz zamkniętej walidacji wszystkich jego ścieżek wykonawczych.
+### Translacja materiału żywego
 
-Faktem wynikowym jest zgodność dwóch ocen z kluczem konstrukcyjnym we wszystkich wynikach końcowych wewnętrznej walidacji strukturalnej wariantów oraz historyczne wykonawcze odtworzenie tych wyników przez kod.
+**Wejście:** nieustrukturyzowany opis, zachowanie albo pomiar.
 
-Wnioskiem architektonicznym jest możliwość połączenia matryc, filtra i walidacji przez jawny interfejs bez utożsamiania ich funkcji.
+**Oczekiwane wyjście:** wartości dwunastu wymiarów dekodera.
 
-Założeniem warstwy pozostaje możliwość opisania chemicznej realizacji trajektorii emocji za pomocą zasad fizyki dotyczących przepływu, transportu, przemiany, ograniczeń energetycznych i czasu reakcji.
+**Status:** niewypełnione.
 
-Hipotezą pozostaje, że wspólna matryca zachowuje cechy wystarczające do użytecznego porównania czternastu rodzin poza materiałem konstrukcyjnym.
+### Dynamika
 
-Niewiadomą pozostaje trafność biologiczna rodzin, kompletność taksonomii, granice rodzin, odczytywanie cech z narracji, przenoszalność na realne epizody, zależność od osoby i kultury oraz przejścia między emocjami.
+**Wejście:** zmiana stanu oraz parametry jej przebiegu.
 
-GRANICE
+**Oczekiwane wyjście:** trajektoria narastania, utrzymywania i wygaszania.
 
-Dokument nie jest diagnozą, modelem klinicznym, dowodem biologicznym ani katalogiem wszystkich emocji.
+**Status:** struktura opisowa istnieje; wykonanie niewypełnione.
 
-Nie określa, jak tłumaczyć narrację, zachowanie albo pomiar organizmu na wartości kategorialne filtra.
+### Reakcja organizmu
 
-Nie symuluje dynamiki emocji. Parametry dynamiki pozostają częścią matryc, lecz nie są wykonywane przez filtr.
+**Wejście:** trajektoria stanu.
 
-Nie opisuje zależności ani przejść między rodzinami. Konflikt kandydatów oznacza współzgodność opisu z kilkoma regułami, nie przejście jednej emocji w drugą.
+**Oczekiwane wyjście:** skoordynowana odpowiedź nerwowa, autonomiczna, hormonalna, metaboliczna i ruchowa.
 
-REJESTR ŹRÓDEŁ PODSTAWOWYCH
+**Status:** połączenie niewypełnione.
 
-`systemy/emocje/v1.0/model/MATRYCA_PODSTAWOWYCH_MECHANIZMOW_EMOCJONALNYCH_v1.4.md`
+### Pomost fizyczny i chemiczny
 
-Skrót SHA-256: `a49a142ce79cd246cca82b7cb3f8be039ad67d6c3343d6f03cbcdb74079501c1`
+**Założenie:** realizacja trajektorii podlega przepływowi, transportowi, przemianie, ograniczeniom energetycznym i czasowi reakcji.
 
-Rola: źródło sześciu rodzin, wspólnego obiegu, parametrów dynamiki, statusów i granic.
+**Oczekiwane wyjście:** operacyjny opis realizacji procesu.
 
-`systemy/emocje/v1.0/model/MATRYCA_SPOLECZNYCH_MECHANIZMOW_EMOCJONALNYCH.md`
+**Status:** założone; niewykonane.
 
-Skrót SHA-256: `b0b6e163a9ee323199eb43c1befe4f80653f23476fc5ed4545accf6b29c294aa`
+### Przejścia między rodzinami
 
-Rola: źródło ośmiu rodzin społecznych, wspólnego obiegu, parametrów dynamiki, statusów i granic.
+**Wejście:** wynik obiegu i nowe wejście.
 
-`systemy/emocje/v1.0/walidacja/WALIDACJA_MATRYCY_PODSTAWOWYCH_MECHANIZMOW_EMOCJONALNYCH.md`
+**Oczekiwane wyjście:** reguła utrzymania rodziny, jej wygaszenia albo przejścia do innej rodziny.
 
-Skrót SHA-256: `f0e778f4c483191e662fcefe3ba8d5bb06bf2d880dab2635a2f139b3bad9dc8f`
+**Status:** niewypełnione.
 
-Rola: źródło diagnostycznego wyniku pierwszej próby, jej wady proceduralnej i dodatniego powtórzenia wewnętrznego.
+### Zakres rodzin
 
-`systemy/emocje/v1.0/walidacja/WALIDACJA_MATRYCY_SPOLECZNYCH_MECHANIZMOW_EMOCJONALNYCH.md`
+**Wejście:** materiał wykraczający poza czternaście aktualnych rodzin.
 
-Skrót SHA-256: `014198ad438518c81fed377cef29da6d25c6404edaa2b3620ab102a2f7fd9619`
+**Oczekiwane wyjście:** zachowanie istniejącej rodziny, rozdzielenie jej albo utworzenie nowej jednostki.
 
-Rola: źródło dodatniego wyniku rozróżnialności operacyjnej na materiale konstrukcyjnym.
+**Status:** kryterium niewypełnione.
 
-`systemy/emocje/v1.0/model/FILTR_DECYZYJNY_MECHANIZMOW_EMOCJONALNYCH.md`
+## STATUS TREŚCI
 
-Skrót SHA-256: `945bf6e87de5ce48ea39ecab82c3de0e4028e33612c506f83605ce05e2613127`
+**Zbudowane:** wspólny obieg, czternaście rodzin, dwanaście wymiarów, mapa matryca–filtr, synteza kandydatów, test działania, test domknięcia oraz trzy rodzaje wyniku.
 
-Rola: źródło słownika, reguł włączania, testu działania, testu domknięcia i wyników końcowych.
+**Założone:** operacyjny podział rodzin i możliwość fizyczno-chemicznej realizacji trajektorii.
 
-`systemy/emocje/v1.0/walidacja/WALIDACJA_KOLIZYJNA_FILTRA_DECYZYJNEGO_EMOCJI.md`
+**Niewypełnione:** translacja materiału żywego, wykonanie dynamiki, połączenie z reakcją organizmu, operacjonalizacja warstwy fizyczno-chemicznej, przejścia między rodzinami oraz kryterium zakresu rodzin.
 
-Skrót SHA-256: `828c51ed064d0e669610de0eb514661d255e2a76c177ec34c7ed88dd48fa60e5`
+**Oczekuje na trzecią warstwę:** kontrola zgodności konstrukcji z materiałem rzeczywistym.
 
-Rola: źródło wyniku pierwszej walidacji kolizyjnej na czterdziestu opisach konstrukcyjnych.
+## MATERIAŁ POZA WARSTWĄ LOGICZNĄ
 
-`systemy/emocje/v1.0/walidacja/PRODUKCYJNA_WALIDACJA_WARIANTOWA_FILTRA_EMOCJI.md`
-
-Skrót SHA-256: `80699a99870bea95a5b4dcdb893dfc51e79e769a38148e198ddcb68dd8e162d1`
-
-Rola: źródło procedury, zakresu sześciu serii, wyniku zbiorczego i granic walidacji strukturalnej.
-
-`systemy/emocje/v1.0/walidacja/MATRYCA_POKRYCIA_PRODUKCYJNEJ_WALIDACJI_FILTRA_EMOCJI.md`
-
-Skrót SHA-256: `d5eb56378b2f0ead68283e7d47cd0153b100a84a93025f43984adecd75493f7c`
-
-Rola: źródło jednostek pokrycia i kryterium kompletności strukturalnej.
-
-`systemy/emocje/v1.0/walidacja/WALIDACJA_WYKONAWCZA_KORPUSU_310.md`
-
-Skrót SHA-256: `770719ffa0294803fb95b4fa155a79f92adaed9257d347ac3007026cd2ecd4e6`
-
-Rola: źródło składniowego adaptera, literalnego testu domknięcia, pełnego odtworzenia wykonawczego i rozstrzygnięcia granicy warstwy.
-
-REJESTR DOWODÓW SERII
-
-Materiały ślepe, szczegółowe klucze i wyniki sześciu serii znajdują się w archiwum prywatnym. Repozytorium publiczne zachowuje opis procedury, zakres serii i raporty zbiorcze, lecz nie zawiera rekordów potrzebnych do pełnego odtworzenia walidacji.
-
-REJESTR DOWODÓW WSTĘPNYCH
-
-Materiały i klucze prób wstępnych znajdują się w archiwum prywatnym. Repozytorium publiczne zachowuje ich opis proceduralny i wynik zbiorczy. Nie zmienia to diagnostycznego statusu wadliwej próby matrycy podstawowej ani konstrukcyjnego charakteru pozostałych prób.
-
-REJESTR DOWODÓW POWTÓRZENIA
-
-Katalog `dowody/powtorzenie_matrycy_podstawowej` zachowuje publicznie zamknięty klucz oraz pełny wynik dwóch odizolowanych sesji modeli. Powiązany materiał ślepy znajduje się w archiwum prywatnym. Dowody dotyczą wyłącznie historycznego powtórzenia wewnętrznego na materiale konstrukcyjnym.
-
-MANIFEST INTEGRALNOŚCI
-
-Plik `MANIFEST.sha256` obejmuje wszystkie pliki aktywnej wersji poza samym manifestem. Zawiera dokument nadrzędny, dziewięć źródeł podstawowych, dwa dokumenty dowodowe oraz dwa pliki projekcji maszynowej.
-
-Manifest tworzy się z wierszy uporządkowanych alfabetycznie według ścieżki. Każdy wiersz zawiera ścieżkę względną zapisaną ukośnikami, dwie spacje i małymi literami zapisany skrót SHA-256 pliku. Wiersze łączy znak końca linii bez końcowego znaku po ostatnim wierszu.
-
-Skrót poprzedniego manifestu montażowego pozostaje utrwalony w historii Git. Bieżący manifest jest jedynym rejestrem integralności aktywnej wersji.
-
-GRANICA WARSTWY
-
-Żaden utrwalony rekord ani test obecnego dekodera nie wymaga parametrów dynamiki, reakcji organizmu ani pomostu fizyczno-chemicznego do uzyskania wyniku.
-
-Obecna warstwa kończy się na dekoderze danych kategorialnych, składniowym adapterze dowodów i literalnym teście domknięcia.
-
-Poza obecną warstwą pozostają translacja nieustrukturyzowanego opisu na wartości filtra, wykonanie parametrów dynamiki, połączenie dynamiki z reakcją organizmu, operacjonalizacja pomostu fizyczno-chemicznego oraz przejścia między emocjami. Każdy z tych zakresów wymaga osobnej decyzji, reguł, materiału i walidacji.
-
-ODBIÓR MONTAŻU
-
-Historyczna kontrola lokalna, wykonana przed wydzieleniem archiwum prywatnego, potwierdziła obecność czternastu rodzin, dwunastu wymiarów filtra, wszystkich ówczesnych dokumentów źródłowych i dowodowych oraz brak uszkodzeń zapisu.
-
-Dokumenty źródłowe, filtr, raporty zbiorcze oraz publiczna para dowodów powtórzenia pozostają w repozytorium publicznym. Materiały ślepe, szczegółowe klucze i wyniki przeniesiono do archiwum prywatnego. Zmiana widoczności ograniczyła publiczną odtwarzalność historycznej walidacji, nie zmieniając treści zachowanych źródeł prywatnych.
-
-Orient przyjął montaż bez uwag. Gemini wykrył trzy pominięcia identyfikowalności: nieaktywny warunek wykluczający, granice słownika serii trzeciej oraz rozbieżność między ogólnym opisem serii szóstej a jej faktycznym materiałem. Pominięcia uzupełniono bez zmiany źródeł, zmiennych i reguł. Ponowny audyt Orienta i Gemini zakończył się werdyktem przyjąć bez błędów blokujących i nieblokujących.
-
-Odbiór dotyczy wyłącznie kompletności montażu, identyfikowalności i spójności wewnętrznej. Nie obejmuje testu zewnętrznego, trafności biologicznej ani translacji narracji na wartości filtra.
-
-Historyczne domknięcie wykonawcze objęło składniowy adapter całego korpusu, dodatnie powtórzenie wewnętrzne matrycy podstawowej, literalny test domknięcia oraz zgodność kodu z kluczami wszystkich trzystu dziesięciu rekordów. Pełny korpus wejściowy jest obecnie archiwum prywatnym.
-
-Końcowy audyt Orienta i Gemini przyjął domknięcie bez błędów blokujących i nieblokujących.
+Testy, dowody, bibliografia, manifesty, historia procedur i odbiory pozostają w istniejących plikach oraz historii repozytorium. Nie stanowią treści tego dokumentu.
