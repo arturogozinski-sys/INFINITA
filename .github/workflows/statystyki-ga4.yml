@@ -1,0 +1,36 @@
+name: Statystyki strony GA4
+
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Zainstaluj klienta Google Analytics Data API
+        run: pip install google-analytics-data google-auth
+      - name: Pobierz statystyki GA4
+        env:
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+        run: python narzedzia/pobierz_statystyki_ga4.py
+      - name: Zapisz aktualny raport w repo
+        run: |
+          if git diff --quiet -- dane_publiczne/statystyki_strony.json; then
+            echo "Brak zmian w statystykach"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dane_publiczne/statystyki_strony.json
+          git commit -m "Aktualizuj statystyki strony GA4"
+          git push
