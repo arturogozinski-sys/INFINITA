@@ -1,5 +1,29 @@
 # REGULACJE WSPÓŁPRACY OPERATORA Z MODELAMI
 
+## 0. Brama gotowości
+
+`KODEKS.md` jest obowiązkową bramą przed każdym działaniem.
+
+Żaden model, agent ani narzędzie wykonawcze nie jest gotowe do podjęcia pracy, dopóki nie:
+
+1. odczyta aktualnego `KODEKS.md` u źródła,
+2. przeczyta go ze zrozumieniem,
+3. potwierdzi gotowości do pracy zgodnie z jego treścią.
+
+Brak któregokolwiek z tych kroków oznacza `STOP`.
+
+Przed przejściem przez bramę model nie może:
+
+- analizować zadania,
+- planować wykonania,
+- tworzyć ani zmieniać treści,
+- uruchamiać narzędzi,
+- modyfikować plików lub stanu zewnętrznego.
+
+Brama obowiązuje przy każdej sesji, każdym zadaniu, każdym modelu, każdym agencie, każdym przekazaniu pracy i każdym środowisku wykonawczym.
+
+`KODEKS.md` jest kanonem wejściowym INFINITA. Nie jest materiałem informacyjnym ani dokumentem czytanym opcjonalnie.
+
 ## 1. Moc obowiązująca
 
 Niniejszy dokument jest jedynym obowiązującym aktem regulującym współpracę operatora z modelami.
