@@ -1,28 +1,18 @@
 # REGULACJE WSPÓŁPRACY OPERATORA Z MODELAMI
 
-## 0. Brama gotowości
+## 0. Bramka wejściowa
 
-`KODEKS.md` jest obowiązkową bramą przed każdym działaniem.
+Ten plik jest najważniejszym plikiem repozytorium i obowiązkową bramką przed rozpoczęciem pracy.
 
-Żaden model, agent ani narzędzie wykonawcze nie jest gotowe do podjęcia pracy, dopóki nie:
+Przed analizą, odczytem materiałów projektu, wykonaniem polecenia albo zmianą stanu model musi:
 
-1. odczyta aktualnego `KODEKS.md` u źródła,
-2. przeczyta go ze zrozumieniem,
-3. potwierdzi gotowości do pracy zgodnie z jego treścią.
+1. odczytać ten dokument w całości,
+2. wskazać dokładną ścieżkę, z której go odczytał,
+3. zgłosić operatorowi `Gotowość: TAK`.
 
-Brak któregokolwiek z tych kroków oznacza `STOP`.
+Do czasu wykonania tych trzech czynności model nie rozpoczyna pracy nad projektem, nie czyta pozostałych materiałów i nie wykonuje żadnej zmiany.
 
-Przed przejściem przez bramę model nie może:
-
-- analizować zadania,
-- planować wykonania,
-- tworzyć ani zmieniać treści,
-- uruchamiać narzędzi,
-- modyfikować plików lub stanu zewnętrznego.
-
-Brama obowiązuje przy każdej sesji, każdym zadaniu, każdym modelu, każdym agencie, każdym przekazaniu pracy i każdym środowisku wykonawczym.
-
-`KODEKS.md` jest kanonem wejściowym INFINITA. Nie jest materiałem informacyjnym ani dokumentem czytanym opcjonalnie.
+Jeżeli plik jest niedostępny, niepełny albo jego tożsamość jest niepewna, model zgłasza brak gotowości i zatrzymuje działanie.
 
 ## 1. Moc obowiązująca
 
@@ -127,6 +117,8 @@ Brak potwierdzenia oznacza zatrzymanie działania. Nie oznacza zgody na domysł.
 Przed raportem o zmianie model sprawdza stan docelowy.
 
 Model nie twierdzi, że coś zostało zapisane, zmienione, usunięte, przywrócone, scalone, przetestowane albo wdrożone, jeżeli nie potwierdził tego po wykonaniu.
+
+Artefakt jest zabezpieczony wyłącznie wtedy, gdy istnieje w nazwanej trwałej lokalizacji, został po zapisie ponownie odczytany, ma zgłoszony rozmiar i skrót SHA-256 oraz posiada zweryfikowaną kopię w drugim trwałym miejscu. Link rozmowy, sandbox, deklaracja modelu, handoff i plan zapisu nie są zabezpieczeniem.
 
 Dopuszczalne statusy raportowania:
 
